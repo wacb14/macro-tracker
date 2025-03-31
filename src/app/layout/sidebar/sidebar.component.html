@@ -1,0 +1,46 @@
+<div
+  class="fixed left-0 top-0 h-full bg-white text-gray-700 flex flex-col font-sans transition-all duration-300 z-40"
+>
+  <div class="px-4 py-5 flex items-center">
+    <div class="flex items-center justify-center w-12 h-12 flex-shrink-0">
+      <img
+        src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQrx-RYbYFdnT_PM5vQTBp7a65iVmRmPG1acA&s"
+        alt="Logo"
+        class="h-10 w-10 object-contain"
+      />
+    </div>
+    <h1 class="text-xl font-bold text-gray-800 whitespace-nowrap ml-2">
+      Macro Tracker
+    </h1>
+  </div>
+  <div class="flex-1 overflow-y-auto px-4 py-4">
+    @for (section of sections; track section.title) {
+    <div class="mb-5">
+      <h2
+        class="text-[11px] font-semibold text-gray-500 uppercase tracking-wider mb-3 px-2"
+      >
+        {{ section.title }}
+      </h2>
+      <ul class="space-y-1">
+        @for (item of section.items; track item.subtitle) {
+        <li class="">
+          <a
+            class="flex items-center px-2 py-2 text-sm font-medium rounded cursor-pointer hover:bg-green-100"
+            [ngClass]="{
+              'text-green-700 bg-green-50': currentPath == item.route
+            }"
+            [routerLink]="item.route"
+          >
+            <i class="iconify text-xl" [attr.data-icon]="item.icon"></i>
+            <span class="ml-2">{{ item.subtitle }}</span>
+            @if (currentPath==item.route) {
+            <span class="ml-auto w-1 h-6 bg-green-600 rounded-full"></span>
+            }
+          </a>
+        </li>
+        }
+      </ul>
+    </div>
+    }
+  </div>
+</div>
