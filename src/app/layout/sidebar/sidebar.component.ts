@@ -1,5 +1,5 @@
 import { NgClass } from '@angular/common';
-import { Component, inject, OnInit } from '@angular/core';
+import { Component, inject, Input, OnInit, signal } from '@angular/core';
 import { NavigationEnd, Router, RouterLink } from '@angular/router';
 import { filter } from 'rxjs';
 interface item {
@@ -21,6 +21,8 @@ interface section {
 export class SidebarComponent implements OnInit {
   private router = inject(Router);
   currentPath = '';
+  @Input({ required: true }) isMobile = false;
+  @Input({ required: true }) isHidden = signal(false);
 
   ngOnInit() {
     this.currentPath = this.router.url;

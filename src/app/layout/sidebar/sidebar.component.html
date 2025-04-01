@@ -1,5 +1,6 @@
 <div
-  class="fixed left-0 top-0 h-full bg-white text-gray-700 flex flex-col font-sans transition-all duration-300 z-40"
+  class="fixed left-0 top-0 h-full bg-white text-gray-700 flex flex-col font-sans transition-all duration-300 z-40 md:translate-x-0"
+  [ngClass]="!isHidden() ? 'w-64 translate-x-0' : 'w-18 -translate-x-full'"
 >
   <div class="px-4 py-5 flex items-center">
     <div class="flex items-center justify-center w-12 h-12 flex-shrink-0">
@@ -9,16 +10,18 @@
         class="h-10 w-10 object-contain"
       />
     </div>
+    @if (!isHidden() ) {
     <h1 class="text-xl font-bold text-gray-800 whitespace-nowrap ml-2">
       Macro Tracker
     </h1>
+    }
   </div>
   <div class="flex-1 overflow-y-auto px-4 py-4">
     @for (section of sections; track section.title) {
     <div class="mb-5">
       <h2
         class="text-[11px] font-semibold text-gray-500 uppercase tracking-wider mb-3 px-2"
-      >
+      [ngClass]="{'invisible':isHidden()}">
         {{ section.title }}
       </h2>
       <ul class="space-y-1">
@@ -32,8 +35,9 @@
             [routerLink]="item.route"
           >
             <i class="iconify text-xl" [attr.data-icon]="item.icon"></i>
+            @if (!isHidden()) {
             <span class="ml-2">{{ item.subtitle }}</span>
-            @if (currentPath==item.route) {
+            } @if (currentPath==item.route && !isHidden()) {
             <span class="ml-auto w-1 h-6 bg-green-600 rounded-full"></span>
             }
           </a>

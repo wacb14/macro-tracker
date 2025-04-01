@@ -1,14 +1,17 @@
 <div class="flex h-screen">
   <!-- Sidebar -->
-  <aside class="w-64">
+  <aside class="transition-all duration-300" [ngClass]="isHiddenMenu() ? 'w-18' : 'w-64'">
     <nav class="flex flex-col h-full items-center">
-      <app-sidebar></app-sidebar>
+      <app-sidebar
+        [isMobile]="isMobile"
+        [isHidden]="isHiddenMenu"
+      ></app-sidebar>
     </nav>
   </aside>
   <!-- Main Content -->
   <div class="flex-1 bg-slate-50">
     <!-- Header -->
-    <header><app-header></app-header></header>
+    <header><app-header [isHiddenMenu]="isHiddenMenu"></app-header></header>
     <main><p>Main Content Area</p></main>
     <router-outlet></router-outlet>
   </div>
