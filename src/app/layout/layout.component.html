@@ -1,6 +1,11 @@
 <div class="flex h-screen">
   <!-- Sidebar -->
-  <aside class="transition-all duration-300" [ngClass]="isHiddenMenu() ? 'w-18' : 'w-64'">
+  <aside
+    class="transition-all duration-300"
+    [ngClass]="{ 'w-18': !isMobile && isHiddenMenu(),
+      'w-64': !isHiddenMenu() && !isMobile,
+     }"
+  >
     <nav class="flex flex-col h-full items-center">
       <app-sidebar
         [isMobile]="isMobile"

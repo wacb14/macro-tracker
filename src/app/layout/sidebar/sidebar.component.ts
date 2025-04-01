@@ -84,4 +84,7 @@ export class SidebarComponent implements OnInit {
       ],
     },
   ];
+  closeMenu() {
+    this.isHidden.set(true);
+  }
 }
