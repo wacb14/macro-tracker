@@ -1,0 +1,45 @@
+<div class="p-6 flex flex-col">
+  <h1 class="text-2xl font-bold text-green-700">
+    Welcome back, User! Ready to track today's macros?
+  </h1>
+  <div
+    class="pt-6 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-3 w-full max-w-8xl"
+  >
+    <div class="bg-green-50 rounded-xl p-6 shadow-md w-full flex flex-row">
+      <div class="flex flex-col justify-center">
+        <h2 class="text-xl font-semibold text-purple-700">Protein</h2>
+        <h3 class="text-base text-gray-500">75% Complete</h3>
+      </div>
+      <div>
+        <app-radial-progress-bar [progress]="75" [color]="'text-purple-700'"></app-radial-progress-bar>
+      </div>
+    </div>
+    <div class="bg-green-50 rounded-xl p-6 shadow-md w-full flex flex-row">
+      <div class="flex flex-col justify-center">
+        <h2 class="text-xl font-semibold text-green-700">Carbs</h2>
+        <h3 class="text-base text-gray-500">50% Complete</h3>
+      </div>
+      <div>
+        <app-radial-progress-bar [progress]="50" [color]="'text-green-700'"></app-radial-progress-bar>
+      </div>
+    </div>
+    <div class="bg-green-50 rounded-xl p-6 shadow-md w-full flex flex-row">
+      <div class="flex flex-col justify-center">
+        <h2 class="text-xl font-semibold text-orange-500">Fats</h2>
+        <h3 class="text-base text-gray-500">64% Complete</h3>
+      </div>
+      <div>
+        <app-radial-progress-bar [progress]="64" [color]="'text-orange-500'"></app-radial-progress-bar>
+      </div>
+    </div>
+    <div class="bg-green-50 rounded-xl p-6 shadow-md w-full flex flex-row">
+      <div class="flex flex-col justify-center">
+        <h2 class="text-xl font-semibold text-red-600">Calories</h2>
+        <h3 class="text-base text-gray-500">21% Complete</h3>
+      </div>
+      <div>
+        <app-radial-progress-bar [progress]="21" [color]="'text-red-600'"></app-radial-progress-bar>
+      </div>
+    </div>
+  </div>
+</div>

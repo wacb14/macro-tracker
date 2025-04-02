@@ -1,0 +1,21 @@
+<svg class="w-36 h-36" viewBox="0 0 36 36">
+  <circle
+    class="text-gray-200 stroke-current"
+    stroke-width="3"
+    cx="18"
+    cy="18"
+    r="15"
+    fill="none"
+  ></circle>
+  <circle
+    transform="rotate(-180 18 18)"
+    [attr.stroke-dasharray]="calculateDashArray(15)"
+    [attr.stroke-dashoffset]="calculateDashOffset(15, progress)"
+    [class]="color + ' stroke-current'"
+    stroke-width="3"
+    cx="18"
+    cy="18"
+    r="15"
+    fill="none"
+  ></circle>
+</svg>
