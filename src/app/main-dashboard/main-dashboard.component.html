@@ -2,9 +2,7 @@
   <h2 class="text-xl font-bold text-green-700 self-start">
     Welcome back, User! Ready to track today's macros?
   </h2>
-  <div
-    class="pt-6 w-full max-w-7xl"
-  >
+  <div class="pt-6 w-full max-w-7xl">
     <h1 class="text-2xl font-bold text-black self-start">Today's progress</h1>
   </div>
   <div
@@ -12,9 +10,7 @@
   >
     <div class="bg-green-50 rounded-xl p-6 shadow-md w-full flex flex-row">
       <div class="flex flex-col justify-center w-70">
-        <h2 class="text-xl font-semibold text-center text-blue-500">
-          Protein
-        </h2>
+        <h2 class="text-xl font-semibold text-center text-blue-500">Protein</h2>
       </div>
       <div class="w-full flex flex-col items-center">
         <app-radial-progress-bar
@@ -25,9 +21,7 @@
     </div>
     <div class="bg-green-50 rounded-xl p-6 shadow-md w-full flex flex-row">
       <div class="flex flex-col justify-center w-70">
-        <h2 class="text-xl font-semibold text-center text-purple-500">
-          Carbs
-        </h2>
+        <h2 class="text-xl font-semibold text-center text-purple-500">Carbs</h2>
       </div>
       <div class="w-full flex flex-col items-center">
         <app-radial-progress-bar
@@ -38,9 +32,7 @@
     </div>
     <div class="bg-green-50 rounded-xl p-6 shadow-md w-full flex flex-row">
       <div class="flex flex-col justify-center w-70">
-        <h2 class="text-xl font-semibold text-center text-pink-500">
-          Fats
-        </h2>
+        <h2 class="text-xl font-semibold text-center text-pink-500">Fats</h2>
       </div>
       <div class="w-full flex flex-col items-center">
         <app-radial-progress-bar
@@ -62,5 +54,55 @@
         ></app-radial-progress-bar>
       </div>
     </div>
+  </div>
+  <div class="pt-6 w-full max-w-7xl">
+    <h2 class="text-xl font-bold text-black self-start">Recent Entries</h2>
+  </div>
+  <div class="pt-6 w-full max-w-7xl flex justify-between">
+    <input
+      type="text"
+      placeholder="Search entries..."
+      class="rounded-xl bg-gray-200 px-5 w-75 sm:w-90"
+    />
+    <button
+      class="bg-green-500 rounded-xl py-2 px-4 text-white cursor-pointer hover:bg-green-600"
+    >
+      Add Entry
+    </button>
+  </div>
+  <div class="mt-6 w-full max-w-7xl flex flex-col h-78 overflow-y-auto">
+    @for (recentEntry of recentEntries; track recentEntry.id) {
+    <div class="grid grid-cols-12 border-b border-gray-200">
+      <div class="col-span-3 p-4 w-full flex items-center">
+        <i class="iconify text-xl" [attr.data-icon]="recentEntry.icon"></i>
+        <span class="ml-2">{{ recentEntry.food }}</span>
+      </div>
+      <div class="col-span-2 p-4 w-full">
+        Protein: {{ recentEntry.protein }}g
+      </div>
+      <div class="col-span-2 p-4 w-full">Carbs: {{ recentEntry.carbs }}g</div>
+      <div class="col-span-2 p-4 w-full">Fats: {{ recentEntry.fats }}g</div>
+      <div class="col-span-2 p-4 w-full">
+        {{ recentEntry.dateTime.toLocaleTimeString() }}
+      </div>
+      <div class="col-span-1 p-4 w-full flex justify-evenly">
+        <i
+          class="iconify text-xl"
+          data-icon="material-symbols:edit-outline"
+        ></i>
+        <i
+          class="iconify text-xl"
+          data-icon="material-symbols:delete-outline"
+        ></i>
+      </div>
+    </div>
+    }
+  </div>
+  <div class="pt-6 w-full max-w-7xl text-center">
+    <button
+      class="border-1 border-gray-200 rounded-xl py-2 px-4 text-green-500 cursor-pointer hover:bg-green-100"
+    >
+      Load More
+    </button>
   </div>
 </div>
