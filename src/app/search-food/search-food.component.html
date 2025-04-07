@@ -1,0 +1,47 @@
+<div class="pt-6 w-full max-w-7xl">
+  <h2 class="text-xl font-bold text-black self-start">Search for food</h2>
+</div>
+<div class="pt-6 w-full max-w-7xl flex justify-between">
+  <app-search-bar
+    class="w-90 sm:w-110 h-10"
+    [placeholderMessage]="'Type food name...'"
+  ></app-search-bar>
+</div>
+<div class="pt-6 w-full max-w-7xl">
+  <h2 class="text-xl font-bold text-black self-start">Popular foods</h2>
+</div>
+<div class="mt-6 w-full max-w-7xl flex flex-col h-120 overflow-y-auto">
+  @for (popularFood of popularFoods; track popularFood.id) {
+  <div class="grid grid-cols-12 border-b border-gray-200">
+    <div class="col-span-2 p-4 w-full flex items-center justify-center">
+      <span class="bg-green-100 p-4 rounded-lg">
+        <i
+          class="iconify text-2xl text-green-500"
+          [attr.data-icon]="popularFood.icon"
+        ></i>
+      </span>
+    </div>
+    <div class="col-span-8 p-4 w-full">
+      <span class="font-semibold">{{ popularFood.name }}</span
+      ><br />
+      <span class="text-gray-600"
+        >Protein: {{ popularFood.protein }}g | Carbs: {{ popularFood.carbs }}g |
+        Fats: {{ popularFood.fats }}g | Calories: {{ popularFood.calories }}Cal
+        per 100g</span
+      >
+    </div>
+    <div class="col-span-2 p-4 w-full flex items-center justify-center">
+      <span class="rounded-full p-2 hover:cursor-pointer hover:bg-green-100">
+        <i class="iconify text-xl" data-icon="material-symbols:add-rounded"></i>
+      </span>
+    </div>
+  </div>
+  }
+</div>
+<div class="pt-6 w-full max-w-7xl text-center">
+  <button
+    class="border-1 border-gray-200 rounded-xl py-2 px-4 text-green-500 cursor-pointer hover:bg-green-100"
+  >
+    Load More
+  </button>
+</div>

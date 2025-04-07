@@ -17,6 +17,8 @@
   <div class="flex-1 bg-slate-50">
     <!-- Header -->
     <header><app-header [isHiddenMenu]="isHiddenMenu"></app-header></header>
-    <main><router-outlet></router-outlet></main>
+    <main class="p-6 flex flex-col items-center">
+      <router-outlet></router-outlet>
+    </main>
   </div>
 </div>
