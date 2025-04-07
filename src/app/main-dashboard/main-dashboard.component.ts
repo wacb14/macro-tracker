@@ -1,27 +1,19 @@
 import { Component } from '@angular/core';
 import { RadialProgressBarComponent } from '../components/radial-progress-bar/radial-progress-bar.component';
-
-interface Entry {
-  id: number;
-  food: string;
-  protein: number;
-  carbs: number;
-  fats: number;
-  dateTime: Date;
-  icon: string;
-}
+import { SearchBarComponent } from '../components/search-bar/search-bar.component';
+import { Food } from '../models';
 
 @Component({
   selector: 'app-main-dashboard',
-  imports: [RadialProgressBarComponent],
+  imports: [RadialProgressBarComponent, SearchBarComponent],
   templateUrl: './main-dashboard.component.html',
   styleUrl: './main-dashboard.component.css',
 })
 export class MainDashboardComponent {
-  recentEntries: Entry[] = [
+  recentEntries: Food[] = [
     {
       id: 1,
-      food: 'Pechuga de pollo',
+      name: 'Pechuga de pollo',
       protein: 31,
       carbs: 0,
       fats: 3.6,
@@ -30,7 +22,7 @@ export class MainDashboardComponent {
     },
     {
       id: 2,
-      food: 'Arroz blanco',
+      name: 'Arroz blanco',
       protein: 2.7,
       carbs: 28,
       fats: 0.3,
@@ -39,7 +31,7 @@ export class MainDashboardComponent {
     },
     {
       id: 3,
-      food: 'Aguacate',
+      name: 'Aguacate',
       protein: 2,
       carbs: 9,
       fats: 15,
@@ -48,7 +40,7 @@ export class MainDashboardComponent {
     },
     {
       id: 4,
-      food: 'Huevos revueltos',
+      name: 'Huevos revueltos',
       protein: 12,
       carbs: 1,
       fats: 10,
@@ -57,7 +49,7 @@ export class MainDashboardComponent {
     },
     {
       id: 5,
-      food: 'Batido de proteína',
+      name: 'Batido de proteína',
       protein: 24,
       carbs: 8,
       fats: 2,
@@ -66,7 +58,7 @@ export class MainDashboardComponent {
     },
     {
       id: 6,
-      food: 'Huevos revueltos',
+      name: 'Huevos revueltos',
       protein: 12,
       carbs: 1,
       fats: 10,
@@ -75,7 +67,7 @@ export class MainDashboardComponent {
     },
     {
       id: 7,
-      food: 'Batido de proteína',
+      name: 'Batido de proteína',
       protein: 24,
       carbs: 8,
       fats: 2,
