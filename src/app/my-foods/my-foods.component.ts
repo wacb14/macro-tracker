@@ -1,10 +1,11 @@
 import { Component } from '@angular/core';
 import { SearchBarComponent } from '../components/search-bar/search-bar.component';
 import { Food } from '../models';
+import { FoodCardComponent } from "../components/food-card/food-card.component";
 
 @Component({
   selector: 'app-my-foods',
-  imports: [SearchBarComponent],
+  imports: [SearchBarComponent, FoodCardComponent],
   templateUrl: './my-foods.component.html',
   styleUrl: './my-foods.component.css',
 })

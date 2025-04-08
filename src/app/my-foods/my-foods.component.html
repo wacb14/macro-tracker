@@ -15,23 +15,10 @@
 <div class="mt-6 w-full max-w-7xl flex flex-col">
   @for (favorite of favorites; track favorite.id) {
   <div class="grid grid-cols-12 border-b border-gray-200">
-    <div class="col-span-2 p-4 w-full flex items-center justify-center">
-      <span class="bg-green-100 p-4 rounded-lg">
-        <i
-          class="iconify text-2xl text-green-500"
-          [attr.data-icon]="favorite.icon"
-        ></i>
-      </span>
-    </div>
-    <div class="col-span-8 p-4 w-full">
-      <span class="font-semibold">{{ favorite.name }}</span
-      ><br />
-      <span class="text-gray-600"
-        >Protein: {{ favorite.protein }}g | Carbs: {{ favorite.carbs }}g | Fats:
-        {{ favorite.fats }}g | Calories: {{ favorite.calories }}Cal per
-        100g</span
-      >
-    </div>
+    <app-food-card
+      [food]="favorite"
+      class="col-span-10 grid grid-cols-subgrid w-full"
+    />
     <div class="col-span-2 p-4 w-full flex items-center justify-center">
       <span class="rounded-full p-2 hover:cursor-pointer hover:bg-green-100">
         <i class="iconify text-xl" data-icon="mdi:heart-outline"></i>
@@ -56,23 +43,10 @@
 <div class="mt-6 w-full max-w-7xl flex flex-col">
   @for (recentOne of recent; track recentOne.id) {
   <div class="grid grid-cols-12 border-b border-gray-200">
-    <div class="col-span-2 p-4 w-full flex items-center justify-center">
-      <span class="bg-green-100 p-4 rounded-lg">
-        <i
-          class="iconify text-2xl text-green-500"
-          [attr.data-icon]="recentOne.icon"
-        ></i>
-      </span>
-    </div>
-    <div class="col-span-8 p-4 w-full">
-      <span class="font-semibold">{{ recentOne.name }}</span
-      ><br />
-      <span class="text-gray-600"
-        >Protein: {{ recentOne.protein }}g | Carbs: {{ recentOne.carbs }}g |
-        Fats: {{ recentOne.fats }}g | Calories: {{ recentOne.calories }}Cal per
-        100g</span
-      >
-    </div>
+    <app-food-card
+      [food]="recentOne"
+      class="col-span-10 grid grid-cols-subgrid w-full"
+    />
     <div class="col-span-2 p-4 w-full flex items-center justify-center">
       <span class="rounded-full p-2 hover:cursor-pointer hover:bg-green-100">
         <i class="iconify text-xl" data-icon="mdi:heart-outline"></i>
@@ -97,22 +71,10 @@
 <div class="mt-6 w-full max-w-7xl flex flex-col h-120 overflow-y-auto">
   @for (food of allMyFood; track food.id) {
   <div class="grid grid-cols-12 border-b border-gray-200">
-    <div class="col-span-2 p-4 w-full flex items-center justify-center">
-      <span class="bg-green-100 p-4 rounded-lg">
-        <i
-          class="iconify text-2xl text-green-500"
-          [attr.data-icon]="food.icon"
-        ></i>
-      </span>
-    </div>
-    <div class="col-span-8 p-4 w-full">
-      <span class="font-semibold">{{ food.name }}</span
-      ><br />
-      <span class="text-gray-600"
-        >Protein: {{ food.protein }}g | Carbs: {{ food.carbs }}g | Fats:
-        {{ food.fats }}g | Calories: {{ food.calories }}Cal per 100g</span
-      >
-    </div>
+    <app-food-card
+      [food]="food"
+      class="col-span-10 grid grid-cols-subgrid w-full"
+    />
     <div class="col-span-2 p-4 w-full flex items-center justify-center">
       <span class="rounded-full p-2 hover:cursor-pointer hover:bg-green-100">
         <i class="iconify text-xl" data-icon="mdi:heart-outline"></i>
