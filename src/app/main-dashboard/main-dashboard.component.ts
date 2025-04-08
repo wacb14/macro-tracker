@@ -17,7 +17,7 @@ export class MainDashboardComponent {
       protein: 31,
       carbs: 0,
       fats: 3.6,
-      dateTime: new Date('2023-05-15T12:30:00'),
+      creation: new Date('2023-05-15T12:30:00'),
       icon: 'ep:food',
     },
     {
@@ -26,7 +26,7 @@ export class MainDashboardComponent {
       protein: 2.7,
       carbs: 28,
       fats: 0.3,
-      dateTime: new Date('2023-05-15T13:15:00'),
+      creation: new Date('2023-05-15T13:15:00'),
       icon: 'ep:food',
     },
     {
@@ -35,7 +35,7 @@ export class MainDashboardComponent {
       protein: 2,
       carbs: 9,
       fats: 15,
-      dateTime: new Date('2023-05-16T08:45:00'),
+      creation: new Date('2023-05-16T08:45:00'),
       icon: 'ep:food',
     },
     {
@@ -44,7 +44,7 @@ export class MainDashboardComponent {
       protein: 12,
       carbs: 1,
       fats: 10,
-      dateTime: new Date('2023-05-16T09:00:00'),
+      creation: new Date('2023-05-16T09:00:00'),
       icon: 'ep:food',
     },
     {
@@ -53,7 +53,7 @@ export class MainDashboardComponent {
       protein: 24,
       carbs: 8,
       fats: 2,
-      dateTime: new Date('2023-05-16T16:30:00'),
+      creation: new Date('2023-05-16T16:30:00'),
       icon: 'ep:food',
     },
     {
@@ -62,7 +62,7 @@ export class MainDashboardComponent {
       protein: 12,
       carbs: 1,
       fats: 10,
-      dateTime: new Date('2023-05-16T09:00:00'),
+      creation: new Date('2023-05-16T09:00:00'),
       icon: 'ep:food',
     },
     {
@@ -71,7 +71,7 @@ export class MainDashboardComponent {
       protein: 24,
       carbs: 8,
       fats: 2,
-      dateTime: new Date('2023-05-16T16:30:00'),
+      creation: new Date('2023-05-16T16:30:00'),
       icon: 'ep:food',
     },
   ];

@@ -16,7 +16,7 @@ export class SearchFoodComponent {
       carbs: 0,
       fats: 3.6,
       calories: 165,
-      dateTime: new Date('2023-06-10T12:30:00'),
+      creation: new Date('2023-06-10T12:30:00'),
       icon: 'ep:food',
     },
     {
@@ -26,7 +26,7 @@ export class SearchFoodComponent {
       carbs: 0,
       fats: 13,
       calories: 208,
-      dateTime: new Date('2023-06-10T13:15:00'),
+      creation: new Date('2023-06-10T13:15:00'),
       icon: 'ep:food',
     },
     {
@@ -36,7 +36,7 @@ export class SearchFoodComponent {
       carbs: 45,
       fats: 0.4,
       calories: 205,
-      dateTime: new Date('2023-06-10T13:20:00'),
+      creation: new Date('2023-06-10T13:20:00'),
       icon: 'ep:food',
     },
     {
@@ -46,7 +46,7 @@ export class SearchFoodComponent {
       carbs: 9,
       fats: 15,
       calories: 160,
-      dateTime: new Date('2023-06-11T08:45:00'),
+      creation: new Date('2023-06-11T08:45:00'),
       icon: 'ep:food',
     },
     {
@@ -56,7 +56,7 @@ export class SearchFoodComponent {
       carbs: 1,
       fats: 10,
       calories: 140,
-      dateTime: new Date('2023-06-11T09:00:00'),
+      creation: new Date('2023-06-11T09:00:00'),
       icon: 'ep:food',
     },
     {
@@ -66,7 +66,7 @@ export class SearchFoodComponent {
       carbs: 27,
       fats: 3,
       calories: 150,
-      dateTime: new Date('2023-06-11T07:30:00'),
+      creation: new Date('2023-06-11T07:30:00'),
       icon: 'ep:food',
     },
     {
@@ -76,7 +76,7 @@ export class SearchFoodComponent {
       carbs: 25,
       fats: 0.3,
       calories: 95,
-      dateTime: new Date('2023-06-11T11:00:00'),
+      creation: new Date('2023-06-11T11:00:00'),
       icon: 'ep:food',
     },
     {
@@ -86,7 +86,7 @@ export class SearchFoodComponent {
       carbs: 8,
       fats: 2,
       calories: 150,
-      dateTime: new Date('2023-06-11T16:30:00'),
+      creation: new Date('2023-06-11T16:30:00'),
       icon: 'ep:food',
     },
     {
@@ -96,7 +96,7 @@ export class SearchFoodComponent {
       carbs: 6,
       fats: 14,
       calories: 170,
-      dateTime: new Date('2023-06-12T10:00:00'),
+      creation: new Date('2023-06-12T10:00:00'),
       icon: 'ep:food',
     },
     {
@@ -106,7 +106,7 @@ export class SearchFoodComponent {
       carbs: 6,
       fats: 0.4,
       calories: 35,
-      dateTime: new Date('2023-06-12T12:45:00'),
+      creation: new Date('2023-06-12T12:45:00'),
       icon: 'ep:food',
     },
   ];

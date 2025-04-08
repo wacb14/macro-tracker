@@ -6,5 +6,7 @@ export interface Food {
   carbs: number;
   fats: number;
   calories?: number;
-  dateTime?: Date;
+  creation?: Date;
+  modification?: Date;
+  favorite?:boolean
 }

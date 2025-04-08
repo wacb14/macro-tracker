@@ -84,7 +84,7 @@
     <div class="col-span-2 p-4 w-full">Fats: {{ recentEntry.fats }}g</div>
     <div class="col-span-2 p-4 w-full">
       {{
-        recentEntry.dateTime ? recentEntry.dateTime.toLocaleTimeString() : ""
+        recentEntry.creation ? recentEntry.creation.toLocaleTimeString() : ""
       }}
     </div>
     <div class="col-span-1 p-4 w-full flex justify-evenly">
