@@ -1,0 +1,132 @@
+<div class="pt-6 w-full max-w-7xl flex justify-between">
+  <app-search-bar
+    class="w-75 sm:w-90"
+    [placeholderMessage]="'Filter my foods...'"
+  ></app-search-bar>
+  <button
+    class="bg-green-500 rounded-xl py-2 px-4 text-white cursor-pointer hover:bg-green-600"
+  >
+    Add New Food
+  </button>
+</div>
+<div class="pt-6 w-full max-w-7xl">
+  <h2 class="text-xl font-bold text-black self-start">Favorites</h2>
+</div>
+<div class="mt-6 w-full max-w-7xl flex flex-col">
+  @for (favorite of favorites; track favorite.id) {
+  <div class="grid grid-cols-12 border-b border-gray-200">
+    <div class="col-span-2 p-4 w-full flex items-center justify-center">
+      <span class="bg-green-100 p-4 rounded-lg">
+        <i
+          class="iconify text-2xl text-green-500"
+          [attr.data-icon]="favorite.icon"
+        ></i>
+      </span>
+    </div>
+    <div class="col-span-8 p-4 w-full">
+      <span class="font-semibold">{{ favorite.name }}</span
+      ><br />
+      <span class="text-gray-600"
+        >Protein: {{ favorite.protein }}g | Carbs: {{ favorite.carbs }}g | Fats:
+        {{ favorite.fats }}g | Calories: {{ favorite.calories }}Cal per
+        100g</span
+      >
+    </div>
+    <div class="col-span-2 p-4 w-full flex items-center justify-center">
+      <span class="rounded-full p-2 hover:cursor-pointer hover:bg-green-100">
+        <i class="iconify text-xl" data-icon="mdi:heart-outline"></i>
+      </span>
+      <span class="rounded-full p-2 hover:cursor-pointer hover:bg-green-100">
+        <i
+          class="iconify text-xl"
+          data-icon="material-symbols:edit-outline"
+        ></i>
+      </span>
+      <span class="rounded-full p-2 hover:cursor-pointer hover:bg-green-100">
+        <i class="iconify text-xl" data-icon="material-symbols:add-rounded"></i>
+      </span>
+    </div>
+  </div>
+  }
+</div>
+
+<div class="pt-6 w-full max-w-7xl">
+  <h2 class="text-xl font-bold text-black self-start">Recently Added</h2>
+</div>
+<div class="mt-6 w-full max-w-7xl flex flex-col">
+  @for (recentOne of recent; track recentOne.id) {
+  <div class="grid grid-cols-12 border-b border-gray-200">
+    <div class="col-span-2 p-4 w-full flex items-center justify-center">
+      <span class="bg-green-100 p-4 rounded-lg">
+        <i
+          class="iconify text-2xl text-green-500"
+          [attr.data-icon]="recentOne.icon"
+        ></i>
+      </span>
+    </div>
+    <div class="col-span-8 p-4 w-full">
+      <span class="font-semibold">{{ recentOne.name }}</span
+      ><br />
+      <span class="text-gray-600"
+        >Protein: {{ recentOne.protein }}g | Carbs: {{ recentOne.carbs }}g |
+        Fats: {{ recentOne.fats }}g | Calories: {{ recentOne.calories }}Cal per
+        100g</span
+      >
+    </div>
+    <div class="col-span-2 p-4 w-full flex items-center justify-center">
+      <span class="rounded-full p-2 hover:cursor-pointer hover:bg-green-100">
+        <i class="iconify text-xl" data-icon="mdi:heart-outline"></i>
+      </span>
+      <span class="rounded-full p-2 hover:cursor-pointer hover:bg-green-100">
+        <i
+          class="iconify text-xl"
+          data-icon="material-symbols:edit-outline"
+        ></i>
+      </span>
+      <span class="rounded-full p-2 hover:cursor-pointer hover:bg-green-100">
+        <i class="iconify text-xl" data-icon="material-symbols:add-rounded"></i>
+      </span>
+    </div>
+  </div>
+  }
+</div>
+
+<div class="pt-6 w-full max-w-7xl">
+  <h2 class="text-xl font-bold text-black self-start">All my Foods</h2>
+</div>
+<div class="mt-6 w-full max-w-7xl flex flex-col h-120 overflow-y-auto">
+  @for (food of allMyFood; track food.id) {
+  <div class="grid grid-cols-12 border-b border-gray-200">
+    <div class="col-span-2 p-4 w-full flex items-center justify-center">
+      <span class="bg-green-100 p-4 rounded-lg">
+        <i
+          class="iconify text-2xl text-green-500"
+          [attr.data-icon]="food.icon"
+        ></i>
+      </span>
+    </div>
+    <div class="col-span-8 p-4 w-full">
+      <span class="font-semibold">{{ food.name }}</span
+      ><br />
+      <span class="text-gray-600"
+        >Protein: {{ food.protein }}g | Carbs: {{ food.carbs }}g | Fats:
+        {{ food.fats }}g | Calories: {{ food.calories }}Cal per 100g</span
+      >
+    </div>
+    <div class="col-span-2 p-4 w-full flex items-center justify-center">
+      <span class="rounded-full p-2 hover:cursor-pointer hover:bg-green-100">
+        <i class="iconify text-xl" data-icon="mdi:heart-outline"></i>
+      </span>
+      <span class="rounded-full p-2 hover:cursor-pointer hover:bg-green-100">
+        <i
+          class="iconify text-xl"
+          data-icon="material-symbols:edit-outline"
+        ></i>
+      </span>
+      <span class="rounded-full p-2 hover:cursor-pointer hover:bg-green-100">
+        <i class="iconify text-xl" data-icon="material-symbols:add-rounded"></i>
+      </span>
+    </div>
+  </div>
+  }
+</div>
