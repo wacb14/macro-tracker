@@ -5,6 +5,7 @@ export interface Food {
   protein: number;
   carbs: number;
   fats: number;
+  portion:number;
   calories?: number;
   creation?: Date;
   modification?: Date;
