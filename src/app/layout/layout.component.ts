@@ -11,13 +11,13 @@ import { NgClass } from '@angular/common';
   styleUrl: './layout.component.css',
 })
 export class LayoutComponent {
-  isMobile = window.innerWidth <= 768;
+  isMobile = window.innerWidth < 768;
   isHiddenMenu = signal(this.isMobile);
 
   @HostListener('window:resize')
   onResize() {
     // Verify again
-    this.isMobile=window.innerWidth <= 768;
+    this.isMobile=window.innerWidth < 768;
     this.isHiddenMenu.set(this.isMobile);
   }
 }
