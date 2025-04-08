@@ -30,7 +30,7 @@ export class SidebarComponent implements OnInit {
     this.router.events
       .pipe(filter((event) => event instanceof NavigationEnd))
       .subscribe((event: NavigationEnd) => {
-        this.currentPath = event.url.split('?')[0].split('#')[0];
+        this.currentPath = event.url.split('?')[0].split('#')[0].split('/')[1];
       });
   }
 
@@ -41,7 +41,7 @@ export class SidebarComponent implements OnInit {
         {
           icon: 'fluent:food-16-regular',
           subtitle: "Today's progress",
-          route: '/',
+          route: '',
         },
         {
           icon: 'ant-design:bulb-outlined',
