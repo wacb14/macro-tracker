@@ -46,12 +46,12 @@ export class SidebarComponent implements OnInit {
         {
           icon: 'ant-design:bulb-outlined',
           subtitle: 'Insights',
-          route: '/insights',
+          route: 'insights',
         },
         {
           icon: 'fluent-mdl2:health',
-          subtitle: 'Health Reports',
-          route: '/health-reports',
+          subtitle: 'Health Report',
+          route: 'health-report',
         },
       ],
     },
