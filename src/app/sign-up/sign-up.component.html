@@ -7,8 +7,16 @@
       alt="Logo"
       class="h-20 w-20 object-contain self-center"
     />
-    <h1 class="text-2xl font-bold text-black self-start">Login</h1>
+    <h1 class="text-2xl font-bold text-black self-start">Sign Up</h1>
     <form action="" class="w-full max-w-7xl flex flex-col gap-y-5">
+      <div class="w-full flex flex-col">
+        <label for="" class="font-semibold pb-2">Full Name</label>
+        <input
+          type="text"
+          class="rounded-xl bg-gray-200 px-5 w-full h-10 focus:outline-none focus:ring-2 focus:ring-green-500"
+          placeholder="Enter you full name"
+        />
+      </div>
       <div class="w-full flex flex-col">
         <label for="" class="font-semibold pb-2">Email</label>
         <input
@@ -25,17 +33,22 @@
           placeholder="Enter your password"
         />
       </div>
-      <a href="" class="text-md font-semibold text-green-600 self-end hover:text-green-500">
-        Forgot your password?
-      </a>
+      <div class="w-full flex flex-col">
+        <label for="" class="font-semibold pb-2">Confirm Password</label>
+        <input
+          type="text"
+          class="rounded-xl bg-gray-200 px-5 w-full h-10 focus:outline-none focus:ring-2 focus:ring-green-500"
+          placeholder="Confirm your password"
+        />
+      </div>
       <button
         class="bg-green-500 rounded-xl py-2 px-4 text-white cursor-pointer hover:bg-green-600 font-semibold"
         type="submit"
       >
-        Login
+        Create Account
       </button>
     </form>
-    <p class="self-center">Or continue with</p>
+    <p class="self-center">Or sign up with</p>
     <div class="w-full grid grid-cols-2 gap-3">
       <button
         class="bg-green-100 rounded-xl py-2 px-4 text-green-500 cursor-pointer hover:bg-green-200 font-semibold"
@@ -51,9 +64,11 @@
       </button>
     </div>
     <p class="self-center">
-      Don't you have an account?
-      <a href="" class="text-md font-semibold text-green-600 self-end hover:text-green-500"
-        >Sign up</a
+      Already have an account?
+      <a
+        href=""
+        class="text-md font-semibold text-green-600 self-end hover:text-green-500"
+        >Login</a
       >
     </p>
   </div>
