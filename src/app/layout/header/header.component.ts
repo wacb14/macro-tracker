@@ -1,8 +1,9 @@
 import { Component, Input, WritableSignal } from '@angular/core';
+import { NotificationsComponent } from '../../components/notifications/notifications.component';
 
 @Component({
   selector: 'app-header',
-  imports: [],
+  imports: [NotificationsComponent],
   templateUrl: './header.component.html',
   styleUrl: './header.component.css',
 })
