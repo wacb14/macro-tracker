@@ -1,16 +1,21 @@
 <div class="relative">
-  <button class="p-2 hover:bg-green-100 rounded-lg cursor-pointer">
+  <button
+    class="p-2 hover:bg-green-100 rounded-lg cursor-pointer"
+    (click)="openMenu()"
+  >
     <i class="iconify text-xl" data-icon="solar:bell-line-duotone"></i>
   </button>
   <span
     class="absolute -top-1 -right-1 bg-red-500 text-white text-xs font-bold px-1 rounded-full"
-    [ngClass]="{ invisible: !(activeNotifications > 0) }"
-    >{{ activeNotifications }}</span
+    [ngClass]="{ invisible: !(pendingNotifications > 0) }"
+    >{{ pendingNotifications }}</span
   >
 </div>
+@if (isOpen) {
 <div class="fixed inset-0 bg-black opacity-10 z-40 transition-opacity"></div>
 <div
   class="absolute -bottom-2 right-18 z-40 w-4 h-4 transform rotate-45 bg-white"
+  #notificationContainer
 ></div>
 <div
   class="absolute top-15 right-5 z-40 w-full max-w-sm bg-white p-3 rounded-lg shadow-lg mx-auto"
@@ -19,7 +24,7 @@
     <h2 class="text-md font-semibold px-4">Notifications</h2>
     <span
       class="px-2 py-1 text-sm mx-2 text-white bg-green-600 rounded-full select-none"
-      >{{ activeNotifications }} new</span
+      >{{ pendingNotifications }} new</span
     >
   </div>
   <div class="space-y-2 px-3 max-h-90 overflow-auto">
@@ -53,3 +58,5 @@
     }
   </div>
 </div>
+
+}

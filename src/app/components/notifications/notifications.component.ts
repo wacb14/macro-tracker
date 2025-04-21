@@ -1,5 +1,11 @@
 import { DatePipe, NgClass } from '@angular/common';
-import { Component, OnInit } from '@angular/core';
+import {
+  Component,
+  ElementRef,
+  HostListener,
+  OnInit,
+  ViewChild,
+} from '@angular/core';
 
 type Warning = 'red';
 type Success = 'green';
@@ -24,7 +30,8 @@ interface Notification {
   styleUrl: './notifications.component.css',
 })
 export class NotificationsComponent implements OnInit {
-  activeNotifications = 0;
+  pendingNotifications = 0;
+  isOpen = false;
   notifications: Notification[] = [
     {
       id: 1,
@@ -72,25 +79,40 @@ export class NotificationsComponent implements OnInit {
       isRead: false,
     },
   ];
+  @ViewChild('notificationContainer') notificationContainer!: ElementRef;
 
   ngOnInit(): void {
-    this.calculateActiveNotifications();
+    this.calculatePendingNotifications();
   }
 
-  calculateActiveNotifications() {
+  @HostListener('document:click', ['$event'])
+  onClickOutside(event: MouseEvent): void {
+    if (
+      this.isOpen &&
+      this.notificationContainer &&
+      !this.notificationContainer.nativeElement.contains(event.target)
+    ) {
+      this.isOpen = false;
+    }
+  }
+  openMenu() {
+    this.isOpen = true;
+  }
+
+  calculatePendingNotifications() {
     for (const notification of this.notifications) {
-      if (!notification.isRead) this.activeNotifications++;
+      if (!notification.isRead) this.pendingNotifications++;
     }
   }
 
   markAsRead(id: number) {
-    if (this.activeNotifications > 0) {
+    if (this.pendingNotifications > 0) {
       let index = this.notifications.findIndex((n) => {
         return n.id == id;
       });
       if (!this.notifications[index].isRead) {
         this.notifications[index].isRead = true;
-        this.activeNotifications--;
+        this.pendingNotifications--;
       }
     }
   }
