@@ -1,9 +1,10 @@
 import { Component, Input, WritableSignal } from '@angular/core';
 import { NotificationsComponent } from '../../components/notifications/notifications.component';
+import { ProfileMenuComponent } from "../../components/profile-menu/profile-menu.component";
 
 @Component({
   selector: 'app-header',
-  imports: [NotificationsComponent],
+  imports: [NotificationsComponent, ProfileMenuComponent],
   templateUrl: './header.component.html',
   styleUrl: './header.component.css',
 })

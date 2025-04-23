@@ -1,0 +1,46 @@
+<div class="relative">
+  <button class="p-2 hover:bg-green-100 rounded-lg cursor-pointer" (click)="openMenu()">
+    <i class="iconify text-xl" data-icon="qlementine-icons:user-24"></i>
+  </button>
+</div>
+@if (isOpen) {
+<div class="fixed inset-0 bg-black opacity-10 z-40 transition-opacity"></div>
+<div
+  class="absolute -bottom-2 right-5 z-40 w-4 h-4 transform rotate-45 bg-white"
+></div>
+<div
+  #profileMenuContainer
+  class="absolute top-15 right-1 z-40 min-w-80 max-w-sm bg-white p-3 rounded-lg shadow-lg mx-auto"
+>
+  <div class="px-4 py-2 flex items-center">
+    <img
+      src="https://materialm-angular-main.netlify.app/assets/images/profile/user-1.jpg"
+      alt="User Image"
+      class="w-16 h-16 rounded-full mr-4"
+    />
+    <div>
+      <div class="font-semibold text-lg ">User name</div>
+      <div class="text-sm text-gray-500">user-email&#64;email.com</div>
+    </div>
+  </div>
+  <div class="py-1 font-medium border-t border-gray-200 my-1">
+    <a
+      class="flex items-center px-4 py-2 w-full cursor-pointer hover:bg-green-100 hover:text-green-700"
+    >
+      Profile
+    </a>
+    <a
+      class="flex items-center px-4 py-2 w-full cursor-pointer hover:bg-green-100 hover:text-green-700"
+    >
+      Settings
+    </a>
+  </div>
+  <div class="py-2 border-t border-gray-200 font-medium">
+    <a
+      class="flex items-center px-4 py-2 w-full cursor-pointer hover:bg-green-100 hover:text-green-700"
+    >
+      Logout
+    </a>
+  </div>
+</div>
+}
