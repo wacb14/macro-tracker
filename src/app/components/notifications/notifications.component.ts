@@ -32,6 +32,12 @@ interface Notification {
 export class NotificationsComponent implements OnInit {
   pendingNotifications = 0;
   isOpen = false;
+  notificationClassMap: Record<NotificationType, string> = {
+    red: 'bg-red-100 text-red-500',
+    green: 'bg-green-100 text-green-500',
+    blue: 'bg-blue-100 text-blue-500',
+    yellow: 'bg-yellow-100 text-yellow-500'
+  };
   notifications: Notification[] = [
     {
       id: 1,

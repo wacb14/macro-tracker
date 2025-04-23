@@ -35,13 +35,8 @@
       (mouseleave)="markAsRead(notification.id)"
     >
       <div
-        [class]="
-          'w-10 h-10 flex items-center justify-center rounded-full bg-' +
-          notification.type +
-          '-100 text-' +
-          notification.type +
-          '-500'
-        "
+        class="w-10 h-10 flex items-center justify-center rounded-full"
+        [ngClass]="notificationClassMap[notification.type]"
       >
         <i class="iconify text-xl" [attr.data-icon]="notification.icon"></i>
       </div>
