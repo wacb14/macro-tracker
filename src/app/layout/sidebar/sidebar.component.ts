@@ -19,21 +19,9 @@ interface section {
   styleUrl: './sidebar.component.css',
 })
 export class SidebarComponent implements OnInit {
-  private router = inject(Router);
   currentPath = '';
   @Input({ required: true }) isMobile = false;
   @Input({ required: true }) isHidden = signal(false);
-
-  ngOnInit() {
-    this.currentPath = this.router.url;
-
-    this.router.events
-      .pipe(filter((event) => event instanceof NavigationEnd))
-      .subscribe((event: NavigationEnd) => {
-        this.currentPath = event.url.split('?')[0].split('#')[0].split('/')[1];
-      });
-  }
-
   sections: section[] = [
     {
       title: 'Dashboards',
@@ -84,8 +72,25 @@ export class SidebarComponent implements OnInit {
       ],
     },
   ];
+
+  private router = inject(Router);
+
+  ngOnInit() {
+    this.setCurrentPath(this.router.url);
+
+    this.router.events
+      .pipe(filter((event) => event instanceof NavigationEnd))
+      .subscribe((event: NavigationEnd) => {
+        this.setCurrentPath(event.url);
+      });
+  }
+
+  setCurrentPath(url: string) {
+    this.currentPath = url.split('?')[0].split('#')[0].split('/')[1];
+  }
+
   closeMenu() {
-    if(this.isMobile){
+    if (this.isMobile) {
       this.isHidden.set(true);
     }
   }
