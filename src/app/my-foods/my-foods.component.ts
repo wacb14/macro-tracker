@@ -1,14 +1,16 @@
 import { Component } from '@angular/core';
 import { SearchBarComponent } from '../components/search-bar/search-bar.component';
 import { Food } from '../models';
+import { NgStyle } from '@angular/common';
 
 @Component({
   selector: 'app-my-foods',
-  imports: [SearchBarComponent],
+  imports: [SearchBarComponent, NgStyle],
   templateUrl: './my-foods.component.html',
   styleUrl: './my-foods.component.css',
 })
 export class MyFoodsComponent {
+  selectedIndex = 0;
   favorites: Food[] = [
     {
       id: 1,
@@ -125,4 +127,8 @@ export class MyFoodsComponent {
       icon: 'ep:food',
     },
   ];
+
+  selectTab(index: number) {
+    this.selectedIndex = index;
+  }
 }
