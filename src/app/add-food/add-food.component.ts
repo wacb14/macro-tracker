@@ -3,12 +3,12 @@ import { SearchBarComponent } from '../components/search-bar/search-bar.componen
 import { Food } from '../models';
 import { FoodCardComponent } from '../components/food-card/food-card.component';
 @Component({
-  selector: 'app-search-food',
+  selector: 'app-add-food',
   imports: [SearchBarComponent,FoodCardComponent],
-  templateUrl: './search-food.component.html',
-  styleUrl: './search-food.component.css',
+  templateUrl: './add-food.component.html',
+  styleUrl: './add-food.component.css',
 })
-export class SearchFoodComponent {
+export class AddFoodComponent {
   popularFoods: Food[] = [
     {
       id: 1,
