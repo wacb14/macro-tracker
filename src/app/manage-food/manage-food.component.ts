@@ -10,7 +10,7 @@ import { FoodCardComponent } from '../components/food-card/food-card.component';
   templateUrl: './manage-food.component.html',
   styleUrl: './manage-food.component.css',
 })
-export class ManageFooodComponent {
+export class ManageFoodComponent {
   selectedIndex = 0;
   favorites: Food[] = [
     {
