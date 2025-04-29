@@ -32,30 +32,30 @@ export class SidebarComponent implements OnInit {
           route: '',
         },
         {
-          icon: 'ant-design:bulb-outlined',
-          subtitle: 'Insights',
-          route: 'insights',
-        },
-        {
           icon: 'fluent-mdl2:health',
           subtitle: 'Health Report',
           route: 'health-report',
         },
+        {
+          icon: 'ant-design:bulb-outlined',
+          subtitle: 'Insights',
+          route: '/insights',
+        },
       ],
     },
     {
-      title: 'Foods',
+      title: 'Food',
       items: [
-        { icon: 'bx:food-menu', subtitle: 'Search Food', route: 'search-food' },
+        { icon: 'bx:food-menu', subtitle: 'Add Food', route: 'add-food' },
+        {
+          icon: 'material-symbols:ramen-dining-outline-rounded',
+          subtitle: 'Manage Food',
+          route: 'manage-food',
+        },
         {
           icon: 'mdi:food-outline',
           subtitle: 'Custom Food',
           route: 'custom-food',
-        },
-        {
-          icon: 'material-symbols:ramen-dining-outline-rounded',
-          subtitle: 'My Foods',
-          route: 'my-foods',
         },
       ],
     },

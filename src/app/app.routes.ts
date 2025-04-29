@@ -16,9 +16,9 @@ export const routes: Routes = [
     component: LayoutComponent,
     children: [
       { path: '', component: MainDashboardComponent },
-      { path: 'search-food', component: SearchFoodComponent },
+      { path: 'add-food', component: SearchFoodComponent },
+      { path: 'manage-food', component: MyFoodsComponent },
       { path: 'custom-food', component: CustomFoodComponent },
-      { path: 'my-foods', component: MyFoodsComponent },
       { path: 'health-report', component: HealthReportComponent },
     ],
   },
