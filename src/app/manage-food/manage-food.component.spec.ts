@@ -1,18 +1,18 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { ManageFooodComponent } from './manage-food.component';
+import { ManageFoodComponent } from './manage-food.component';
 
-describe('ManageFooodComponent', () => {
-  let component: ManageFooodComponent;
-  let fixture: ComponentFixture<ManageFooodComponent>;
+describe('ManageFoodComponent', () => {
+  let component: ManageFoodComponent;
+  let fixture: ComponentFixture<ManageFoodComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [ManageFooodComponent]
+      imports: [ManageFoodComponent]
     })
     .compileComponents();
 
-    fixture = TestBed.createComponent(ManageFooodComponent);
+    fixture = TestBed.createComponent(ManageFoodComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });
