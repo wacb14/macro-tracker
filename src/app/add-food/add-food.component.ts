@@ -2,14 +2,40 @@ import { Component } from '@angular/core';
 import { SearchBarComponent } from '../components/search-bar/search-bar.component';
 import { Food } from '../models';
 import { FoodCardComponent } from '../components/food-card/food-card.component';
+import { NgStyle } from '@angular/common';
 @Component({
   selector: 'app-add-food',
-  imports: [SearchBarComponent,FoodCardComponent],
+  imports: [SearchBarComponent, FoodCardComponent, NgStyle],
   templateUrl: './add-food.component.html',
   styleUrl: './add-food.component.css',
 })
 export class AddFoodComponent {
-  popularFoods: Food[] = [
+  selectedIndex = 0;
+  favorites: Food[] = [
+    {
+      id: 1,
+      name: 'Pechuga de pollo (100g)',
+      protein: 31,
+      carbs: 0,
+      fats: 3.6,
+      portion: 100,
+      calories: 165,
+      creation: new Date('2023-06-10T12:30:00'),
+      icon: 'ep:food',
+    },
+    {
+      id: 2,
+      name: 'Salmón (100g)',
+      protein: 25,
+      carbs: 0,
+      fats: 13,
+      portion: 100,
+      calories: 208,
+      creation: new Date('2023-06-10T13:15:00'),
+      icon: 'ep:food',
+    },
+  ];
+  popularFood: Food[] = [
     {
       id: 1,
       name: 'Pechuga de pollo (100g)',
@@ -121,4 +147,42 @@ export class AddFoodComponent {
       icon: 'ep:food',
     },
   ];
+  myFood: Food[] = [
+    {
+      id: 3,
+      name: 'Arroz blanco (1 taza)',
+      protein: 4.2,
+      carbs: 45,
+      fats: 0.4,
+      portion: 100,
+      calories: 205,
+      creation: new Date('2023-06-10T13:20:00'),
+      icon: 'ep:food',
+    },
+    {
+      id: 4,
+      name: 'Aguacate (100g)',
+      protein: 2,
+      carbs: 9,
+      fats: 15,
+      portion: 100,
+      calories: 160,
+      creation: new Date('2023-06-11T08:45:00'),
+      icon: 'ep:food',
+    },
+    {
+      id: 5,
+      name: 'Huevos revueltos (2 unidades)',
+      protein: 12,
+      carbs: 1,
+      fats: 10,
+      portion: 100,
+      calories: 140,
+      creation: new Date('2023-06-11T09:00:00'),
+      icon: 'ep:food',
+    },
+  ];
+  selectTab(index: number) {
+    this.selectedIndex = index;
+  }
 }
