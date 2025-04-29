@@ -5,12 +5,12 @@ import { NgStyle } from '@angular/common';
 import { FoodCardComponent } from '../components/food-card/food-card.component';
 
 @Component({
-  selector: 'app-my-foods',
+  selector: 'app-manage-food',
   imports: [SearchBarComponent, FoodCardComponent, NgStyle],
-  templateUrl: './my-foods.component.html',
-  styleUrl: './my-foods.component.css',
+  templateUrl: './manage-food.component.html',
+  styleUrl: './manage-food.component.css',
 })
-export class MyFoodsComponent {
+export class ManageFooodComponent {
   selectedIndex = 0;
   favorites: Food[] = [
     {

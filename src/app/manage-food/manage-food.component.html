@@ -1,12 +1,16 @@
+<div class="pt-6 w-full max-w-7xl">
+  <h2 class="text-xl font-bold text-black self-start">Manage My Food</h2>
+</div>
+
 <div class="pt-6 w-full max-w-7xl flex justify-between">
   <app-search-bar
     class="w-75 sm:w-90"
-    [placeholderMessage]="'Filter my foods...'"
+    [placeholderMessage]="'Filter my food...'"
   ></app-search-bar>
   <button
     class="bg-green-500 rounded-xl py-2 px-4 text-white cursor-pointer hover:bg-green-600"
   >
-    Add New Food
+    New Custom Food
   </button>
 </div>
 
@@ -22,7 +26,7 @@
       }"
     ></div>
 
-    @for (tab of ['Favorites', 'Recently Added', 'All My Foods']; track $index)
+    @for (tab of ['Favorites', 'Recently Added', 'All My Food']; track $index)
     {
     <button
       class="flex-1 px-4 py-2 text-center focus:outline-none cursor-pointer hover:bg-green-100 font-semibold"
@@ -67,7 +71,7 @@
             >
               <i
                 class="iconify text-xl"
-                data-icon="material-symbols:add-rounded"
+                data-icon="material-symbols:delete-outline"
               ></i>
             </span>
           </div>
@@ -102,7 +106,7 @@
             >
               <i
                 class="iconify text-xl"
-                data-icon="material-symbols:add-rounded"
+                data-icon="material-symbols:delete-outline"
               ></i>
             </span>
           </div>
@@ -137,7 +141,7 @@
             >
               <i
                 class="iconify text-xl"
-                data-icon="material-symbols:add-rounded"
+                data-icon="material-symbols:delete-outline"
               ></i>
             </span>
           </div>

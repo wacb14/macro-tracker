@@ -2,7 +2,7 @@ import { Routes } from '@angular/router';
 import { MainDashboardComponent } from './main-dashboard/main-dashboard.component';
 import { SearchFoodComponent } from './search-food/search-food.component';
 import { CustomFoodComponent } from './custom-food/custom-food.component';
-import { MyFoodsComponent } from './my-foods/my-foods.component';
+import { ManageFooodComponent } from './manage-food/manage-food.component';
 import { HealthReportComponent } from './health-report/health-report.component';
 import { LoginComponent } from './login/login.component';
 import { LayoutComponent } from './layout/layout.component';
@@ -17,7 +17,7 @@ export const routes: Routes = [
     children: [
       { path: '', component: MainDashboardComponent },
       { path: 'add-food', component: SearchFoodComponent },
-      { path: 'manage-food', component: MyFoodsComponent },
+      { path: 'manage-food', component: ManageFooodComponent },
       { path: 'custom-food', component: CustomFoodComponent },
       { path: 'health-report', component: HealthReportComponent },
     ],
