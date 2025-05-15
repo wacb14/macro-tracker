@@ -8,6 +8,7 @@ import { LoginComponent } from './login/login.component';
 import { LayoutComponent } from './layout/layout.component';
 import { SignUpComponent } from './sign-up/sign-up.component';
 import { UserProfileComponent } from './user-profile/user-profile.component';
+import { PreferencesComponent } from './preferences/preferences.component';
 
 export const routes: Routes = [
   { path: 'login', component: LoginComponent },
@@ -22,6 +23,7 @@ export const routes: Routes = [
       { path: 'custom-food', component: CustomFoodComponent },
       { path: 'health-report', component: HealthReportComponent },
       { path: 'profile', component: UserProfileComponent },
+      { path: 'preferences', component: PreferencesComponent },
     ],
   },
 ];
