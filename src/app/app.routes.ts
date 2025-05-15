@@ -7,6 +7,7 @@ import { HealthReportComponent } from './health-report/health-report.component';
 import { LoginComponent } from './login/login.component';
 import { LayoutComponent } from './layout/layout.component';
 import { SignUpComponent } from './sign-up/sign-up.component';
+import { UserProfileComponent } from './user-profile/user-profile.component';
 
 export const routes: Routes = [
   { path: 'login', component: LoginComponent },
@@ -20,6 +21,7 @@ export const routes: Routes = [
       { path: 'manage-food', component: ManageFoodComponent },
       { path: 'custom-food', component: CustomFoodComponent },
       { path: 'health-report', component: HealthReportComponent },
+      { path: 'profile', component: UserProfileComponent },
     ],
   },
 ];
