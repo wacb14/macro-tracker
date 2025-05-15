@@ -1,74 +1,76 @@
-<div class="pt-6 w-full max-w-7xl">
-  <h2 class="text-xl font-bold text-black self-start">Custom food entry</h2>
+<div class="w-full flex flex-col items-center">
+  <div class="pt-6 w-full max-w-7xl">
+    <h2 class="text-xl font-bold text-black self-start">Custom food entry</h2>
+  </div>
+  <form action="" class="mt-6 w-full max-w-7xl grid grid-cols-12">
+    <div class="col-span-12 md:col-span-8 p-4 w-full flex flex-col">
+      <label for="" class="font-semibold pb-2">Food Name</label>
+      <input
+        type="text"
+        class="rounded-xl bg-gray-200 px-5 w-full h-10 focus:outline-none focus:ring-2 focus:ring-green-500"
+        placeholder="Red apple / Organic beans / Lactose-free milk"
+      />
+    </div>
+    <div class="col-span-12 md:col-span-4 p-4 w-full flex flex-col">
+      <label for="" class="font-semibold pb-2">Serving Size</label>
+      <input
+        type="text"
+        class="rounded-xl bg-gray-200 px-5 w-full h-10 focus:outline-none focus:ring-2 focus:ring-green-500"
+        placeholder="100g"
+      />
+    </div>
+    <div
+      class="col-span-12 md:col-span-4 md:col-start-3 p-4 w-full flex flex-col"
+    >
+      <label for="" class="font-semibold pb-2">Protein</label>
+      <input
+        type="text"
+        class="rounded-xl bg-gray-200 px-5 w-full h-10 focus:outline-none focus:ring-2 focus:ring-green-500"
+        placeholder="0"
+      />
+    </div>
+    <div class="col-span-12 md:col-span-4 p-4 w-full flex flex-col">
+      <label for="" class="font-semibold pb-2">Carbs</label>
+      <input
+        type="text"
+        class="rounded-xl bg-gray-200 px-5 w-full h-10 focus:outline-none focus:ring-2 focus:ring-green-500"
+        placeholder="0"
+      />
+    </div>
+    <div
+      class="col-span-12 md:col-span-4 md:col-start-5 p-4 w-full flex flex-col"
+    >
+      <label for="" class="font-semibold pb-2">Fats</label>
+      <input
+        type="text"
+        class="rounded-xl bg-gray-200 px-5 w-full h-10 focus:outline-none focus:ring-2 focus:ring-green-500"
+        placeholder="0"
+      />
+    </div>
+    <div
+      class="col-span-12 md:col-span-4 md:col-start-5 rounded-xl bg-green-100 mt-4 p-2 w-full flex flex-col justify-center"
+    >
+      <span class="font-semibold w-full text-center text-blue-600"
+        >Calculated
+      </span>
+      <span class="font-semibold w-full text-center text-blue-600"
+        >Calories
+      </span>
+      <span class="font-semibold w-full text-center text-gray-400">0 kcal</span>
+    </div>
+    <div class="col-span-12 p-4 w-full flex flex-row justify-evenly">
+      <button
+        class="w-75 bg-green-100 rounded-xl py-2 px-4 text-green-500 cursor-pointer hover:bg-green-200 font-semibold"
+        type="button"
+      >
+        Cancel
+      </button>
+      <button
+        class="w-75 bg-green-500 rounded-xl py-2 px-4 text-white cursor-pointer hover:bg-green-600 font-semibold"
+        type="submit"
+      >
+        Add Food
+      </button>
+    </div>
+  </form>
 </div>
-<form action="" class="mt-6 w-full max-w-7xl grid grid-cols-12">
-  <div class="col-span-12 md:col-span-8 p-4 w-full flex flex-col">
-    <label for="" class="font-semibold pb-2">Food Name</label>
-    <input
-      type="text"
-      class="rounded-xl bg-gray-200 px-5 w-full h-10 focus:outline-none focus:ring-2 focus:ring-green-500"
-      placeholder="Red apple / Organic beans / Lactose-free milk"
-    />
-  </div>
-  <div
-    class="col-span-12 md:col-span-4 p-4 w-full flex flex-col"
-  >
-    <label for="" class="font-semibold pb-2">Serving Size</label>
-    <input
-      type="text"
-      class="rounded-xl bg-gray-200 px-5 w-full h-10 focus:outline-none focus:ring-2 focus:ring-green-500"
-      placeholder="100g"
-    />
-  </div>
-  <div
-    class="col-span-12 md:col-span-4 md:col-start-3 p-4 w-full flex flex-col"
-  >
-    <label for="" class="font-semibold pb-2">Protein</label>
-    <input
-      type="text"
-      class="rounded-xl bg-gray-200 px-5 w-full h-10 focus:outline-none focus:ring-2 focus:ring-green-500"
-      placeholder="0"
-    />
-  </div>
-  <div class="col-span-12 md:col-span-4 p-4 w-full flex flex-col">
-    <label for="" class="font-semibold pb-2">Carbs</label>
-    <input
-      type="text"
-      class="rounded-xl bg-gray-200 px-5 w-full h-10 focus:outline-none focus:ring-2 focus:ring-green-500"
-      placeholder="0"
-    />
-  </div>
-  <div class="col-span-12 md:col-span-4 md:col-start-5 p-4 w-full flex flex-col">
-    <label for="" class="font-semibold pb-2">Fats</label>
-    <input
-      type="text"
-      class="rounded-xl bg-gray-200 px-5 w-full h-10 focus:outline-none focus:ring-2 focus:ring-green-500"
-      placeholder="0"
-    />
-  </div>
-  <div
-    class="col-span-12 md:col-span-4 md:col-start-5 rounded-xl bg-green-100 mt-4 p-2 w-full flex flex-col justify-center"
-  >
-    <span class="font-semibold w-full text-center text-blue-600"
-      >Calculated
-    </span>
-    <span class="font-semibold w-full text-center text-blue-600"
-      >Calories
-    </span>
-    <span class="font-semibold w-full text-center text-gray-400">0 kcal</span>
-  </div>
-  <div class="col-span-12 p-4 w-full flex flex-row justify-evenly">
-    <button
-      class="w-75 bg-green-100 rounded-xl py-2 px-4 text-green-500 cursor-pointer hover:bg-green-200 font-semibold"
-      type="button"
-    >
-      Cancel
-    </button>
-    <button
-      class="w-75 bg-green-500 rounded-xl py-2 px-4 text-white cursor-pointer hover:bg-green-600 font-semibold"
-      type="submit"
-    >
-      Add Food
-    </button>
-  </div>
-</form>
