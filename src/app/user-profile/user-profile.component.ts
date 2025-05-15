@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { InformationCardComponent } from '../components/information-card/information-card.component';
 
-interface Field {
+export interface Field {
   title: string;
   content: string;
   placeholder: string;
@@ -25,36 +25,6 @@ export class UserProfileComponent {
       content: 'User Full Name',
       placeholder: 'Enter your full name',
     },
-    {
-      title: 'Gender',
-      content: 'Male',
-      placeholder: 'Chose your gender',
-    },
-    {
-      title: 'Date of Birth',
-      content: 'December 24th 2000',
-      placeholder: 'Enter your date of birth',
-    },
-    {
-      title: 'Weight',
-      content: '90kg',
-      placeholder: 'Enter your weight',
-    },
-    {
-      title: 'Height',
-      content: '180cm',
-      placeholder: 'Enter your height',
-    },
-    {
-      title: 'Activity Level',
-      content: 'Sedentary',
-      placeholder: 'Select your activity level',
-    },
-    {
-      title: 'Fitness Goal',
-      content: 'Lose weight',
-      placeholder: 'Complete your fitness goal',
-    },
   ];
   security: Field[] = [
     {
@@ -66,6 +36,11 @@ export class UserProfileComponent {
       title: 'Password',
       content: '',
       placeholder: 'Last modification: November 23th 2023',
+    },
+    {
+      title: 'Delete Account',
+      content: '',
+      placeholder: 'Remove all your data',
     },
   ];
 }
