@@ -9,6 +9,7 @@ import { LayoutComponent } from './layout/layout.component';
 import { SignUpComponent } from './sign-up/sign-up.component';
 import { UserProfileComponent } from './user-profile/user-profile.component';
 import { PreferencesComponent } from './preferences/preferences.component';
+import { SettingsComponent } from './settings/settings.component';
 
 export const routes: Routes = [
   { path: 'login', component: LoginComponent },
@@ -24,6 +25,7 @@ export const routes: Routes = [
       { path: 'health-report', component: HealthReportComponent },
       { path: 'profile', component: UserProfileComponent },
       { path: 'preferences', component: PreferencesComponent },
+      { path: 'settings', component: SettingsComponent },
     ],
   },
 ];
