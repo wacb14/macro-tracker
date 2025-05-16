@@ -9,7 +9,10 @@
   </div>
 
   <div class="flex items-center gap-4">
-    <button class="p-2 hover:bg-green-100 rounded-lg cursor-pointer">
+    <button
+      class="p-2 hover:bg-green-100 rounded-lg cursor-pointer"
+      (click)="toggleTheme()"
+    >
       <i class="iconify text-xl" data-icon="solar:moon-line-duotone"></i>
     </button>
     <app-notifications></app-notifications>
