@@ -35,4 +35,7 @@ export class ProfileMenuComponent {
   openMenu() {
     this.isOpen = true;
   }
+  closeMenu() {
+    this.isOpen = false;
+  }
 }
