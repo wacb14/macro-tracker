@@ -18,4 +18,7 @@ export class HeaderComponent {
   toggleTheme(): void {
     this.themeService.toggleTheme();
   }
+  getTheme() {
+    return this.themeService.getTheme();
+  }
 }

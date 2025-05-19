@@ -7,7 +7,7 @@
 }
 
 <div
-  class="fixed left-0 top-0 h-full bg-white text-gray-700 flex flex-col font-sans transition-all duration-300 z-40 md:translate-x-0"
+  class="fixed left-0 top-0 h-full bg-white dark:bg-shark-500 dark:text-stone-300 text-gray-700 flex flex-col font-sans transition-all duration-300 z-40 md:translate-x-0"
   [ngClass]="!isHidden() ? 'w-64 translate-x-0' : 'w-18 -translate-x-full'"
 >
   <div class="px-4 py-5 flex items-center">
@@ -19,7 +19,9 @@
       />
     </div>
     @if (!isHidden() ) {
-    <h1 class="text-xl font-bold text-gray-800 whitespace-nowrap ml-2">
+    <h1
+      class="text-xl font-bold text-gray-800 dark:text-stone-300 whitespace-nowrap ml-2"
+    >
       Macro Tracker
     </h1>
     }
@@ -28,7 +30,7 @@
     @for (section of sections; track section.title) {
     <div class="mb-5">
       <h2
-        class="text-[11px] font-semibold text-gray-500 uppercase tracking-wider mb-3 px-2"
+        class="text-[11px] font-semibold text-gray-500 dark:text-stone-400 uppercase tracking-wider mb-3 px-2"
         [ngClass]="{ invisible: isHidden() }"
       >
         {{ section.title }}
@@ -37,9 +39,9 @@
         @for (item of section.items; track item.subtitle) {
         <li class="">
           <a
-            class="flex items-center px-2 py-2 text-sm font-medium rounded cursor-pointer hover:bg-green-100"
+            class="flex items-center px-2 py-2 text-sm font-medium rounded cursor-pointer hover:bg-green-100 dark:hover:bg-green-600 dark:hover:text-white"
             [ngClass]="{
-              'text-green-700 bg-green-50': currentPath == item.route
+              'text-green-700 bg-green-50 dark:bg-green-600 dark:text-white': currentPath == item.route
             }"
             [routerLink]="item.route"
             (click)="closeMenu()"
@@ -48,7 +50,7 @@
             @if (!isHidden()) {
             <span class="ml-2">{{ item.subtitle }}</span>
             } @if (currentPath==item.route && !isHidden()) {
-            <span class="ml-auto w-1 h-6 bg-green-600 rounded-full"></span>
+            <span class="ml-auto w-1 h-6 bg-green-600 dark:bg-green-300 rounded-full"></span>
             }
           </a>
         </li>
