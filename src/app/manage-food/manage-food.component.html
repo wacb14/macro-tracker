@@ -1,6 +1,8 @@
 <div class="w-full flex flex-col items-center">
   <div class="pt-6 w-full max-w-7xl">
-    <h2 class="text-xl font-bold text-black self-start">Manage My Food</h2>
+    <h2 class="text-xl font-bold text-black self-start dark:text-white">
+      Manage My Food
+    </h2>
   </div>
 
   <div class="pt-6 w-full max-w-7xl flex justify-between">
@@ -9,7 +11,7 @@
       [placeholderMessage]="'Filter my food...'"
     ></app-search-bar>
     <button
-      class="bg-green-500 rounded-xl py-2 px-4 text-white cursor-pointer hover:bg-green-600"
+      class="bg-green-500 dark:bg-green-600 rounded-xl py-2 px-4 text-white cursor-pointer hover:bg-green-600 dark:hover:bg-green-500"
     >
       New Custom Food
     </button>
@@ -17,7 +19,7 @@
 
   <div class="w-full max-w-7xl mt-10">
     <div
-      class="relative flex bg-gray-200 rounded-lg overflow-hidden justify-start"
+      class="relative flex bg-gray-200 rounded-lg overflow-hidden justify-start dark:bg-shark-500"
     >
       <div
         class="absolute bottom-0 left-0 h-1 bg-green-500 transition-all duration-300"
@@ -30,7 +32,7 @@
       @for (tab of ['Favorites', 'Recently Added', 'All My Food']; track $index)
       {
       <button
-        class="flex-1 px-4 py-2 text-center focus:outline-none cursor-pointer hover:bg-green-100 font-semibold"
+        class="flex-1 px-4 py-2 text-center focus:outline-none cursor-pointer hover:bg-green-10 font-semibold dark:hover:bg-green-600 dark:hover:text-white"
         (click)="selectTab($index)"
       >
         {{ tab }}
@@ -48,19 +50,21 @@
           class="flex-shrink-0 p-4 w-full max-w-7xl flex flex-col max-h-150 overflow-y-auto"
         >
           @for (favorite of favorites; track favorite.id) {
-          <div class="grid grid-cols-12 border-b border-gray-200">
+          <div
+            class="grid grid-cols-12 border-b border-gray-200 dark:border-gray-600"
+          >
             <app-food-card
               [food]="favorite"
               class="col-span-10 grid grid-cols-subgrid w-full"
             />
             <div class="col-span-2 p-4 w-full flex items-center justify-center">
               <span
-                class="rounded-full p-2 hover:cursor-pointer hover:bg-green-100"
+                class="rounded-full p-2 hover:cursor-pointer hover:bg-green-100 dark:hover:bg-green-600 dark:hover:text-white"
               >
                 <i class="iconify text-xl" data-icon="mdi:heart-outline"></i>
               </span>
               <span
-                class="rounded-full p-2 hover:cursor-pointer hover:bg-green-100"
+                class="rounded-full p-2 hover:cursor-pointer hover:bg-green-100 dark:hover:bg-green-600 dark:hover:text-white"
               >
                 <i
                   class="iconify text-xl"
@@ -68,7 +72,7 @@
                 ></i>
               </span>
               <span
-                class="rounded-full p-2 hover:cursor-pointer hover:bg-green-100"
+                class="rounded-full p-2 hover:cursor-pointer hover:bg-green-100 dark:hover:bg-green-600 dark:hover:text-white"
               >
                 <i
                   class="iconify text-xl"
@@ -83,19 +87,21 @@
           class="flex-shrink-0 p-4 w-full max-w-7xl flex flex-col max-h-150 overflow-y-auto"
         >
           @for (recentOne of recent; track recentOne.id) {
-          <div class="grid grid-cols-12 border-b border-gray-200">
+          <div
+            class="grid grid-cols-12 border-b border-gray-200 dark:border-gray-600"
+          >
             <app-food-card
               [food]="recentOne"
               class="col-span-10 grid grid-cols-subgrid w-full"
             />
             <div class="col-span-2 p-4 w-full flex items-center justify-center">
               <span
-                class="rounded-full p-2 hover:cursor-pointer hover:bg-green-100"
+                class="rounded-full p-2 hover:cursor-pointer hover:bg-green-100 dark:hover:bg-green-600 dark:hover:text-white"
               >
                 <i class="iconify text-xl" data-icon="mdi:heart-outline"></i>
               </span>
               <span
-                class="rounded-full p-2 hover:cursor-pointer hover:bg-green-100"
+                class="rounded-full p-2 hover:cursor-pointer hover:bg-green-100 dark:hover:bg-green-600 dark:hover:text-white"
               >
                 <i
                   class="iconify text-xl"
@@ -103,7 +109,7 @@
                 ></i>
               </span>
               <span
-                class="rounded-full p-2 hover:cursor-pointer hover:bg-green-100"
+                class="rounded-full p-2 hover:cursor-pointer hover:bg-green-100 dark:hover:bg-green-600 dark:hover:text-white"
               >
                 <i
                   class="iconify text-xl"
@@ -118,19 +124,21 @@
           class="flex-shrink-0 p-4 w-full max-w-7xl flex flex-col max-h-150 overflow-y-auto"
         >
           @for (food of allMyFood; track food.id) {
-          <div class="grid grid-cols-12 border-b border-gray-200">
+          <div
+            class="grid grid-cols-12 border-b border-gray-200 dark:border-gray-600"
+          >
             <app-food-card
               [food]="food"
               class="col-span-10 grid grid-cols-subgrid w-full"
             />
             <div class="col-span-2 p-4 w-full flex items-center justify-center">
               <span
-                class="rounded-full p-2 hover:cursor-pointer hover:bg-green-100"
+                class="rounded-full p-2 hover:cursor-pointer hover:bg-green-100 dark:hover:bg-green-600 dark:hover:text-white"
               >
                 <i class="iconify text-xl" data-icon="mdi:heart-outline"></i>
               </span>
               <span
-                class="rounded-full p-2 hover:cursor-pointer hover:bg-green-100"
+                class="rounded-full p-2 hover:cursor-pointer hover:bg-green-100 dark:hover:bg-green-600 dark:hover:text-white"
               >
                 <i
                   class="iconify text-xl"
@@ -138,7 +146,7 @@
                 ></i>
               </span>
               <span
-                class="rounded-full p-2 hover:cursor-pointer hover:bg-green-100"
+                class="rounded-full p-2 hover:cursor-pointer hover:bg-green-100 dark:hover:bg-green-600 dark:hover:text-white"
               >
                 <i
                   class="iconify text-xl"
