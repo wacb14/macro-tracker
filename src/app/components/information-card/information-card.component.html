@@ -1,17 +1,19 @@
 <div
-  class="grid grid-cols-12 w-full p-4 hover:bg-green-100 cursor-pointer"
-  [ngClass]="lastCard() ? 'rounded-b-xl' : ''"
+  class="grid grid-cols-12 w-full p-4 hover:bg-green-100 cursor-pointer dark:hover:bg-green-600 group"
+  [ngClass]="lastCard() ? 'rounded-b-2xl' : ''"
 >
   <div class="col-span-10 grid grid-cols-subgrid">
-    <span class="col-span-10 sm:col-span-3 text-sm text-gray-800">{{
-      title()
-    }}</span>
+    <span
+      class="col-span-10 sm:col-span-3 text-sm text-gray-800 dark:text-stone-100 dark:group-hover:text-white"
+      >{{ title() }}</span
+    >
     @if(content() != ""){
-    <span class="col-span-10 sm:col-span-7 text-md">{{ content() }}</span>
+    <span class="col-span-10 sm:col-span-7 text-md dark:group-hover:text-white">{{ content() }}</span>
     } @else {
-    <span class="col-span-10 sm:col-span-7 text-md text-gray-700">{{
-      message()
-    }}</span>
+    <span
+      class="col-span-10 sm:col-span-7 text-md text-gray-700 dark:text-stone-400 dark:group-hover:text-white"
+      >{{ message() }}</span
+    >
     }
   </div>
   <div class="col-span-2 flex justify-end">
