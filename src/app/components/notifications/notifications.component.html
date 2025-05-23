@@ -18,7 +18,7 @@
 ></div>
 <div
   #notificationContainer
-  class="absolute top-15 right-5 z-40 w-full max-w-sm bg-white p-3 rounded-lg shadow-lg mx-auto dark:bg-shark-500"
+  class="absolute top-15 right-5 z-40 w-full max-w-80 sm:max-w-sm bg-white p-3 rounded-lg shadow-lg mx-auto dark:bg-shark-500"
 >
   <div class="flex justify-between items-center mb-4 mt-2 select-none">
     <h2 class="text-md font-semibold px-4">Notifications</h2>
@@ -31,8 +31,12 @@
     @for (notification of notifications; track notification.id) {
     <div
       class="flex items-center gap-3 py-2 hover:bg-green-200 rounded-md px-1 dark:text-white dark:hover:bg-green-700 dark:hover:text-white"
-      [ngClass]="notification.isRead ? 'bg-white dark:bg-shark-500' : 'bg-green-100 dark:bg-green-600'"
-      (mouseleave)="markAsRead(notification.id)"
+      [ngClass]="
+        notification.isRead
+          ? 'bg-white dark:bg-shark-500'
+          : 'bg-green-100 dark:bg-green-600'
+      "
+      (mouseover)="markAsRead(notification.id)"
     >
       <div
         class="w-10 h-10 flex items-center justify-center rounded-full"
@@ -46,9 +50,10 @@
           {{ notification.comment }}
         </p>
       </div>
-      <span class="text-xs text-gray-400 whitespace-nowrap px-1 select-none dark:text-stone-300">{{
-        notification.time | date : "shortTime"
-      }}</span>
+      <span
+        class="text-xs text-gray-400 whitespace-nowrap px-1 select-none dark:text-stone-300"
+        >{{ notification.time | date : "shortTime" }}</span
+      >
     </div>
     }
   </div>
