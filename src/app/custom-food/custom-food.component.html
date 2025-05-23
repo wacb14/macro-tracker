@@ -1,72 +1,79 @@
-<div class="w-full flex flex-col items-center">
-  <div class="pt-6 w-full max-w-5xl">
-    <h2 class="text-xl font-bold text-black self-start dark:text-white">Custom food entry</h2>
+<div class="flex w-full flex-col items-center">
+  <div class="w-full max-w-5xl pt-6">
+    <h2 class="self-start text-xl font-bold text-black dark:text-white">
+      Custom food entry
+    </h2>
   </div>
-  <form action="" class="mt-6 w-full max-w-5xl grid grid-cols-12">
-    <div class="col-span-12 md:col-span-8 p-4 w-full flex flex-col">
-      <label for="" class="font-semibold pb-2">Food Name</label>
+  <form action="" class="mt-6 grid w-full max-w-5xl grid-cols-12">
+    <div class="col-span-12 flex w-full flex-col p-4 md:col-span-8">
+      <label for="" class="pb-2 font-semibold">Food Name</label>
       <input
         type="text"
-        class="rounded-xl bg-gray-200 px-5 w-full h-10 focus:outline-none focus:ring-2 focus:ring-green-500 dark:bg-shark-500 dark:border-1 dark:border-gray-300 dark:focus:border-none"
+        class="dark:bg-shark-500 h-10 w-full rounded-xl bg-gray-200 px-5 focus:ring-2 focus:ring-green-500 focus:outline-none dark:border-1 dark:border-gray-300 dark:focus:border-none"
         placeholder="Red apple / Organic beans / Lactose-free milk"
       />
     </div>
-    <div class="col-span-12 md:col-span-4 p-4 w-full flex flex-col">
-      <label for="" class="font-semibold pb-2">Serving Size</label>
+    <div class="col-span-12 flex w-full flex-col p-4 md:col-span-4">
+      <label for="" class="pb-2 font-semibold">Serving Size</label>
       <input
         type="text"
-        class="rounded-xl bg-gray-200 px-5 w-full h-10 focus:outline-none focus:ring-2 focus:ring-green-500 dark:bg-shark-500 dark:border-1 dark:border-gray-300 dark:focus:border-none"
+        class="dark:bg-shark-500 h-10 w-full rounded-xl bg-gray-200 px-5 focus:ring-2 focus:ring-green-500 focus:outline-none dark:border-1 dark:border-gray-300 dark:focus:border-none"
         placeholder="100g"
       />
     </div>
     <div
-      class="col-span-12 md:col-span-4 md:col-start-3 p-4 w-full flex flex-col"
+      class="col-span-12 flex w-full flex-col p-4 md:col-span-4 md:col-start-3"
     >
-      <label for="" class="font-semibold pb-2">Protein</label>
+      <label for="" class="pb-2 font-semibold">Protein</label>
       <input
         type="text"
-        class="rounded-xl bg-gray-200 px-5 w-full h-10 focus:outline-none focus:ring-2 focus:ring-green-500 dark:bg-shark-500 dark:border-1 dark:border-gray-300 dark:focus:border-none"
+        class="dark:bg-shark-500 h-10 w-full rounded-xl bg-gray-200 px-5 focus:ring-2 focus:ring-green-500 focus:outline-none dark:border-1 dark:border-gray-300 dark:focus:border-none"
         placeholder="0"
       />
     </div>
-    <div class="col-span-12 md:col-span-4 p-4 w-full flex flex-col">
-      <label for="" class="font-semibold pb-2">Carbs</label>
+    <div class="col-span-12 flex w-full flex-col p-4 md:col-span-4">
+      <label for="" class="pb-2 font-semibold">Carbs</label>
       <input
         type="text"
-        class="rounded-xl bg-gray-200 px-5 w-full h-10 focus:outline-none focus:ring-2 focus:ring-green-500 dark:bg-shark-500 dark:border-1 dark:border-gray-300 dark:focus:border-none"
-        placeholder="0"
-      />
-    </div>
-    <div
-      class="col-span-12 md:col-span-4 md:col-start-5 p-4 w-full flex flex-col"
-    >
-      <label for="" class="font-semibold pb-2">Fats</label>
-      <input
-        type="text"
-        class="rounded-xl bg-gray-200 px-5 w-full h-10 focus:outline-none focus:ring-2 focus:ring-green-500 dark:bg-shark-500 dark:border-1 dark:border-gray-300 dark:focus:border-none"
+        class="dark:bg-shark-500 h-10 w-full rounded-xl bg-gray-200 px-5 focus:ring-2 focus:ring-green-500 focus:outline-none dark:border-1 dark:border-gray-300 dark:focus:border-none"
         placeholder="0"
       />
     </div>
     <div
-      class="col-span-12 md:col-span-4 md:col-start-5 rounded-xl bg-green-100 dark:bg-green-300 mt-4 p-2 w-full flex flex-col justify-center"
+      class="col-span-12 flex w-full flex-col p-4 md:col-span-4 md:col-start-5"
     >
-      <span class="font-semibold w-full text-center text-blue-600 dark:text-blue-700"
+      <label for="" class="pb-2 font-semibold">Fats</label>
+      <input
+        type="text"
+        class="dark:bg-shark-500 h-10 w-full rounded-xl bg-gray-200 px-5 focus:ring-2 focus:ring-green-500 focus:outline-none dark:border-1 dark:border-gray-300 dark:focus:border-none"
+        placeholder="0"
+      />
+    </div>
+    <div
+      class="col-span-12 mt-4 flex w-full flex-col justify-center rounded-xl bg-green-100 p-2 md:col-span-4 md:col-start-5 dark:bg-green-300"
+    >
+      <span
+        class="w-full text-center font-semibold text-blue-600 dark:text-blue-700"
         >Calculated
       </span>
-      <span class="font-semibold w-full text-center text-blue-600 dark:text-blue-700"
+      <span
+        class="w-full text-center font-semibold text-blue-600 dark:text-blue-700"
         >Calories
       </span>
-      <span class="font-semibold w-full text-center text-gray-400 dark:text-black">0 kcal</span>
+      <span
+        class="w-full text-center font-semibold text-gray-400 dark:text-black"
+        >0 kcal</span
+      >
     </div>
-    <div class="col-span-12 p-4 w-full flex flex-row justify-evenly">
+    <div class="col-span-12 flex w-full flex-row justify-evenly p-4">
       <button
-        class="w-75 bg-green-100 dark:bg-green-200 dark:text-green-600 dark:hover:bg-green-300 rounded-xl py-2 px-4 text-green-500 cursor-pointer hover:bg-green-200 font-semibold"
+        class="w-75 cursor-pointer rounded-xl bg-green-100 px-4 py-2 font-semibold text-green-500 hover:bg-green-200 dark:bg-green-200 dark:text-green-600 dark:hover:bg-green-300"
         type="button"
       >
         Cancel
       </button>
       <button
-        class="w-75 bg-green-500 rounded-xl py-2 px-4 text-white cursor-pointer hover:bg-green-600 dark:bg-green-600 font-semibold"
+        class="w-75 cursor-pointer rounded-xl bg-green-500 px-4 py-2 font-semibold text-white hover:bg-green-600 dark:bg-green-600"
         type="submit"
       >
         Add Food

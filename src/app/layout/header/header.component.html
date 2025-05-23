@@ -1,7 +1,9 @@
-<div class="bg-slate-50 dark:bg-bunker-500 dark:text-stone-300 flex items-center justify-between p-3">
+<div
+  class="dark:bg-bunker-500 flex items-center justify-between bg-slate-50 p-3 dark:text-stone-300"
+>
   <div class="flex items-center gap-4">
     <button
-      class="p-2 hover:bg-green-100 dark:hover:bg-green-600 dark:hover:text-white rounded-lg cursor-pointer"
+      class="cursor-pointer rounded-lg p-2 hover:bg-green-100 dark:hover:bg-green-600 dark:hover:text-white"
       (click)="toggleMenu()"
     >
       <i class="iconify text-xl" data-icon="solar:hamburger-menu-linear"></i>
@@ -9,20 +11,20 @@
   </div>
 
   <div class="flex items-center gap-4">
-    @if (getTheme()==='dark' ) {
-    <button
-      class="p-2 hover:bg-green-100 dark:hover:bg-green-600 dark:hover:text-white rounded-lg cursor-pointer"
-      (click)="toggleTheme()"
-    >
-      <i class="iconify text-2xl" data-icon="line-md:moon-loop"></i>
-    </button>
+    @if (getTheme() === "dark") {
+      <button
+        class="cursor-pointer rounded-lg p-2 hover:bg-green-100 dark:hover:bg-green-600 dark:hover:text-white"
+        (click)="toggleTheme()"
+      >
+        <i class="iconify text-2xl" data-icon="line-md:moon-loop"></i>
+      </button>
     } @else {
-    <button
-      class="p-2 hover:bg-green-100 dark:hover:bg-green-600 dark:hover:text-white rounded-lg cursor-pointer"
-      (click)="toggleTheme()"
-    >
-      <i class="iconify text-2xl" data-icon="line-md:sunny-loop"></i>
-    </button>
+      <button
+        class="cursor-pointer rounded-lg p-2 hover:bg-green-100 dark:hover:bg-green-600 dark:hover:text-white"
+        (click)="toggleTheme()"
+      >
+        <i class="iconify text-2xl" data-icon="line-md:sunny-loop"></i>
+      </button>
     }
     <app-notifications></app-notifications>
     <app-profile-menu></app-profile-menu>

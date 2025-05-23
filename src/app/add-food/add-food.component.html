@@ -1,180 +1,194 @@
-<div class="w-full flex flex-col items-center">
+<div class="flex w-full flex-col items-center">
   <div class="w-full max-w-7xl">
-    <h2 class="text-xl font-bold text-black dark:text-white self-start">
+    <h2 class="self-start text-xl font-bold text-black dark:text-white">
       Add Food Entry
     </h2>
   </div>
-  <div class="pt-6 w-full max-w-7xl">
-    <div class="pt-6 w-full max-w-7xl flex justify-between">
-      <h2 class="text-lg font-bold text-black dark:text-white self-start">
+  <div class="w-full max-w-7xl pt-6">
+    <div class="flex w-full max-w-7xl justify-between pt-6">
+      <h2 class="self-start text-lg font-bold text-black dark:text-white">
         Selected Food
       </h2>
       <button
-        class="bg-green-500 dark:bg-green-600 rounded-xl py-2 px-4 text-white cursor-pointer hover:bg-green-600"
+        class="cursor-pointer rounded-xl bg-green-500 px-4 py-2 text-white hover:bg-green-600 dark:bg-green-600"
       >
         Confirm Entry
       </button>
     </div>
-    <div class="py-4 md:p-4 w-full max-w-7xl max-h-55 overflow-y-auto">
+    <div class="max-h-55 w-full max-w-7xl overflow-y-auto py-4 md:p-4">
       <div
-        class="grid grid-cols-1 lg:grid-cols-2 xl:grid-cols-3 gap-2 border-gray-200"
+        class="grid grid-cols-1 gap-2 border-gray-200 lg:grid-cols-2 xl:grid-cols-3"
       >
         @for (selected of selectedFood; track selected.id) {
-        <div
-          class="grid grid-cols-12 border-1 border-gray-300 bg-white shadow-md dark:bg-shark-500 dark:border-shark-500 rounded-xl px-4"
-        >
-          <div class="col-span-2 p-4 w-full flex items-center justify-center">
-            <span class="bg-green-100 dark:bg-green-200 p-4 rounded-lg">
-              <i
-                class="iconify text-xl text-green-500"
-                [attr.data-icon]="selected.icon"
-              ></i>
-            </span>
-          </div>
           <div
-            class="col-span-4 p-4 w-full flex items-center over font-semibold text-start"
+            class="dark:bg-shark-500 dark:border-shark-500 grid grid-cols-12 rounded-xl border-1 border-gray-300 bg-white px-4 shadow-md"
           >
-            {{ selected.name }}
-          </div>
-          <div class="col-span-4 p-4 w-full flex items-center justify-start">
-            <input
-              type="text"
-              placeholder="100g"
-              class="border-1 border-gray-300 rounded-xl px-5 h-3/4 w-full focus:border-none focus:outline-none focus:ring-2 focus:ring-green-500"
-            />
-          </div>
-          <div class="col-span-1 p-4 w-full flex items-center justify-start">
-            <span
-              class="rounded-full p-2 hover:cursor-pointer hover:bg-green-100 dark:hover:bg-green-600 dark:hover:text-white"
+            <div class="col-span-2 flex w-full items-center justify-center p-4">
+              <span class="rounded-lg bg-green-100 p-4 dark:bg-green-200">
+                <i
+                  class="iconify text-xl text-green-500"
+                  [attr.data-icon]="selected.icon"
+                ></i>
+              </span>
+            </div>
+            <div
+              class="over col-span-4 flex w-full items-center p-4 text-start font-semibold"
             >
-              <i
-                class="iconify text-xl"
-                data-icon="material-symbols:delete-outline"
-              ></i>
-            </span>
+              {{ selected.name }}
+            </div>
+            <div class="col-span-4 flex w-full items-center justify-start p-4">
+              <input
+                type="text"
+                placeholder="100g"
+                class="h-3/4 w-full rounded-xl border-1 border-gray-300 px-5 focus:border-none focus:ring-2 focus:ring-green-500 focus:outline-none"
+              />
+            </div>
+            <div class="col-span-1 flex w-full items-center justify-start p-4">
+              <span
+                class="rounded-full p-2 hover:cursor-pointer hover:bg-green-100 dark:hover:bg-green-600 dark:hover:text-white"
+              >
+                <i
+                  class="iconify text-xl"
+                  data-icon="material-symbols:delete-outline"
+                ></i>
+              </span>
+            </div>
           </div>
-        </div>
         } @empty {
-        <h3 class="text-lg text-gray-600 dark:text-stone-100">
-          Select some food entries to add them to your diet.
-        </h3>
+          <h3 class="text-lg text-gray-600 dark:text-stone-100">
+            Select some food entries to add them to your diet.
+          </h3>
         }
       </div>
     </div>
   </div>
-  <div class="pt-6 w-full max-w-7xl flex justify-center flex-wrap sm:flex-nowrap sm:justify-between gap-3">
+  <div
+    class="flex w-full max-w-7xl flex-wrap justify-center gap-3 pt-6 sm:flex-nowrap sm:justify-between"
+  >
     <app-search-bar
-      class="w-75 sm:w-90 h-10"
+      class="h-10 w-75 sm:w-90"
       [placeholderMessage]="'Type food name...'"
     ></app-search-bar>
   </div>
-  <div class="w-full max-w-7xl mt-6">
+  <div class="mt-6 w-full max-w-7xl">
     <div
-      class="relative flex bg-gray-200 dark:bg-shark-500 rounded-lg overflow-hidden justify-start"
+      class="dark:bg-shark-500 relative flex justify-start overflow-hidden rounded-lg bg-gray-200"
     >
       <div
         class="absolute bottom-0 left-0 h-1 bg-green-500 transition-all duration-300"
         [ngStyle]="{
           width: 100 / 3 + '%',
-          transform: 'translateX(' + selectedIndex * 100 + '%)'
+          transform: 'translateX(' + selectedIndex * 100 + '%)',
         }"
       ></div>
 
-      @for (tab of ['Favorites', 'Popular Food','My Food']; track $index) {
-      <button
-        class="flex-1 px-4 py-2 text-center focus:outline-none cursor-pointer hover:bg-green-100 dark:hover:bg-green-600 dark:hover:text-white font-semibold"
-        (click)="selectTab($index)"
-      >
-        {{ tab }}
-      </button>
+      @for (tab of ["Favorites", "Popular Food", "My Food"]; track $index) {
+        <button
+          class="flex-1 cursor-pointer px-4 py-2 text-center font-semibold hover:bg-green-100 focus:outline-none dark:hover:bg-green-600 dark:hover:text-white"
+          (click)="selectTab($index)"
+        >
+          {{ tab }}
+        </button>
       }
     </div>
-    <div class="relative overflow-hidden mt-3 max-h-75">
+    <div class="relative mt-3 max-h-75 overflow-hidden">
       <div
         class="flex transition-transform duration-500"
         [ngStyle]="{
-          transform: 'translateX(-' + selectedIndex * 100 + '%)'
+          transform: 'translateX(-' + selectedIndex * 100 + '%)',
         }"
       >
         <div
-          class="flex-shrink-0 p-4 w-full max-w-7xl flex flex-col max-h-75 overflow-y-auto"
+          class="flex max-h-75 w-full max-w-7xl flex-shrink-0 flex-col overflow-y-auto p-4"
         >
           @for (favorite of favorites; track favorite.id) {
-          <div class="grid grid-cols-12 border-b border-gray-200 dark:border-gray-600">
-            <app-food-card
-              [food]="favorite"
-              class="col-span-10 grid grid-cols-subgrid w-full"
-            />
-            <div class="col-span-2 p-4 w-full flex items-center justify-center">
-              <span
-                class="rounded-full p-2 hover:cursor-pointer hover:bg-green-100 dark:hover:bg-green-600 dark:hover:text-white"
+            <div
+              class="grid grid-cols-12 border-b border-gray-200 dark:border-gray-600"
+            >
+              <app-food-card
+                [food]="favorite"
+                class="col-span-10 grid w-full grid-cols-subgrid"
+              />
+              <div
+                class="col-span-2 flex w-full items-center justify-center p-4"
               >
-                <i class="iconify text-xl" data-icon="mdi:heart-outline"></i>
-              </span>
-              <span
-                class="rounded-full p-2 hover:cursor-pointer hover:bg-green-100 dark:hover:bg-green-600 dark:hover:text-white"
-              >
-                <i
-                  class="iconify text-xl"
-                  data-icon="material-symbols:add-rounded"
-                ></i>
-              </span>
+                <span
+                  class="rounded-full p-2 hover:cursor-pointer hover:bg-green-100 dark:hover:bg-green-600 dark:hover:text-white"
+                >
+                  <i class="iconify text-xl" data-icon="mdi:heart-outline"></i>
+                </span>
+                <span
+                  class="rounded-full p-2 hover:cursor-pointer hover:bg-green-100 dark:hover:bg-green-600 dark:hover:text-white"
+                >
+                  <i
+                    class="iconify text-xl"
+                    data-icon="material-symbols:add-rounded"
+                  ></i>
+                </span>
+              </div>
             </div>
-          </div>
           }
         </div>
         <div
-          class="flex-shrink-0 p-4 w-full max-w-7xl flex flex-col max-h-75 overflow-y-auto"
+          class="flex max-h-75 w-full max-w-7xl flex-shrink-0 flex-col overflow-y-auto p-4"
         >
           @for (popular of popularFood; track popular.id) {
-          <div class="grid grid-cols-12 border-b border-gray-200 dark:border-gray-600">
-            <app-food-card
-              [food]="popular"
-              class="col-span-10 grid grid-cols-subgrid w-full"
-            />
-            <div class="col-span-2 p-4 w-full flex items-center justify-center">
-              <span
-                class="rounded-full p-2 hover:cursor-pointer hover:bg-green-100 dark:hover:bg-green-600 dark:hover:text-white"
+            <div
+              class="grid grid-cols-12 border-b border-gray-200 dark:border-gray-600"
+            >
+              <app-food-card
+                [food]="popular"
+                class="col-span-10 grid w-full grid-cols-subgrid"
+              />
+              <div
+                class="col-span-2 flex w-full items-center justify-center p-4"
               >
-                <i class="iconify text-xl" data-icon="mdi:heart-outline"></i>
-              </span>
-              <span
-                class="rounded-full p-2 hover:cursor-pointer hover:bg-green-100 dark:hover:bg-green-600 dark:hover:text-white"
-              >
-                <i
-                  class="iconify text-xl"
-                  data-icon="material-symbols:add-rounded"
-                ></i>
-              </span>
+                <span
+                  class="rounded-full p-2 hover:cursor-pointer hover:bg-green-100 dark:hover:bg-green-600 dark:hover:text-white"
+                >
+                  <i class="iconify text-xl" data-icon="mdi:heart-outline"></i>
+                </span>
+                <span
+                  class="rounded-full p-2 hover:cursor-pointer hover:bg-green-100 dark:hover:bg-green-600 dark:hover:text-white"
+                >
+                  <i
+                    class="iconify text-xl"
+                    data-icon="material-symbols:add-rounded"
+                  ></i>
+                </span>
+              </div>
             </div>
-          </div>
           }
         </div>
         <div
-          class="flex-shrink-0 p-4 w-full max-w-7xl flex flex-col max-h-75 overflow-y-auto"
+          class="flex max-h-75 w-full max-w-7xl flex-shrink-0 flex-col overflow-y-auto p-4"
         >
           @for (food of myFood; track food.id) {
-          <div class="grid grid-cols-12 border-b border-gray-200 dark:border-gray-600">
-            <app-food-card
-              [food]="food"
-              class="col-span-10 grid grid-cols-subgrid w-full"
-            />
-            <div class="col-span-2 p-4 w-full flex items-center justify-center">
-              <span
-                class="rounded-full p-2 hover:cursor-pointer hover:bg-green-100 dark:hover:bg-green-600 dark:hover:text-white"
+            <div
+              class="grid grid-cols-12 border-b border-gray-200 dark:border-gray-600"
+            >
+              <app-food-card
+                [food]="food"
+                class="col-span-10 grid w-full grid-cols-subgrid"
+              />
+              <div
+                class="col-span-2 flex w-full items-center justify-center p-4"
               >
-                <i class="iconify text-xl" data-icon="mdi:heart-outline"></i>
-              </span>
-              <span
-                class="rounded-full p-2 hover:cursor-pointer hover:bg-green-100 dark:hover:bg-green-600 dark:hover:text-white"
-              >
-                <i
-                  class="iconify text-xl"
-                  data-icon="material-symbols:add-rounded"
-                ></i>
-              </span>
+                <span
+                  class="rounded-full p-2 hover:cursor-pointer hover:bg-green-100 dark:hover:bg-green-600 dark:hover:text-white"
+                >
+                  <i class="iconify text-xl" data-icon="mdi:heart-outline"></i>
+                </span>
+                <span
+                  class="rounded-full p-2 hover:cursor-pointer hover:bg-green-100 dark:hover:bg-green-600 dark:hover:text-white"
+                >
+                  <i
+                    class="iconify text-xl"
+                    data-icon="material-symbols:add-rounded"
+                  ></i>
+                </span>
+              </div>
             </div>
-          </div>
           }
         </div>
       </div>

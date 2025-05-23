@@ -1,24 +1,29 @@
-<div class="w-full flex flex-col items-center">
+<div class="flex w-full flex-col items-center">
   <div class="w-full max-w-5xl">
-    <h1 class="text-xl font-bold text-black self-start dark:text-white">Settings</h1>
+    <h1 class="self-start text-xl font-bold text-black dark:text-white">
+      Settings
+    </h1>
   </div>
-  <form class="w-full max-w-5xl flex flex-col items-center">
+  <form class="flex w-full max-w-5xl flex-col items-center">
     <div
-      class="mt-6 flex flex-col w-full max-w-4xl border border-gray-300 rounded-2xl bg-white dark:bg-shark-500"
+      class="dark:bg-shark-500 mt-6 flex w-full max-w-4xl flex-col rounded-2xl border border-gray-300 bg-white"
     >
-      <h2 class="text-lg font-semibold text-black self-start p-4 dark:text-white">
+      <h2
+        class="self-start p-4 text-lg font-semibold text-black dark:text-white"
+      >
         App settings
       </h2>
       @for (field of settings; track $index) {
-      <app-information-card
-        [title]="field.title"
-        [message]="field.placeholder"
-        [content]="field.content"
-        [lastCard]="$last"
-      />
-      @if(!$last){
-      <hr class="border-gray-300" />
-      } }
+        <app-information-card
+          [title]="field.title"
+          [message]="field.placeholder"
+          [content]="field.content"
+          [lastCard]="$last"
+        />
+        @if (!$last) {
+          <hr class="border-gray-300" />
+        }
+      }
     </div>
   </form>
 </div>

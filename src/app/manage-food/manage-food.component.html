@@ -1,160 +1,170 @@
-<div class="w-full flex flex-col items-center">
-  <div class="pt-6 w-full max-w-7xl">
-    <h2 class="text-xl font-bold text-black self-start dark:text-white">
+<div class="flex w-full flex-col items-center">
+  <div class="w-full max-w-7xl pt-6">
+    <h2 class="self-start text-xl font-bold text-black dark:text-white">
       Manage My Food
     </h2>
   </div>
 
-  <div class="pt-6 w-full max-w-7xl flex justify-center flex-wrap sm:flex-nowrap sm:justify-between gap-3">
+  <div
+    class="flex w-full max-w-7xl flex-wrap justify-center gap-3 pt-6 sm:flex-nowrap sm:justify-between"
+  >
     <app-search-bar
-      class="w-75 sm:w-90 h-10"
+      class="h-10 w-75 sm:w-90"
       [placeholderMessage]="'Filter my food...'"
     ></app-search-bar>
     <button
-      class="bg-green-500 dark:bg-green-600 rounded-xl py-2 px-4 text-white cursor-pointer hover:bg-green-600 dark:hover:bg-green-500"
+      class="cursor-pointer rounded-xl bg-green-500 px-4 py-2 text-white hover:bg-green-600 dark:bg-green-600 dark:hover:bg-green-500"
     >
       New Custom Food
     </button>
   </div>
 
-  <div class="w-full max-w-7xl mt-10">
+  <div class="mt-10 w-full max-w-7xl">
     <div
-      class="relative flex bg-gray-200 rounded-lg overflow-hidden justify-start dark:bg-shark-500"
+      class="dark:bg-shark-500 relative flex justify-start overflow-hidden rounded-lg bg-gray-200"
     >
       <div
         class="absolute bottom-0 left-0 h-1 bg-green-500 transition-all duration-300"
         [ngStyle]="{
           width: 100 / 3 + '%',
-          transform: 'translateX(' + selectedIndex * 100 + '%)'
+          transform: 'translateX(' + selectedIndex * 100 + '%)',
         }"
       ></div>
 
-      @for (tab of ['Favorites', 'Recently Added', 'All My Food']; track $index)
-      {
-      <button
-        class="flex-1 px-4 py-2 text-center focus:outline-none cursor-pointer hover:bg-green-10 font-semibold dark:hover:bg-green-600 dark:hover:text-white"
-        (click)="selectTab($index)"
-      >
-        {{ tab }}
-      </button>
+      @for (
+        tab of ["Favorites", "Recently Added", "All My Food"];
+        track $index
+      ) {
+        <button
+          class="hover:bg-green-10 flex-1 cursor-pointer px-4 py-2 text-center font-semibold focus:outline-none dark:hover:bg-green-600 dark:hover:text-white"
+          (click)="selectTab($index)"
+        >
+          {{ tab }}
+        </button>
       }
     </div>
-    <div class="relative overflow-hidden mt-3 max-h-150">
+    <div class="relative mt-3 max-h-150 overflow-hidden">
       <div
         class="flex transition-transform duration-500"
         [ngStyle]="{
-          transform: 'translateX(-' + selectedIndex * 100 + '%)'
+          transform: 'translateX(-' + selectedIndex * 100 + '%)',
         }"
       >
         <div
-          class="flex-shrink-0 p-4 w-full max-w-7xl flex flex-col max-h-150 overflow-y-auto"
+          class="flex max-h-150 w-full max-w-7xl flex-shrink-0 flex-col overflow-y-auto p-4"
         >
           @for (favorite of favorites; track favorite.id) {
-          <div
-            class="grid grid-cols-12 border-b border-gray-200 dark:border-gray-600"
-          >
-            <app-food-card
-              [food]="favorite"
-              class="col-span-10 grid grid-cols-subgrid w-full"
-            />
-            <div class="col-span-2 p-4 w-full flex items-center justify-center">
-              <span
-                class="rounded-full p-2 hover:cursor-pointer hover:bg-green-100 dark:hover:bg-green-600 dark:hover:text-white"
+            <div
+              class="grid grid-cols-12 border-b border-gray-200 dark:border-gray-600"
+            >
+              <app-food-card
+                [food]="favorite"
+                class="col-span-10 grid w-full grid-cols-subgrid"
+              />
+              <div
+                class="col-span-2 flex w-full items-center justify-center p-4"
               >
-                <i class="iconify text-xl" data-icon="mdi:heart-outline"></i>
-              </span>
-              <span
-                class="rounded-full p-2 hover:cursor-pointer hover:bg-green-100 dark:hover:bg-green-600 dark:hover:text-white"
-              >
-                <i
-                  class="iconify text-xl"
-                  data-icon="material-symbols:edit-outline"
-                ></i>
-              </span>
-              <span
-                class="rounded-full p-2 hover:cursor-pointer hover:bg-green-100 dark:hover:bg-green-600 dark:hover:text-white"
-              >
-                <i
-                  class="iconify text-xl"
-                  data-icon="material-symbols:delete-outline"
-                ></i>
-              </span>
+                <span
+                  class="rounded-full p-2 hover:cursor-pointer hover:bg-green-100 dark:hover:bg-green-600 dark:hover:text-white"
+                >
+                  <i class="iconify text-xl" data-icon="mdi:heart-outline"></i>
+                </span>
+                <span
+                  class="rounded-full p-2 hover:cursor-pointer hover:bg-green-100 dark:hover:bg-green-600 dark:hover:text-white"
+                >
+                  <i
+                    class="iconify text-xl"
+                    data-icon="material-symbols:edit-outline"
+                  ></i>
+                </span>
+                <span
+                  class="rounded-full p-2 hover:cursor-pointer hover:bg-green-100 dark:hover:bg-green-600 dark:hover:text-white"
+                >
+                  <i
+                    class="iconify text-xl"
+                    data-icon="material-symbols:delete-outline"
+                  ></i>
+                </span>
+              </div>
             </div>
-          </div>
           }
         </div>
         <div
-          class="flex-shrink-0 p-4 w-full max-w-7xl flex flex-col max-h-150 overflow-y-auto"
+          class="flex max-h-150 w-full max-w-7xl flex-shrink-0 flex-col overflow-y-auto p-4"
         >
           @for (recentOne of recent; track recentOne.id) {
-          <div
-            class="grid grid-cols-12 border-b border-gray-200 dark:border-gray-600"
-          >
-            <app-food-card
-              [food]="recentOne"
-              class="col-span-10 grid grid-cols-subgrid w-full"
-            />
-            <div class="col-span-2 p-4 w-full flex items-center justify-center">
-              <span
-                class="rounded-full p-2 hover:cursor-pointer hover:bg-green-100 dark:hover:bg-green-600 dark:hover:text-white"
+            <div
+              class="grid grid-cols-12 border-b border-gray-200 dark:border-gray-600"
+            >
+              <app-food-card
+                [food]="recentOne"
+                class="col-span-10 grid w-full grid-cols-subgrid"
+              />
+              <div
+                class="col-span-2 flex w-full items-center justify-center p-4"
               >
-                <i class="iconify text-xl" data-icon="mdi:heart-outline"></i>
-              </span>
-              <span
-                class="rounded-full p-2 hover:cursor-pointer hover:bg-green-100 dark:hover:bg-green-600 dark:hover:text-white"
-              >
-                <i
-                  class="iconify text-xl"
-                  data-icon="material-symbols:edit-outline"
-                ></i>
-              </span>
-              <span
-                class="rounded-full p-2 hover:cursor-pointer hover:bg-green-100 dark:hover:bg-green-600 dark:hover:text-white"
-              >
-                <i
-                  class="iconify text-xl"
-                  data-icon="material-symbols:delete-outline"
-                ></i>
-              </span>
+                <span
+                  class="rounded-full p-2 hover:cursor-pointer hover:bg-green-100 dark:hover:bg-green-600 dark:hover:text-white"
+                >
+                  <i class="iconify text-xl" data-icon="mdi:heart-outline"></i>
+                </span>
+                <span
+                  class="rounded-full p-2 hover:cursor-pointer hover:bg-green-100 dark:hover:bg-green-600 dark:hover:text-white"
+                >
+                  <i
+                    class="iconify text-xl"
+                    data-icon="material-symbols:edit-outline"
+                  ></i>
+                </span>
+                <span
+                  class="rounded-full p-2 hover:cursor-pointer hover:bg-green-100 dark:hover:bg-green-600 dark:hover:text-white"
+                >
+                  <i
+                    class="iconify text-xl"
+                    data-icon="material-symbols:delete-outline"
+                  ></i>
+                </span>
+              </div>
             </div>
-          </div>
           }
         </div>
         <div
-          class="flex-shrink-0 p-4 w-full max-w-7xl flex flex-col max-h-150 overflow-y-auto"
+          class="flex max-h-150 w-full max-w-7xl flex-shrink-0 flex-col overflow-y-auto p-4"
         >
           @for (food of allMyFood; track food.id) {
-          <div
-            class="grid grid-cols-12 border-b border-gray-200 dark:border-gray-600"
-          >
-            <app-food-card
-              [food]="food"
-              class="col-span-10 grid grid-cols-subgrid w-full"
-            />
-            <div class="col-span-2 p-4 w-full flex items-center justify-center">
-              <span
-                class="rounded-full p-2 hover:cursor-pointer hover:bg-green-100 dark:hover:bg-green-600 dark:hover:text-white"
+            <div
+              class="grid grid-cols-12 border-b border-gray-200 dark:border-gray-600"
+            >
+              <app-food-card
+                [food]="food"
+                class="col-span-10 grid w-full grid-cols-subgrid"
+              />
+              <div
+                class="col-span-2 flex w-full items-center justify-center p-4"
               >
-                <i class="iconify text-xl" data-icon="mdi:heart-outline"></i>
-              </span>
-              <span
-                class="rounded-full p-2 hover:cursor-pointer hover:bg-green-100 dark:hover:bg-green-600 dark:hover:text-white"
-              >
-                <i
-                  class="iconify text-xl"
-                  data-icon="material-symbols:edit-outline"
-                ></i>
-              </span>
-              <span
-                class="rounded-full p-2 hover:cursor-pointer hover:bg-green-100 dark:hover:bg-green-600 dark:hover:text-white"
-              >
-                <i
-                  class="iconify text-xl"
-                  data-icon="material-symbols:delete-outline"
-                ></i>
-              </span>
+                <span
+                  class="rounded-full p-2 hover:cursor-pointer hover:bg-green-100 dark:hover:bg-green-600 dark:hover:text-white"
+                >
+                  <i class="iconify text-xl" data-icon="mdi:heart-outline"></i>
+                </span>
+                <span
+                  class="rounded-full p-2 hover:cursor-pointer hover:bg-green-100 dark:hover:bg-green-600 dark:hover:text-white"
+                >
+                  <i
+                    class="iconify text-xl"
+                    data-icon="material-symbols:edit-outline"
+                  ></i>
+                </span>
+                <span
+                  class="rounded-full p-2 hover:cursor-pointer hover:bg-green-100 dark:hover:bg-green-600 dark:hover:text-white"
+                >
+                  <i
+                    class="iconify text-xl"
+                    data-icon="material-symbols:delete-outline"
+                  ></i>
+                </span>
+              </div>
             </div>
-          </div>
           }
         </div>
       </div>

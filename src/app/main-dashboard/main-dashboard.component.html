@@ -1,57 +1,89 @@
-<div class="w-full flex flex-col items-center">
-  <h2 class="text-xl font-bold text-green-700 dark:text-green-600 self-start">
+<div class="flex w-full flex-col items-center">
+  <h2 class="self-start text-xl font-bold text-green-700 dark:text-green-600">
     Welcome back, User! Ready to track today's macros?
   </h2>
-  <div class="pt-6 w-full max-w-7xl">
-    <h1 class="text-2xl font-bold text-black dark:text-white self-start">Today's progress</h1>
+  <div class="w-full max-w-7xl pt-6">
+    <h1 class="self-start text-2xl font-bold text-black dark:text-white">
+      Today's progress
+    </h1>
   </div>
   <div
-    class="pt-6 grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-4 gap-3 w-full max-w-7xl"
+    class="grid w-full max-w-7xl grid-cols-1 gap-3 pt-6 sm:grid-cols-2 xl:grid-cols-4"
   >
-    <div class="bg-green-50 dark:bg-green-600 rounded-xl p-6 shadow-md w-full flex flex-row">
-      <div class="flex flex-col justify-center w-70">
-        <h2 class="text-xl font-semibold text-center text-blue-500 dark:text-blue-800">Protein</h2>
-        <h3 class="text-md text-center text-gray-400 dark:text-white">2000 / 3000g</h3>
+    <div
+      class="flex w-full flex-row rounded-xl bg-green-50 p-6 shadow-md dark:bg-green-600"
+    >
+      <div class="flex w-70 flex-col justify-center">
+        <h2
+          class="text-center text-xl font-semibold text-blue-500 dark:text-blue-800"
+        >
+          Protein
+        </h2>
+        <h3 class="text-md text-center text-gray-400 dark:text-white">
+          2000 / 3000g
+        </h3>
       </div>
-      <div class="w-full flex flex-col items-center">
+      <div class="flex w-full flex-col items-center">
         <app-radial-progress-bar
           [value]="75"
           [color]="'text-blue-500 dark:text-blue-800'"
         ></app-radial-progress-bar>
       </div>
     </div>
-    <div class="bg-green-50 dark:bg-green-600 rounded-xl p-6 shadow-md w-full flex flex-row">
-      <div class="flex flex-col justify-center w-70">
-        <h2 class="text-xl font-semibold text-center text-purple-500 dark:text-purple-700">Carbs</h2>
-        <h3 class="text-md text-center text-gray-400 dark:text-white">2000 / 3000g</h3>
+    <div
+      class="flex w-full flex-row rounded-xl bg-green-50 p-6 shadow-md dark:bg-green-600"
+    >
+      <div class="flex w-70 flex-col justify-center">
+        <h2
+          class="text-center text-xl font-semibold text-purple-500 dark:text-purple-700"
+        >
+          Carbs
+        </h2>
+        <h3 class="text-md text-center text-gray-400 dark:text-white">
+          2000 / 3000g
+        </h3>
       </div>
-      <div class="w-full flex flex-col items-center">
+      <div class="flex w-full flex-col items-center">
         <app-radial-progress-bar
           [value]="50"
           [color]="'text-purple-500 dark:text-purple-700'"
         ></app-radial-progress-bar>
       </div>
     </div>
-    <div class="bg-green-50 dark:bg-green-600 rounded-xl p-6 shadow-md w-full flex flex-row">
-      <div class="flex flex-col justify-center w-full">
-        <h2 class="text-xl font-semibold text-center text-rose-500 dark:text-rose-800">Fats</h2>
-        <h3 class="text-md text-center text-gray-400 dark:text-white">2000 / 3000g</h3>
+    <div
+      class="flex w-full flex-row rounded-xl bg-green-50 p-6 shadow-md dark:bg-green-600"
+    >
+      <div class="flex w-full flex-col justify-center">
+        <h2
+          class="text-center text-xl font-semibold text-rose-500 dark:text-rose-800"
+        >
+          Fats
+        </h2>
+        <h3 class="text-md text-center text-gray-400 dark:text-white">
+          2000 / 3000g
+        </h3>
       </div>
-      <div class="w-full flex flex-col items-center">
+      <div class="flex w-full flex-col items-center">
         <app-radial-progress-bar
           [value]="64"
           [color]="'text-rose-500 dark:text-rose-800'"
         ></app-radial-progress-bar>
       </div>
     </div>
-    <div class="bg-green-50 dark:bg-green-600 rounded-xl p-6 shadow-md w-full flex flex-row">
-      <div class="flex flex-col justify-center w-70">
-        <h2 class="text-xl font-semibold text-center text-yellow-500 dark:text-yellow-400">
+    <div
+      class="flex w-full flex-row rounded-xl bg-green-50 p-6 shadow-md dark:bg-green-600"
+    >
+      <div class="flex w-70 flex-col justify-center">
+        <h2
+          class="text-center text-xl font-semibold text-yellow-500 dark:text-yellow-400"
+        >
           Calories
         </h2>
-        <h3 class="text-md text-center text-gray-400 dark:text-white">2000 / 3000Cal</h3>
+        <h3 class="text-md text-center text-gray-400 dark:text-white">
+          2000 / 3000Cal
+        </h3>
       </div>
-      <div class="w-full flex flex-col items-center">
+      <div class="flex w-full flex-col items-center">
         <app-radial-progress-bar
           [value]="21"
           [color]="'text-yellow-500 dark:text-yellow-400'"
@@ -59,48 +91,54 @@
       </div>
     </div>
   </div>
-  <div class="pt-6 w-full max-w-7xl">
-    <h2 class="text-xl font-bold text-black dark:text-white self-start">Recent Entries</h2>
+  <div class="w-full max-w-7xl pt-6">
+    <h2 class="self-start text-xl font-bold text-black dark:text-white">
+      Recent Entries
+    </h2>
   </div>
-  <div class="pt-6 w-full max-w-7xl flex justify-center flex-wrap sm:flex-nowrap sm:justify-between gap-3">
+  <div
+    class="flex w-full max-w-7xl flex-wrap justify-center gap-3 pt-6 sm:flex-nowrap sm:justify-between"
+  >
     <app-search-bar
-      class="w-75 sm:w-90 h-10"
+      class="h-10 w-75 sm:w-90"
       [placeholderMessage]="'Search entries...'"
     ></app-search-bar>
     <button
-      class="bg-green-500 rounded-xl py-2 px-4 text-white cursor-pointer hover:bg-green-600 dark:bg-green-600"
+      class="cursor-pointer rounded-xl bg-green-500 px-4 py-2 text-white hover:bg-green-600 dark:bg-green-600"
     >
       New Entry
     </button>
   </div>
-  <div class="mt-6 w-full max-w-7xl flex flex-col h-78 overflow-y-auto">
+  <div class="mt-6 flex h-78 w-full max-w-7xl flex-col overflow-y-auto">
     @for (recentEntry of recentEntries; track recentEntry.id) {
-    <div class="grid grid-cols-12 border-b border-gray-200">
-      <div class="col-span-3 p-4 w-full flex items-center">
-        <i class="iconify text-xl" [attr.data-icon]="recentEntry.icon"></i>
-        <span class="ml-2">{{ recentEntry.name }}</span>
+      <div class="grid grid-cols-12 border-b border-gray-200">
+        <div class="col-span-3 flex w-full items-center p-4">
+          <i class="iconify text-xl" [attr.data-icon]="recentEntry.icon"></i>
+          <span class="ml-2">{{ recentEntry.name }}</span>
+        </div>
+        <div class="col-span-2 w-full p-4">
+          Protein: {{ recentEntry.protein }}g
+        </div>
+        <div class="col-span-2 w-full p-4">Carbs: {{ recentEntry.carbs }}g</div>
+        <div class="col-span-2 w-full p-4">Fats: {{ recentEntry.fats }}g</div>
+        <div class="col-span-2 w-full p-4">
+          {{
+            recentEntry.creation
+              ? recentEntry.creation.toLocaleTimeString()
+              : ""
+          }}
+        </div>
+        <div class="col-span-1 flex w-full justify-evenly p-4">
+          <i
+            class="iconify text-xl"
+            data-icon="material-symbols:edit-outline"
+          ></i>
+          <i
+            class="iconify text-xl"
+            data-icon="material-symbols:delete-outline"
+          ></i>
+        </div>
       </div>
-      <div class="col-span-2 p-4 w-full">
-        Protein: {{ recentEntry.protein }}g
-      </div>
-      <div class="col-span-2 p-4 w-full">Carbs: {{ recentEntry.carbs }}g</div>
-      <div class="col-span-2 p-4 w-full">Fats: {{ recentEntry.fats }}g</div>
-      <div class="col-span-2 p-4 w-full">
-        {{
-          recentEntry.creation ? recentEntry.creation.toLocaleTimeString() : ""
-        }}
-      </div>
-      <div class="col-span-1 p-4 w-full flex justify-evenly">
-        <i
-          class="iconify text-xl"
-          data-icon="material-symbols:edit-outline"
-        ></i>
-        <i
-          class="iconify text-xl"
-          data-icon="material-symbols:delete-outline"
-        ></i>
-      </div>
-    </div>
     }
   </div>
 </div>

@@ -1,62 +1,61 @@
 <div class="relative">
   <button
-    class="p-2 hover:bg-green-100 dark:hover:bg-green-600 dark:hover:text-white rounded-lg cursor-pointer"
+    class="cursor-pointer rounded-lg p-2 hover:bg-green-100 dark:hover:bg-green-600 dark:hover:text-white"
     (click)="openMenu()"
   >
     <i class="iconify text-xl" data-icon="solar:bell-line-duotone"></i>
   </button>
   <span
-    class="absolute -top-1 -right-1 bg-red-500 text-white text-xs font-bold px-1 rounded-full"
+    class="absolute -top-1 -right-1 rounded-full bg-red-500 px-1 text-xs font-bold text-white"
     [ngClass]="{ invisible: !(pendingNotifications > 0) }"
     >{{ pendingNotifications }}</span
   >
 </div>
 @if (isOpen) {
-<div class="fixed inset-0 bg-black opacity-10 z-40 transition-opacity"></div>
-<div
-  class="absolute -bottom-2 right-18 z-40 w-4 h-4 transform rotate-45 bg-white dark:bg-shark-500"
-></div>
-<div
-  #notificationContainer
-  class="absolute top-15 right-5 z-40 w-full max-w-80 sm:max-w-sm bg-white p-3 rounded-lg shadow-lg mx-auto dark:bg-shark-500"
->
-  <div class="flex justify-between items-center mb-4 mt-2 select-none">
-    <h2 class="text-md font-semibold px-4">Notifications</h2>
-    <span
-      class="px-2 py-1 text-sm mx-2 text-white bg-green-600 rounded-full select-none"
-      >{{ pendingNotifications }} new</span
-    >
-  </div>
-  <div class="space-y-2 px-3 max-h-90 overflow-auto">
-    @for (notification of notifications; track notification.id) {
-    <div
-      class="flex items-center gap-3 py-2 hover:bg-green-200 rounded-md px-1 dark:text-white dark:hover:bg-green-700 dark:hover:text-white"
-      [ngClass]="
-        notification.isRead
-          ? 'bg-white dark:bg-shark-500'
-          : 'bg-green-100 dark:bg-green-600'
-      "
-      (mouseover)="markAsRead(notification.id)"
-    >
-      <div
-        class="w-10 h-10 flex items-center justify-center rounded-full"
-        [ngClass]="notificationClassMap[notification.type]"
-      >
-        <i class="iconify text-xl" [attr.data-icon]="notification.icon"></i>
-      </div>
-      <div class="flex-1 text-wrap">
-        <p class="font-md select-none">{{ notification.title }}</p>
-        <p class="text-sm text-gray-500 select-none dark:text-stone-300">
-          {{ notification.comment }}
-        </p>
-      </div>
+  <div class="fixed inset-0 z-40 bg-black opacity-10 transition-opacity"></div>
+  <div
+    class="dark:bg-shark-500 absolute right-18 -bottom-2 z-40 h-4 w-4 rotate-45 transform bg-white"
+  ></div>
+  <div
+    #notificationContainer
+    class="dark:bg-shark-500 absolute top-15 right-5 z-40 mx-auto w-full max-w-80 rounded-lg bg-white p-3 shadow-lg sm:max-w-sm"
+  >
+    <div class="mt-2 mb-4 flex items-center justify-between select-none">
+      <h2 class="text-md px-4 font-semibold">Notifications</h2>
       <span
-        class="text-xs text-gray-400 whitespace-nowrap px-1 select-none dark:text-stone-300"
-        >{{ notification.time | date : "shortTime" }}</span
+        class="mx-2 rounded-full bg-green-600 px-2 py-1 text-sm text-white select-none"
+        >{{ pendingNotifications }} new</span
       >
     </div>
-    }
+    <div class="max-h-90 space-y-2 overflow-auto px-3">
+      @for (notification of notifications; track notification.id) {
+        <div
+          class="flex items-center gap-3 rounded-md px-1 py-2 hover:bg-green-200 dark:text-white dark:hover:bg-green-700 dark:hover:text-white"
+          [ngClass]="
+            notification.isRead
+              ? 'dark:bg-shark-500 bg-white'
+              : 'bg-green-100 dark:bg-green-600'
+          "
+          (mouseover)="markAsRead(notification.id)"
+        >
+          <div
+            class="flex h-10 w-10 items-center justify-center rounded-full"
+            [ngClass]="notificationClassMap[notification.type]"
+          >
+            <i class="iconify text-xl" [attr.data-icon]="notification.icon"></i>
+          </div>
+          <div class="flex-1 text-wrap">
+            <p class="font-md select-none">{{ notification.title }}</p>
+            <p class="text-sm text-gray-500 select-none dark:text-stone-300">
+              {{ notification.comment }}
+            </p>
+          </div>
+          <span
+            class="px-1 text-xs whitespace-nowrap text-gray-400 select-none dark:text-stone-300"
+            >{{ notification.time | date: "shortTime" }}</span
+          >
+        </div>
+      }
+    </div>
   </div>
-</div>
-
 }

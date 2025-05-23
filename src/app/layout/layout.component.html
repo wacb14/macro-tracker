@@ -2,11 +2,12 @@
   <!-- Sidebar -->
   <aside
     class="transition-all duration-300"
-    [ngClass]="{ 'w-18': !isMobile && isHiddenMenu(),
+    [ngClass]="{
+      'w-18': !isMobile && isHiddenMenu(),
       'w-64': !isHiddenMenu() && !isMobile,
-     }"
+    }"
   >
-    <nav class="flex flex-col h-full items-center">
+    <nav class="flex h-full flex-col items-center">
       <app-sidebar
         [isMobile]="isMobile"
         [isHidden]="isHiddenMenu"
@@ -14,7 +15,7 @@
     </nav>
   </aside>
   <!-- Main Content -->
-  <div class="flex-1 bg-slate-50 dark:bg-bunker-500 dark:text-stone-300">
+  <div class="dark:bg-bunker-500 flex-1 bg-slate-50 dark:text-stone-300">
     <!-- Header -->
     <header class="sticky top-0 z-10">
       <app-header [isHiddenMenu]="isHiddenMenu"></app-header>
