@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
-import { SearchBarComponent } from '../components/search-bar/search-bar.component';
-import { Food } from '../models';
-import { FoodCardComponent } from '../components/food-card/food-card.component';
+import { SearchBarComponent } from '../../components/search-bar/search-bar.component';
+import { Food } from '../../models';
+import { FoodCardComponent } from '../../components/food-card/food-card.component';
 import { NgStyle } from '@angular/common';
 @Component({
   selector: 'app-add-food',

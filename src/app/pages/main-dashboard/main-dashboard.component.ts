@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
-import { RadialProgressBarComponent } from '../components/radial-progress-bar/radial-progress-bar.component';
-import { SearchBarComponent } from '../components/search-bar/search-bar.component';
-import { Food } from '../models';
+import { RadialProgressBarComponent } from '../../components/radial-progress-bar/radial-progress-bar.component';
+import { SearchBarComponent } from '../../components/search-bar/search-bar.component';
+import { Food } from '../../models';
 
 @Component({
   selector: 'app-main-dashboard',

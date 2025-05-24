@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { InformationCardComponent } from '../components/information-card/information-card.component';
+import { InformationCardComponent } from '../../components/information-card/information-card.component';
 
 export interface Field {
   title: string;

@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { Field } from '../user-profile/user-profile.component';
-import { InformationCardComponent } from '../components/information-card/information-card.component';
+import { InformationCardComponent } from '../../components/information-card/information-card.component';
 
 @Component({
   selector: 'app-preferences',

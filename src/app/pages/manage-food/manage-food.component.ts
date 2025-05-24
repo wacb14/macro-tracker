@@ -1,8 +1,8 @@
 import { Component } from '@angular/core';
-import { SearchBarComponent } from '../components/search-bar/search-bar.component';
-import { Food } from '../models';
+import { SearchBarComponent } from '../../components/search-bar/search-bar.component';
+import { Food } from '../../models';
 import { NgStyle } from '@angular/common';
-import { FoodCardComponent } from '../components/food-card/food-card.component';
+import { FoodCardComponent } from '../../components/food-card/food-card.component';
 
 @Component({
   selector: 'app-manage-food',

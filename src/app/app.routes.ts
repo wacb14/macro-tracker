@@ -1,15 +1,15 @@
 import { Routes } from '@angular/router';
-import { MainDashboardComponent } from './main-dashboard/main-dashboard.component';
-import { AddFoodComponent } from './add-food/add-food.component';
-import { CustomFoodComponent } from './custom-food/custom-food.component';
-import { ManageFoodComponent } from './manage-food/manage-food.component';
-import { HealthReportComponent } from './health-report/health-report.component';
-import { LoginComponent } from './login/login.component';
+import { MainDashboardComponent } from './pages/main-dashboard/main-dashboard.component';
+import { AddFoodComponent } from './pages/add-food/add-food.component';
+import { CustomFoodComponent } from './pages/custom-food/custom-food.component';
+import { ManageFoodComponent } from './pages/manage-food/manage-food.component';
+import { HealthReportComponent } from './pages/health-report/health-report.component';
+import { LoginComponent } from './pages/login/login.component';
 import { LayoutComponent } from './layout/layout.component';
-import { SignUpComponent } from './sign-up/sign-up.component';
-import { UserProfileComponent } from './user-profile/user-profile.component';
-import { PreferencesComponent } from './preferences/preferences.component';
-import { SettingsComponent } from './settings/settings.component';
+import { SignUpComponent } from './pages/sign-up/sign-up.component';
+import { UserProfileComponent } from './pages/user-profile/user-profile.component';
+import { PreferencesComponent } from './pages/preferences/preferences.component';
+import { SettingsComponent } from './pages/settings/settings.component';
 
 export const routes: Routes = [
   { path: 'login', component: LoginComponent },
