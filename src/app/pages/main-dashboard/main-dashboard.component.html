@@ -111,7 +111,7 @@
   </div>
   <div class="mt-6 flex h-78 w-full max-w-7xl flex-col overflow-y-auto">
     @for (recentEntry of recentEntries; track recentEntry.id) {
-      <div class="grid grid-cols-12 border-b border-gray-200">
+      <div class="grid grid-cols-12 border-b border-gray-200 dark:border-gray-600">
         <div class="col-span-3 flex w-full items-center p-4">
           <i class="iconify text-xl" [attr.data-icon]="recentEntry.icon"></i>
           <span class="ml-2">{{ recentEntry.name }}</span>

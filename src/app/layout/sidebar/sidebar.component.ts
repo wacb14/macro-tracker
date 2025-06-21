@@ -19,6 +19,8 @@ interface section {
   styleUrl: './sidebar.component.css',
 })
 export class SidebarComponent implements OnInit {
+  private router = inject(Router);
+
   currentPath = '';
   @Input({ required: true }) isMobile = false;
   @Input({ required: true }) isHidden = signal(false);
@@ -72,8 +74,6 @@ export class SidebarComponent implements OnInit {
       ],
     },
   ];
-
-  private router = inject(Router);
 
   ngOnInit() {
     this.setCurrentPath(this.router.url);
