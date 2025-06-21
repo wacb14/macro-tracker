@@ -2,28 +2,41 @@
 @import "tailwindcss";
 @custom-variant dark (&:where(.dark, .dark *));
 @theme {
-  --color-shark-50: #F5F5F5;
-  --color-shark-100: #E8E8E8;
-  --color-shark-200: #C7C7C7;
-  --color-shark-300: #A6A6A6;
+  --color-shark-50: #f5f5f5;
+  --color-shark-100: #e8e8e8;
+  --color-shark-200: #c7c7c7;
+  --color-shark-300: #a6a6a6;
   --color-shark-400: #616161;
   --color-shark-500: #1f1f1f;
-  --color-shark-600: #1C1919;
+  --color-shark-600: #1c1919;
   --color-shark-700: #171111;
-  --color-shark-800: #120B0B;
-  --color-shark-900: #0D0606;
+  --color-shark-800: #120b0b;
+  --color-shark-900: #0d0606;
   --color-shark-950: #080202;
 }
 @theme {
-  --color-bunker-50: #F5F5F5;
-  --color-bunker-100: #EBEBEB;
-  --color-bunker-200: #CCCCCC;
-  --color-bunker-300: #ABABAB;
-  --color-bunker-400: #6E6E6E;
+  --color-bunker-50: #f5f5f5;
+  --color-bunker-100: #ebebeb;
+  --color-bunker-200: #cccccc;
+  --color-bunker-300: #ababab;
+  --color-bunker-400: #6e6e6e;
   --color-bunker-500: #2e2e2e;
   --color-bunker-600: #292525;
   --color-bunker-700: #211919;
-  --color-bunker-800: #1C1111;
+  --color-bunker-800: #1c1111;
   --color-bunker-900: #140909;
-  --color-bunker-950: #0D0404;
+  --color-bunker-950: #0d0404;
+}
+
+.btn-primary {
+  @apply cursor-pointer rounded-xl bg-green-500 px-4 py-2 font-semibold text-white hover:bg-green-600 dark:bg-green-600 dark:hover:bg-green-500;
+}
+.btn-secondary {
+  @apply cursor-pointer rounded-xl bg-green-100 px-4 py-2 font-semibold text-green-500 hover:bg-green-200 dark:bg-green-200 dark:text-green-600 dark:hover:bg-green-300;
+}
+.btn-icon {
+  @apply cursor-pointer rounded-lg p-2 hover:bg-green-100 dark:hover:bg-green-600 dark:hover:text-white;
+}
+.input-primary {
+  @apply dark:bg-shark-500 h-10 w-full rounded-xl bg-gray-200 px-5 focus:ring-2 focus:ring-green-500 focus:outline-none dark:ring dark:ring-gray-300;
 }

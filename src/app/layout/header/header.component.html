@@ -3,7 +3,7 @@
 >
   <div class="flex items-center gap-4">
     <button
-      class="cursor-pointer rounded-lg p-2 hover:bg-green-100 dark:hover:bg-green-600 dark:hover:text-white"
+      class="btn-icon"
       (click)="toggleMenu()"
     >
       <i class="iconify text-xl" data-icon="solar:hamburger-menu-linear"></i>
@@ -13,14 +13,14 @@
   <div class="flex items-center gap-4">
     @if (getTheme() === "dark") {
       <button
-        class="cursor-pointer rounded-lg p-2 hover:bg-green-100 dark:hover:bg-green-600 dark:hover:text-white"
+        class="btn-icon"
         (click)="toggleTheme()"
       >
         <i class="iconify text-2xl" data-icon="line-md:moon-loop"></i>
       </button>
     } @else {
       <button
-        class="cursor-pointer rounded-lg p-2 hover:bg-green-100 dark:hover:bg-green-600 dark:hover:text-white"
+        class="btn-icon"
         (click)="toggleTheme()"
       >
         <i class="iconify text-2xl" data-icon="line-md:sunny-loop"></i>

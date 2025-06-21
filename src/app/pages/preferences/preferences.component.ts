@@ -14,21 +14,25 @@ export class PreferencesComponent {
       title: 'Gender',
       content: 'Male',
       placeholder: 'Chose your gender',
+      href: '',
     },
     {
       title: 'Date of Birth',
       content: 'December 24th 2000',
       placeholder: 'Enter your date of birth',
+      href: '',
     },
     {
       title: 'Weight',
       content: '90kg',
       placeholder: 'Enter your weight',
+      href: '',
     },
     {
       title: 'Height',
       content: '180cm',
       placeholder: 'Enter your height',
+      href: '',
     },
   ];
   userPreferences: Field[] = [
@@ -36,11 +40,13 @@ export class PreferencesComponent {
       title: 'Activity Level',
       content: 'Sedentary',
       placeholder: 'Select your activity level',
+      href: '',
     },
     {
       title: 'Fitness Goal',
       content: 'Lose weight',
       placeholder: 'Complete your fitness goal',
+      href: '',
     },
   ];
 }

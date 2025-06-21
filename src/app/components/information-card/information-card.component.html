@@ -1,6 +1,7 @@
-<div
+<a
   class="group grid w-full cursor-pointer grid-cols-12 p-4 hover:bg-green-100 dark:hover:bg-green-600"
   [ngClass]="lastCard() ? 'rounded-b-2xl' : ''"
+  [routerLink]="href()"
 >
   <div class="col-span-10 grid grid-cols-subgrid">
     <span
@@ -22,4 +23,4 @@
   <div class="col-span-2 flex justify-end">
     <i class="iconify text-xl" data-icon="mingcute:right-fill"></i>
   </div>
-</div>
+</a>
