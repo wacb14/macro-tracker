@@ -1,14 +1,5 @@
 <div class="flex w-full flex-col items-center">
-  <div class="w-full max-w-5xl">
-    <div class="flex flex-row items-center justify-start">
-      <button class="btn-icon" type="button" (click)="navigateBack()">
-        <i class="iconify text-2xl" data-icon="famicons:arrow-back-sharp"></i>
-      </button>
-      <h1 class="p-2 text-xl font-bold text-black dark:text-white">
-        Profile Picture
-      </h1>
-    </div>
-  </div>
+  <app-edit-field title="Profile Picture" routeBack="/profile"></app-edit-field>
   <div class="w-full max-w-5xl pt-4">
     <h2 class="text-md font-bold text-black dark:text-white">Current Avatar</h2>
     <div class="flex justify-center">

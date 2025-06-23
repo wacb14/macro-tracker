@@ -1,12 +1,6 @@
 <div class="flex w-full flex-col items-center">
   <form class="flex w-full max-w-3xl flex-col gap-y-5 pt-4 lg:w-150">
-    <div class="flex flex-row items-center justify-start">
-      <button class="btn-icon" type="button" (click)="navigateBack()">
-        <i class="iconify text-2xl" data-icon="famicons:arrow-back-sharp"></i>
-      </button>
-
-      <h1 class="p-2 text-xl font-bold text-black dark:text-white">Email</h1>
-    </div>
+    <app-edit-field title="Email" routeBack="/profile"/>
     <label class="text-md font-bold text-black dark:text-white"> Email </label>
     <input type="email" class="input-primary" placeholder="Enter your Email" />
     <label class="text-md font-bold text-black dark:text-white">
@@ -18,7 +12,7 @@
       placeholder="Confirm your Email"
     />
     <div class="flex flex-row gap-4 pt-4">
-      <button class="btn-secondary w-full" type="button">Cancel</button>
+      <app-btn-cancel-back routeBack="/profile" class="w-full"/>
       <button class="btn-primary w-full" type="submit">Save</button>
     </div>
   </form>

@@ -1,16 +1,21 @@
 import { Component, inject } from '@angular/core';
-import { Router } from '@angular/router';
 import { PasswordInputComponent } from '../../../../components/password-input/password-input.component';
 import { FormBuilder, ReactiveFormsModule, Validators } from '@angular/forms';
+import { EditFieldComponent } from '../../../../components/edit-field/edit-field.component';
+import { BtnCancelBackComponent } from '../../../../components/btn-cancel-back/btn-cancel-back.component';
 
 @Component({
   selector: 'app-password',
-  imports: [PasswordInputComponent, ReactiveFormsModule],
+  imports: [
+    PasswordInputComponent,
+    ReactiveFormsModule,
+    EditFieldComponent,
+    BtnCancelBackComponent,
+  ],
   templateUrl: './password.component.html',
   styleUrl: './password.component.css',
 })
 export class PasswordComponent {
-  router = inject(Router);
   fb = inject(FormBuilder);
 
   passwordForm = this.fb.group({
@@ -18,10 +23,6 @@ export class PasswordComponent {
     newPassword: ['', Validators.required],
     confirmPassword: ['', Validators.required],
   });
-
-  navigateBack() {
-    this.router.navigate(['/profile']);
-  }
 
   sendForm() {
     console.log(this.passwordForm.controls);
