@@ -5,7 +5,7 @@ export interface Field {
   title: string;
   content: string;
   placeholder: string;
-  href:string;
+  href: string;
 }
 
 @Component({
@@ -20,13 +20,13 @@ export class UserProfileComponent {
       title: 'Profile Picture',
       content: '',
       placeholder: 'Choose a picture for your profile',
-      href:'/personal-data/profile-picture'
+      href: '/personal-data/profile-picture',
     },
     {
       title: 'Name',
       content: 'User Full Name',
       placeholder: 'Enter your full name',
-      href:'/personal-data/name'
+      href: '/personal-data/name',
     },
   ];
   security: Field[] = [
@@ -34,19 +34,19 @@ export class UserProfileComponent {
       title: 'Email',
       content: 'user.email@email.com',
       placeholder: 'Enter your email',
-      href:''
+      href: '/security/email',
     },
     {
       title: 'Password',
       content: '',
       placeholder: 'Last modification: November 23th 2023',
-      href:''
+      href: '/security/password',
     },
     {
       title: 'Delete Account',
       content: '',
       placeholder: 'Remove all your data',
-      href:''
+      href: '/security/delete-account',
     },
   ];
 }

@@ -13,6 +13,9 @@ import { PreferencesComponent } from './pages/preferences/preferences.component'
 import { SettingsComponent } from './pages/settings/settings.component';
 import { ProfilePictureComponent } from './pages/user-profile/personal-data/profile-picture/profile-picture.component';
 import { NameComponent } from './pages/user-profile/personal-data/name/name.component';
+import { EmailComponent } from './pages/user-profile/security/email/email.component';
+import { PasswordComponent } from './pages/user-profile/security/password/password.component';
+import { DeleteAccountComponent } from './pages/user-profile/security/delete-account/delete-account.component';
 
 export const routes: Routes = [
   { path: 'login', component: LoginComponent },
@@ -33,6 +36,15 @@ export const routes: Routes = [
         children: [
           { path: 'profile-picture', component: ProfilePictureComponent },
           { path: 'name', component: NameComponent },
+        ],
+      },
+      {
+        path: 'security',
+        component: undefined,
+        children: [
+          { path: 'email', component: EmailComponent },
+          { path: 'password', component: PasswordComponent },
+          { path: 'delete-account', component: DeleteAccountComponent },
         ],
       },
       { path: 'preferences', component: PreferencesComponent },

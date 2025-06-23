@@ -1,0 +1,50 @@
+<div class="flex w-full flex-col items-center">
+  <form class="flex w-full max-w-3xl flex-col gap-y-5 pt-4 lg:w-150">
+    <div class="flex flex-row items-center justify-start">
+      <button class="btn-icon" type="button" (click)="navigateBack()">
+        <i class="iconify text-2xl" data-icon="famicons:arrow-back-sharp"></i>
+      </button>
+
+      <h1 class="p-2 text-xl font-bold text-red-500">Delete Account</h1>
+    </div>
+    <span class="flex items-center">
+      <i
+        class="iconify text-2xl text-red-500"
+        data-icon="material-symbols:warning-outline"
+      ></i>
+      <h2 class="text-md p-2 font-bold text-red-500">
+        Are you sure you want to do this?
+      </h2>
+    </span>
+    <span>
+      We will immediately delete all your information and fitness data.
+    </span>
+    <label class="text-md font-bold text-black dark:text-white">
+      Your Email
+    </label>
+    <input
+      type="email"
+      class="input-primary"
+      name="email"
+      autocomplete="new-password"
+    />
+
+    <label class="text-md font-bold text-black dark:text-white">
+      To verify, type exactly <i class="select-none">delete my account</i> as it
+      appears:
+    </label>
+    <input type="text" class="input-primary" autocomplete="new-password" />
+
+    <label class="text-md font-bold text-black dark:text-white" for="password">
+      Confirm Your Password
+    </label>
+    <app-password-input id="password" formControlName="password" />
+
+    <div class="flex flex-row gap-4 pt-4">
+      <button class="btn-secondary w-full" type="button">Cancel</button>
+      <button class="btn-primary w-full" type="submit">
+        Delete this account
+      </button>
+    </div>
+  </form>
+</div>
