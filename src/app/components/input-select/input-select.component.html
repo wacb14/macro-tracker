@@ -1,0 +1,48 @@
+<div class="relative" #selectContainer>
+  <div class="relative">
+    <span
+      type="text"
+      class="input-primary flex cursor-pointer items-center"
+      [id]="idLabel()"
+      (click)="toggleOptions()"
+      tabindex="0"
+      role="input"
+    >
+      @if (value) {
+        {{ value[optionLabel()] }}
+      } @else {
+        <b class="font-normal text-[#727375] dark:text-[#a9a9a9]">{{
+          placeholder()
+        }}</b>
+      }
+    </span>
+    <button
+      (click)="toggleOptions()"
+      class="absolute top-2 right-3 cursor-pointer"
+      type="button"
+    >
+      <i class="iconify text-2xl" data-icon="mingcute:down-fill"></i>
+    </button>
+  </div>
+  @if (!hidden) {
+    <div
+      class="dark:bg-shark-500 absolute top-11 left-0 z-10 w-full rounded-md bg-gray-200 shadow-lg ring ring-gray-300"
+    >
+      <ul class="flex max-h-50 flex-col gap-1 overflow-y-auto p-1">
+        @for (option of options(); track $index) {
+          <li
+            class="cursor-pointer rounded-md px-6 py-1"
+            (click)="chooseOption($index)"
+            [ngClass]="
+              $index == 0
+                ? 'bg-green-200 text-green-800 hover:bg-green-300 dark:bg-green-600 dark:text-green-100 dark:hover:bg-green-500'
+                : 'dark:hover:bg-shark-400 hover:bg-gray-300'
+            "
+          >
+            {{ option[optionLabel()] }}
+          </li>
+        }
+      </ul>
+    </div>
+  }
+</div>
