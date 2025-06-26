@@ -1,5 +1,5 @@
 import { Component, inject } from '@angular/core';
-import { PasswordInputComponent } from '../../../../components/password-input/password-input.component';
+import { InputPasswordComponent } from '../../../../components/input-password/input-password.component';
 import { FormBuilder, ReactiveFormsModule, Validators } from '@angular/forms';
 import { EditFieldComponent } from '../../../../components/edit-field/edit-field.component';
 import { BtnCancelBackComponent } from '../../../../components/btn-cancel-back/btn-cancel-back.component';
@@ -7,7 +7,7 @@ import { BtnCancelBackComponent } from '../../../../components/btn-cancel-back/b
 @Component({
   selector: 'app-password',
   imports: [
-    PasswordInputComponent,
+    InputPasswordComponent,
     ReactiveFormsModule,
     EditFieldComponent,
     BtnCancelBackComponent,

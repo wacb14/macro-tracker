@@ -1,0 +1,101 @@
+<div class="flex w-full flex-col items-center">
+  <form
+    class="flex w-full max-w-3xl flex-col gap-y-5 pt-4 lg:w-150"
+    (ngSubmit)="sendForm()"
+    [formGroup]="userDataForm"
+  >
+    <app-edit-field title="User Data" routeBack="/preferences"></app-edit-field>
+
+    <label
+      class="text-md flex h-fit items-center gap-2 font-bold text-black dark:text-white"
+      for="gender"
+    >
+      <i
+        class="iconify text-2xl"
+        data-icon="healthicons:male-and-female-outline"
+      ></i>
+      Gender
+    </label>
+    <app-input-select
+      idLabel="gender"
+      placeholder="Select your gender"
+      formControlName="gender"
+      [options]="genders"
+      optionLabel="gender"
+      [showFirst]="true"
+    ></app-input-select>
+
+    <label
+      class="text-md flex h-fit items-center gap-2 font-bold text-black dark:text-white"
+      for="birth-day"
+    >
+      <i class="iconify text-2xl" data-icon="iconoir:birthday-cake"></i>
+      Date of Birth
+    </label>
+    <div class="grid grid-cols-12 gap-4">
+      <input
+        type="text"
+        class="input-primary col-span-3"
+        placeholder="DD"
+        name="birth-day"
+        id="birth-day"
+      />
+      <app-input-select
+        class="col-span-5"
+        placeholder="MM"
+        formControlName="month"
+        [options]="months"
+        optionLabel="name"
+        [showFirst]="true"
+      ></app-input-select>
+      <input
+        type="text"
+        class="input-primary col-span-4"
+        placeholder="YYYY"
+        name="birth-year"
+        id="birth-year"
+      />
+    </div>
+
+    <label
+      class="text-md flex h-fit items-center gap-2 font-bold text-black dark:text-white"
+      for="weight"
+    >
+      <i
+        class="iconify text-2xl"
+        data-icon="material-symbols:weight-outline"
+      ></i>
+      Weight (kg)
+    </label>
+    <input
+      type="text"
+      class="input-primary"
+      placeholder="Enter your weight"
+      id="weight"
+      name="weight"
+    />
+
+    <label
+      class="text-md flex h-fit items-center gap-2 font-bold text-black dark:text-white"
+      for="height"
+    >
+      <i class="iconify text-2xl" data-icon="healthicons:height-outline"></i>
+      Height (cm)
+    </label>
+    <input
+      type="text"
+      class="input-primary"
+      placeholder="Enter your height"
+      id="height"
+      name="height"
+    />
+
+    <div class="flex flex-row gap-4 pt-4">
+      <app-btn-cancel-back
+        routeBack="/preferences"
+        class="w-full"
+      ></app-btn-cancel-back>
+      <button class="btn-primary w-full" type="submit">Save</button>
+    </div>
+  </form>
+</div>

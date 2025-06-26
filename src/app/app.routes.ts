@@ -16,6 +16,7 @@ import { NameComponent } from './pages/user-profile/personal-data/name/name.comp
 import { EmailComponent } from './pages/user-profile/security/email/email.component';
 import { PasswordComponent } from './pages/user-profile/security/password/password.component';
 import { DeleteAccountComponent } from './pages/user-profile/security/delete-account/delete-account.component';
+import { UserDataComponent } from './pages/preferences/user-data/user-data.component';
 
 export const routes: Routes = [
   { path: 'login', component: LoginComponent },
@@ -48,6 +49,7 @@ export const routes: Routes = [
         ],
       },
       { path: 'preferences', component: PreferencesComponent },
+      { path: 'user-data', component: UserDataComponent },
       { path: 'settings', component: SettingsComponent },
     ],
   },

@@ -1,4 +1,4 @@
-import { Component, forwardRef, HostListener, input } from '@angular/core';
+import { Component, forwardRef, input } from '@angular/core';
 import {
   ControlValueAccessor,
   NG_VALUE_ACCESSOR,
@@ -6,20 +6,20 @@ import {
 } from '@angular/forms';
 
 @Component({
-  selector: 'app-password-input',
+  selector: 'app-input-password',
   imports: [ReactiveFormsModule],
-  templateUrl: './password-input.component.html',
-  styleUrl: './password-input.component.css',
+  templateUrl: './input-password.component.html',
+  styleUrl: './input-password.component.css',
   providers: [
     {
       provide: NG_VALUE_ACCESSOR,
-      useExisting: forwardRef(() => PasswordInputComponent),
+      useExisting: forwardRef(() => InputPasswordComponent),
       multi: true,
     },
   ],
 })
-export class PasswordInputComponent implements ControlValueAccessor {
-  id = input('');
+export class InputPasswordComponent implements ControlValueAccessor {
+  idLabel = input('');
   placeholder = input('');
   formControlName = input.required<string>();
 

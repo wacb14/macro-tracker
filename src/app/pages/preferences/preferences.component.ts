@@ -14,25 +14,25 @@ export class PreferencesComponent {
       title: 'Gender',
       content: 'Male',
       placeholder: 'Chose your gender',
-      href: '',
+      href: '/user-data',
     },
     {
       title: 'Date of Birth',
       content: 'December 24th 2000',
       placeholder: 'Enter your date of birth',
-      href: '',
+      href: '/user-data',
     },
     {
       title: 'Weight',
       content: '90kg',
       placeholder: 'Enter your weight',
-      href: '',
+      href: '/user-data',
     },
     {
       title: 'Height',
       content: '180cm',
       placeholder: 'Enter your height',
-      href: '',
+      href: '/user-data',
     },
   ];
   userPreferences: Field[] = [
