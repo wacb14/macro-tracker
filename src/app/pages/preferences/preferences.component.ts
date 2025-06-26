@@ -40,13 +40,13 @@ export class PreferencesComponent {
       title: 'Activity Level',
       content: 'Sedentary',
       placeholder: 'Select your activity level',
-      href: '',
+      href: '/fitness-preferences',
     },
     {
       title: 'Fitness Goal',
       content: 'Lose weight',
       placeholder: 'Complete your fitness goal',
-      href: '',
+      href: '/fitness-preferences',
     },
   ];
 }

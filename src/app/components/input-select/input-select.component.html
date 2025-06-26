@@ -34,7 +34,7 @@
             class="cursor-pointer rounded-md px-6 py-1"
             (click)="chooseOption($index)"
             [ngClass]="
-              $index == 0
+              $index == selectedIndex
                 ? 'bg-green-200 text-green-800 hover:bg-green-300 dark:bg-green-600 dark:text-green-100 dark:hover:bg-green-500'
                 : 'dark:hover:bg-shark-400 hover:bg-gray-300'
             "

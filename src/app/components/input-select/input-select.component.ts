@@ -36,6 +36,7 @@ export class InputSelectComponent implements ControlValueAccessor {
 
   value: any = null;
   hidden = true;
+  selectedIndex = 0;
 
   //-- Functions for ControlValueAccessor
   onChange: any = () => {};
@@ -44,6 +45,7 @@ export class InputSelectComponent implements ControlValueAccessor {
   writeValue(value: any): void {
     if (value == null && this.showFirst() && this.options().length > 0) {
       this.value = this.options()[0];
+      this.selectedIndex = 0;
       this.onChange(this.value);
     } else this.value = value;
   }
@@ -65,6 +67,7 @@ export class InputSelectComponent implements ControlValueAccessor {
   }
   chooseOption(index: number) {
     this.value = this.options()[index];
+    this.selectedIndex = index;
     this.onChange(this.value); //-- Notifies the parent FormGroup
     this.hidden = true;
     this.focusInput();

@@ -1,0 +1,48 @@
+<div class="flex w-full flex-col items-center">
+  <form class="flex w-full max-w-3xl flex-col gap-y-5 pt-4 lg:w-150">
+    <app-edit-field
+      title="Fitness Preferences"
+      routeBack="/preferences"
+    ></app-edit-field>
+
+    <label
+      class="text-md flex h-fit items-center gap-2 font-bold text-black dark:text-white"
+      for="activityLevel"
+    >
+      <i
+        class="iconify text-2xl"
+        data-icon="material-symbols-light:exercise-outline"
+      ></i>
+      Activity Level
+    </label>
+    <app-input-select
+      idLabel="activityLevel"
+      placeholder="Select your Activity Level"
+      formControlName="activityLevel"
+      [options]="activityLevels"
+      optionLabel="name"
+    ></app-input-select>
+
+    <label
+      class="text-md flex h-fit items-center gap-2 font-bold text-black dark:text-white"
+      for="birth-day"
+    >
+      <i class="iconify text-2xl" data-icon="mingcute:fitness-line"></i>
+      Fitness Goal
+    </label>
+    <app-input-select
+      placeholder="Select your Fitness Goal"
+      formControlName="fitnessGoal"
+      [options]="fitnessGoals"
+      optionLabel="name"
+    ></app-input-select>
+
+    <div class="flex flex-row gap-4 pt-4">
+      <app-btn-cancel-back
+        routeBack="/preferences"
+        class="w-full"
+      ></app-btn-cancel-back>
+      <button class="btn-primary w-full" type="submit">Save</button>
+    </div>
+  </form>
+</div>
