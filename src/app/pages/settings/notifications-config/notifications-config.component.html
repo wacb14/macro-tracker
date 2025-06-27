@@ -1,0 +1,105 @@
+<div
+  class="flex w-full flex-col items-center"
+  (ngSubmit)="sendForm()"
+  [formGroup]="notificationsForm"
+>
+  <form class="flex w-full max-w-3xl flex-col gap-y-5 pt-4 lg:w-150">
+    <app-edit-field
+      title="Notifications"
+      routeBack="/settings"
+    ></app-edit-field>
+
+    <div class="flex flex-row items-center justify-between">
+      <span class="flex flex-col">
+        <h2 class="text-md font-semibold dark:text-white">
+          Hydration reminder
+        </h2>
+        <h3 class="text-sm text-gray-600 dark:text-stone-300">
+          Reminders to drink water
+        </h3>
+      </span>
+      <app-toggle-switch formControlName="hydration" />
+    </div>
+
+    <div class="flex flex-row items-center justify-between">
+      <span class="flex flex-col">
+        <h2 class="text-md font-semibold dark:text-white">Goals reminder</h2>
+        <h3 class="text-sm text-gray-600 dark:text-stone-300">
+          Reminders that show your progress
+        </h3>
+      </span>
+      <app-toggle-switch formControlName="goals" />
+    </div>
+
+    <div>
+      <div class="flex flex-row items-center justify-between ps-4">
+        <span class="flex flex-col" [class.opacity-50]="!isEnabled('goals')">
+          <h2 class="text-md font-semibold dark:text-white">Calories</h2>
+          <h3 class="text-sm text-gray-600 dark:text-stone-300">
+            Reminders for progress and warning of your goal of calories
+          </h3>
+        </span>
+        <app-toggle-switch
+          formControlName="calories"
+          [disabled]="!isEnabled('goals')"
+        />
+      </div>
+    </div>
+    <div>
+      <div class="flex flex-row items-center justify-between ps-4">
+        <span class="flex flex-col" [class.opacity-50]="!isEnabled('goals')">
+          <h2 class="text-md font-semibold dark:text-white">Proteins</h2>
+          <h3 class="text-sm text-gray-600 dark:text-stone-300">
+            Reminders for progress and warning of your goal of proteins
+          </h3>
+        </span>
+        <app-toggle-switch
+          formControlName="proteins"
+          [disabled]="!isEnabled('goals')"
+        />
+      </div>
+    </div>
+    <div>
+      <div class="flex flex-row items-center justify-between ps-4">
+        <span class="flex flex-col" [class.opacity-50]="!isEnabled('goals')">
+          <h2 class="text-md font-semibold dark:text-white">Carbs</h2>
+          <h3 class="text-sm text-gray-600 dark:text-stone-300">
+            Reminders for progress and warning of your goal of carbs
+          </h3>
+        </span>
+        <app-toggle-switch
+          formControlName="carbs"
+          [disabled]="!isEnabled('goals')"
+        />
+      </div>
+    </div>
+    <div>
+      <div class="flex flex-row items-center justify-between ps-4">
+        <span class="flex flex-col" [class.opacity-50]="!isEnabled('goals')">
+          <h2
+            class="text-md font-semibold transition-opacity duration-300 dark:text-white"
+          >
+            Fats
+          </h2>
+          <h3
+            class="text-sm text-gray-600 transition-opacity duration-300 dark:text-stone-300"
+          >
+            Reminders for progress and warning of your goal of fats
+          </h3>
+        </span>
+        <app-toggle-switch
+          formControlName="fats"
+          [disabled]="!isEnabled('goals')"
+        />
+      </div>
+    </div>
+
+    <div class="flex flex-row gap-4 pt-4">
+      <app-btn-cancel-back
+        routeBack="/settings"
+        class="w-full"
+      ></app-btn-cancel-back>
+      <button class="btn-primary w-full" type="submit">Save</button>
+    </div>
+  </form>
+</div>

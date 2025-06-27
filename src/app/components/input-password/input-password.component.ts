@@ -21,7 +21,6 @@ import {
 export class InputPasswordComponent implements ControlValueAccessor {
   idLabel = input('');
   placeholder = input('');
-  formControlName = input.required<string>();
 
   value: string = '';
   revealed = 'password';

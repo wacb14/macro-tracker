@@ -11,6 +11,12 @@ import { InformationCardComponent } from '../../components/information-card/info
 export class SettingsComponent {
   settings: Field[] = [
     {
+      title: 'Notifications',
+      content: '',
+      placeholder: 'Set your preferred notification settings',
+      href: '/notifications',
+    },
+    {
       title: 'Language and Region',
       content: 'English / US',
       placeholder: 'Set your preferred language and region',
@@ -20,18 +26,6 @@ export class SettingsComponent {
       title: 'Time zone',
       content: 'UTC-5',
       placeholder: 'Choose your preferred time zone',
-      href: '',
-    },
-    {
-      title: 'Notifications',
-      content: '',
-      placeholder: 'Set your preferred notification settings',
-      href: '',
-    },
-    {
-      title: 'Theme',
-      content: 'Light',
-      placeholder: 'Set your preferred theme',
       href: '',
     },
     {

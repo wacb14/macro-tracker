@@ -5,7 +5,6 @@ import {
   forwardRef,
   HostListener,
   input,
-  OnInit,
   ViewChild,
 } from '@angular/core';
 import { ControlValueAccessor, NG_VALUE_ACCESSOR } from '@angular/forms';
@@ -27,7 +26,6 @@ import { v4 as uuidv4 } from 'uuid';
 export class InputSelectComponent implements ControlValueAccessor {
   @ViewChild('selectContainer') selectContainer!: ElementRef;
 
-  formControlName = input.required<string>();
   options = input.required<any[]>();
   optionLabel = input.required<string>();
   idLabel = input(uuidv4());

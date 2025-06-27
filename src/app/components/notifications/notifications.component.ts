@@ -61,7 +61,7 @@ export class NotificationsComponent implements OnInit {
       id: 3,
       type: 'red', // Warning
       icon: 'material-symbols:warning-outline-rounded',
-      title: 'Reached out 137% of your daily fat',
+      title: 'Reached out 137% of your daily fats',
       comment: 'Be careful!',
       time: new Date('2023-05-15T07:30:00'),
       isRead: false,

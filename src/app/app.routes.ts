@@ -8,7 +8,6 @@ import { LoginComponent } from './pages/login/login.component';
 import { LayoutComponent } from './layout/layout.component';
 import { SignUpComponent } from './pages/sign-up/sign-up.component';
 import { UserProfileComponent } from './pages/user-profile/user-profile.component';
-
 import { PreferencesComponent } from './pages/preferences/preferences.component';
 import { SettingsComponent } from './pages/settings/settings.component';
 import { ProfilePictureComponent } from './pages/user-profile/personal-data/profile-picture/profile-picture.component';
@@ -18,6 +17,7 @@ import { PasswordComponent } from './pages/user-profile/security/password/passwo
 import { DeleteAccountComponent } from './pages/user-profile/security/delete-account/delete-account.component';
 import { UserDataComponent } from './pages/preferences/user-data/user-data.component';
 import { FitnessPreferencesComponent } from './pages/preferences/fitness-preferences/fitness-preferences.component';
+import { NotificationsConfigComponent } from './pages/settings/notifications-config/notifications-config.component';
 
 export const routes: Routes = [
   { path: 'login', component: LoginComponent },
@@ -53,6 +53,7 @@ export const routes: Routes = [
       { path: 'user-data', component: UserDataComponent },
       { path: 'fitness-preferences', component: FitnessPreferencesComponent },
       { path: 'settings', component: SettingsComponent },
+      { path: 'notifications', component: NotificationsConfigComponent },
     ],
   },
 ];
