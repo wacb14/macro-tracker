@@ -26,6 +26,7 @@ import { v4 as uuidv4 } from 'uuid';
 export class InputSelectComponent implements ControlValueAccessor {
   @ViewChild('selectContainer') selectContainer!: ElementRef;
 
+  isDisabled: boolean = false;
   options = input.required<any[]>();
   optionLabel = input.required<string>();
   idLabel = input(uuidv4());
@@ -55,9 +56,14 @@ export class InputSelectComponent implements ControlValueAccessor {
   registerOnTouched(fn: any): void {
     this.onTouched = fn;
   }
+  setDisabledState(isDisabled: boolean): void {
+    this.isDisabled = isDisabled;
+  }
   toggleOptions() {
-    this.hidden = !this.hidden;
-    this.focusInput();
+    if (!this.isDisabled) {
+      this.hidden = !this.hidden;
+      this.focusInput();
+    }
   }
   focusInput() {
     const e: HTMLSpanElement | null = document.getElementById(this.idLabel());

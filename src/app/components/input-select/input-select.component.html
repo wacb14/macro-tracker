@@ -7,6 +7,9 @@
       (click)="toggleOptions()"
       tabindex="0"
       role="input"
+      [class.cursor-not-allowed]="isDisabled"
+      [class.opacity-50]="isDisabled"
+      [class.pointer-events-none]="isDisabled"
     >
       @if (value) {
         {{ value[optionLabel()] }}
@@ -20,6 +23,9 @@
       (click)="toggleOptions()"
       class="absolute top-2 right-3 cursor-pointer"
       type="button"
+      [class.cursor-not-allowed]="isDisabled"
+      [class.opacity-50]="isDisabled"
+      [class.pointer-events-none]="isDisabled"
     >
       <i class="iconify text-2xl" data-icon="mingcute:down-fill"></i>
     </button>

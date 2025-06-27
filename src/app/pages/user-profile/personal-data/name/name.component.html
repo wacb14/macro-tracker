@@ -1,9 +1,17 @@
 <div class="flex w-full flex-col items-center">
   <form class="flex w-full max-w-3xl flex-col gap-y-5 pt-4 lg:w-150">
     <app-edit-field title="Name" routeBack="/profile"></app-edit-field>
-    <label class="text-md font-bold text-black dark:text-white"> Name </label>
+    <label
+      class="text-md flex h-fit items-center gap-2 font-bold text-black dark:text-white"
+    >
+      <i class="iconify text-2xl" data-icon="solar:user-linear"></i>
+      Name
+    </label>
     <input type="text" class="input-primary" placeholder="Enter your name" />
-    <label class="text-md font-bold text-black dark:text-white">
+    <label
+      class="text-md flex h-fit items-center gap-2 font-bold text-black dark:text-white"
+    >
+      <i class="iconify text-2xl" data-icon="hugeicons:ai-user"></i>
       Last Name
     </label>
     <input
@@ -12,7 +20,7 @@
       placeholder="Enter your last name"
     />
     <div class="flex flex-row gap-4 pt-4">
-      <app-btn-cancel-back routeBack="/profile" class="w-full"/>
+      <app-btn-cancel-back routeBack="/profile" class="w-full" />
       <button class="btn-primary w-full" type="submit">Save</button>
     </div>
   </form>

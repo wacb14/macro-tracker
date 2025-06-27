@@ -25,12 +25,28 @@ export class NotificationsConfigComponent {
   fb = inject(FormBuilder);
   notificationsForm = this.fb.group({
     hydration: [true, Validators.required],
-    goals: [false, Validators.required],
-    calories: [false, Validators.required],
-    proteins: [false, Validators.required],
-    carbs: [false, Validators.required],
-    fats: [false, Validators.required],
+    goals: [true, Validators.required],
+    calories: [{ value: true, disabled: false }, Validators.required],
+    proteins: [{ value: true, disabled: false }, Validators.required],
+    carbs: [{ value: true, disabled: false }, Validators.required],
+    fats: [{ value: true, disabled: false }, Validators.required],
   });
+  constructor() {
+    this.notificationsForm
+      .get('goals')
+      ?.valueChanges.subscribe((goalsValue: any) => {
+        if (goalsValue) {
+          ['calories', 'proteins', 'carbs', 'fats'].forEach((key) => {
+            this.getFormControl(key)?.enable({ emitEvent: false });
+          });
+        } else {
+          ['calories', 'proteins', 'carbs', 'fats'].forEach((key) => {
+            this.getFormControl(key)?.disable({ emitEvent: false });
+          });
+        }
+      });
+  }
+
   getFormControl(name: string): AbstractControl | null {
     if (name) return this.notificationsForm.get(name);
     return null;

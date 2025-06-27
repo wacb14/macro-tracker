@@ -20,25 +20,25 @@ export class SettingsComponent {
       title: 'Language and Region',
       content: 'English / US',
       placeholder: 'Set your preferred language and region',
-      href: '',
+      href: '/app-settings',
     },
     {
       title: 'Time zone',
       content: 'UTC-5',
       placeholder: 'Choose your preferred time zone',
-      href: '',
+      href: '/app-settings',
     },
     {
       title: 'Units',
       content: 'Kg / cm',
       placeholder: 'Set your preferred units',
-      href: '',
+      href: '/app-settings',
     },
     {
       title: 'Date Format',
       content: 'DD/MM/YYYY',
       placeholder: 'Set your preferred date format',
-      href: '',
+      href: '/app-settings',
     },
   ];
 }

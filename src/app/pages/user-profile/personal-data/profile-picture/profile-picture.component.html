@@ -1,7 +1,16 @@
 <div class="flex w-full flex-col items-center">
-  <app-edit-field title="Profile Picture" routeBack="/profile"></app-edit-field>
+  <app-edit-field
+    title="Profile Picture"
+    routeBack="/profile"
+    class="w-full max-w-5xl"
+  ></app-edit-field>
   <div class="w-full max-w-5xl pt-4">
-    <h2 class="text-md font-bold text-black dark:text-white">Current Avatar</h2>
+    <label
+      class="text-md flex h-fit items-center gap-2 font-bold text-black dark:text-white"
+    >
+      <i class="iconify text-2xl" data-icon="hugeicons:profile"></i>
+      Current Avatar
+    </label>
     <div class="flex justify-center">
       <img
         [src]="`https://materialm-angular-main.netlify.app/assets/images/profile/user-${indexCurrentAvatar + 1}.jpg`"
@@ -14,9 +23,15 @@
     </div>
   </div>
   <div class="w-full max-w-5xl pt-4">
-    <h2 class="text-md font-bold text-black dark:text-white">
+    <label
+      class="text-md flex h-fit items-center gap-2 font-bold text-black dark:text-white"
+    >
+      <i
+        class="iconify text-2xl"
+        data-icon="fluent:select-all-on-16-regular"
+      ></i>
       Select Your Avatar
-    </h2>
+    </label>
   </div>
   <div class="w-full max-w-5xl pt-4">
     <div
@@ -26,7 +41,7 @@
         <img
           [src]="`https://materialm-angular-main.netlify.app/assets/images/profile/user-${$index + 1}.jpg`"
           [alt]="`Avatar option ${$index + 1}`"
-          class="w-full lg:max-w-[10rem] rounded-full shadow-lg hover:ring-4 hover:shadow-green-500 hover:ring-green-500 cursor-pointer"
+          class="w-full cursor-pointer rounded-full shadow-lg hover:ring-4 hover:shadow-green-500 hover:ring-green-500 lg:max-w-[10rem]"
           [ngClass]="
             $index === indexCurrentAvatar
               ? 'ring-4 shadow-green-500 ring-green-500'

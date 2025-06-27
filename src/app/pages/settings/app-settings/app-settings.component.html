@@ -1,1 +1,114 @@
-<p>app-settings works!</p>
+<div class="flex w-full flex-col items-center">
+  <form
+    class="flex w-full max-w-3xl flex-col gap-y-5 pt-4 lg:w-150"
+    (ngSubmit)="sendForm()"
+    [formGroup]="appSettingsForm"
+  >
+    <app-edit-field title="App settings" routeBack="/settings"></app-edit-field>
+
+    <div class="grid grid-cols-1 gap-4 md:grid-cols-2">
+      <div class="flex flex-col gap-4">
+        <label
+          class="text-md flex h-fit items-center gap-2 font-bold text-black dark:text-white"
+        >
+          <i class="iconify text-2xl" data-icon="ion:language"></i>
+          Language
+        </label>
+        <app-input-select
+          placeholder="Select your language"
+          formControlName="language"
+          [options]="languages"
+          optionLabel="name"
+          [showFirst]="true"
+        ></app-input-select>
+      </div>
+      <div class="flex flex-col gap-4">
+        <label
+          class="text-md flex h-fit items-center gap-2 font-bold text-black dark:text-white"
+        >
+          <i class="iconify text-2xl" data-icon="ic:baseline-language"></i>
+          Region
+        </label>
+        <app-input-select
+          placeholder="Select your region"
+          formControlName="region"
+          [options]="regions"
+          optionLabel="name"
+          [showFirst]="true"
+        ></app-input-select>
+      </div>
+    </div>
+    <label
+      class="text-md flex h-fit items-center gap-2 font-bold text-black dark:text-white"
+    >
+      <i class="iconify text-2xl" data-icon="mingcute:time-line"></i>
+      Time Zone
+    </label>
+
+    <app-input-select
+      class="col-span-5"
+      placeholder="Select your Time Zone"
+      formControlName="timeZone"
+      [options]="timeZones"
+      optionLabel="name"
+      [showFirst]="true"
+    ></app-input-select>
+
+    <div class="grid grid-cols-1 gap-4 md:grid-cols-2">
+      <div class="flex flex-col gap-4">
+        <label
+          class="text-md flex h-fit items-center gap-2 font-bold text-black dark:text-white"
+        >
+          <i class="iconify text-2xl" data-icon="lsicon:measure-filled"></i>
+          Weight
+        </label>
+        <app-input-select
+          class="col-span-5"
+          placeholder="Select your weight metric units"
+          formControlName="weight"
+          [options]="weights"
+          optionLabel="name"
+          [showFirst]="true"
+        ></app-input-select>
+      </div>
+      <div class="flex flex-col gap-4">
+        <label
+          class="text-md flex h-fit items-center gap-2 font-bold text-black dark:text-white"
+        >
+          <i class="iconify text-2xl" data-icon="ic:baseline-language"></i>
+          Height
+        </label>
+        <app-input-select
+          placeholder="Select your height metric units"
+          formControlName="height"
+          [options]="heights"
+          optionLabel="name"
+          [showFirst]="true"
+        ></app-input-select>
+      </div>
+    </div>
+
+    <label
+      class="text-md flex h-fit items-center gap-2 font-bold text-black dark:text-white"
+    >
+      <i class="iconify text-2xl" data-icon="uiw:date"></i>
+      Date Format
+    </label>
+    <app-input-select
+      class="col-span-5"
+      placeholder="Select your preferred date format"
+      formControlName="dateFormat"
+      [options]="dateFormats"
+      optionLabel="name"
+      [showFirst]="true"
+    ></app-input-select>
+
+    <div class="flex flex-row gap-4 pt-4">
+      <app-btn-cancel-back
+        routeBack="/settings"
+        class="w-full"
+      ></app-btn-cancel-back>
+      <button class="btn-primary w-full" type="submit">Save</button>
+    </div>
+  </form>
+</div>

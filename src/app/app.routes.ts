@@ -18,6 +18,7 @@ import { DeleteAccountComponent } from './pages/user-profile/security/delete-acc
 import { UserDataComponent } from './pages/preferences/user-data/user-data.component';
 import { FitnessPreferencesComponent } from './pages/preferences/fitness-preferences/fitness-preferences.component';
 import { NotificationsConfigComponent } from './pages/settings/notifications-config/notifications-config.component';
+import { AppSettingsComponent } from './pages/settings/app-settings/app-settings.component';
 
 export const routes: Routes = [
   { path: 'login', component: LoginComponent },
@@ -54,6 +55,7 @@ export const routes: Routes = [
       { path: 'fitness-preferences', component: FitnessPreferencesComponent },
       { path: 'settings', component: SettingsComponent },
       { path: 'notifications', component: NotificationsConfigComponent },
+      { path: 'app-settings', component: AppSettingsComponent },
     ],
   },
 ];
