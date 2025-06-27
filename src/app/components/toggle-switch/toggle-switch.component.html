@@ -1,0 +1,30 @@
+<label
+  class="group relative inline-flex cursor-pointer items-center transition-opacity duration-300"
+  [class.cursor-not-allowed]="disabled()"
+  [class.opacity-50]="disabled()"
+  [class.pointer-events-none]="disabled()"
+  [tabindex]="disabled() ? -1 : 0"
+>
+  <input
+    type="checkbox"
+    class="peer sr-only"
+    [checked]="value"
+    (input)="onInputChange($event)"
+    [disabled]="disabled()"
+    (blur)="onTouched()"
+  />
+
+  <div
+    class="absolute top-1 left-1 h-4 w-4 rounded-full bg-white transition-all duration-300 peer-checked:translate-x-full dark:bg-gray-300"
+    [ngClass]="disabled() ? 'bg-gray-400' : 'bg-white'"
+  ></div>
+
+  <div
+    class="h-6 w-10 rounded-full transition-all duration-300"
+    [ngClass]="
+      disabled()
+        ? 'dark:bg-shark-600 bg-gray-300'
+        : 'dark:bg-shark-500 dark:group-hover:bg-shark-700 bg-gray-200 group-hover:bg-gray-400 peer-checked:bg-green-500 peer-checked:group-hover:bg-green-600 dark:peer-checked:group-hover:bg-green-400'
+    "
+  ></div>
+</label>
