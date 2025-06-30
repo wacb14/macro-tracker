@@ -4,76 +4,59 @@
       Custom food entry
     </h2>
   </div>
-  <form class="mt-6 grid w-full max-w-4xl grid-cols-12">
-    <div class="order-1 col-span-12 flex w-full p-4 md:col-span-3">
+  <form class="mt-6 grid w-full max-w-4xl grid-cols-12" [formGroup]="foodForm" (ngSubmit)="sendForm()">
+    <div class="order-1 col-span-12 flex w-full p-2 md:col-span-3 md:p-4">
       <label for="" class="pb-2 font-semibold">Icon</label>
     </div>
-    <div class="order-2 col-span-12 flex w-full p-4 md:col-span-9">
-      <div class="flex w-full justify-start">
-        <button
-          class="dark:bg-shark-500 group relative flex h-10 w-fit flex-row justify-center rounded-xl bg-gray-200 py-1 ps-3 pe-8 focus:ring-2 focus:ring-green-500 focus:outline-none dark:border-1 dark:border-gray-300 dark:focus:border-none"
-          type="button"
-        >
-          <span
-            class="flex items-center rounded-lg bg-green-100 px-2 py-1 dark:bg-green-200"
-          >
-            <i
-              class="iconify text-xl text-green-500"
-              data-icon="ion:fast-food-sharp"
-            ></i
-          ></span>
-          <i
-            class="iconify absolute top-3 right-2 text-lg group-focus:text-green-500"
-            data-icon="mingcute:down-fill"
-          ></i>
-        </button>
-      </div>
+    <div
+      class="order-2 col-span-12 w-full grid grid-cols-subgrid p-2 md:col-span-9 md:p-4"
+    >
+      <app-input-icon-picker
+        [options]="icons"
+        optionLabel="name"
+        [showFirst]="true"
+        placeholder="Icon"
+        class="col-span-12 w-full lg:col-span-5 lg:pe-4"
+        formControlName="icon"
+      />
     </div>
 
-    <div class="order-3 col-span-12 flex w-full p-4 md:col-span-3">
+    <div class="order-3 col-span-12 flex w-full p-2 md:col-span-3 md:p-4">
       <label for="" class="pb-2 font-semibold">Food Name</label>
     </div>
     <div
-      class="order-4 col-span-12 flex w-full justify-start p-4 md:col-span-9"
+      class="order-4 col-span-12 flex w-full justify-start p-2 md:col-span-9 md:p-4"
     >
       <input
         type="text"
-        class="dark:bg-shark-500 h-10 w-full rounded-xl bg-gray-200 px-5 focus:ring-2 focus:ring-green-500 focus:outline-none dark:border-1 dark:border-gray-300 dark:focus:border-none"
+        class="input-primary"
         placeholder="Red apple / Organic beans / Lactose-free milk"
       />
     </div>
 
-    <div class="order-5 col-span-12 flex w-full p-4 md:col-span-3">
+    <div class="order-5 col-span-12 flex w-full p-2 md:col-span-3 md:p-4">
       <label for="" class="pb-2 font-semibold">Serving Size</label>
     </div>
     <div
-      class="order-6 col-span-12 flex w-full justify-start p-4 md:col-span-9"
+      class="order-6 col-span-12 flex w-full justify-start p-2 md:col-span-9 md:p-4"
     >
-      <input
-        type="text"
-        class="dark:bg-shark-500 h-10 w-50 rounded-xl bg-gray-200 px-5 focus:ring-2 focus:ring-green-500 focus:outline-none dark:border-1 dark:border-gray-300 dark:focus:border-none"
-        placeholder="100g"
-      />
+      <input type="text" class="input-primary" placeholder="100g" />
     </div>
 
-    <div class="order-7 col-span-12 flex w-full p-4 md:col-span-3">
+    <div class="order-7 col-span-12 flex w-full p-2 md:col-span-3 md:p-4">
       <label for="" class="pb-2 font-semibold">Protein</label>
     </div>
     <div
-      class="order-8 col-span-12 flex w-full justify-start p-4 md:col-span-5"
+      class="order-8 col-span-12 flex w-full justify-start p-2 md:col-span-5 md:p-4"
     >
-      <input
-        type="text"
-        class="dark:bg-shark-500 h-10 w-50 rounded-xl bg-gray-200 px-5 focus:ring-2 focus:ring-green-500 focus:outline-none dark:border-1 dark:border-gray-300 dark:focus:border-none"
-        placeholder="0"
-      />
+      <input type="text" class="input-primary" placeholder="0" />
     </div>
 
     <div
-      class="order-13 col-span-12 w-full flex justify-center md:order-9 md:col-span-4 md:row-span-2"
+      class="order-13 col-span-12 flex w-full items-center justify-center p-2 md:order-9 md:col-span-4 md:row-span-3 md:p-4"
     >
       <div
-        class="flex w-40 flex-col justify-center rounded-xl bg-green-100 p-2 dark:bg-green-300"
+        class="flex h-40 w-40 flex-col justify-center rounded-xl bg-green-100 p-2 dark:bg-green-300"
       >
         <span
           class="w-full text-center font-semibold text-blue-600 dark:text-blue-700"
@@ -90,30 +73,30 @@
       </div>
     </div>
 
-    <div class="order-9 col-span-12 flex w-full p-4 md:order-10 md:col-span-3">
+    <div
+      class="order-9 col-span-12 flex w-full p-2 md:order-10 md:col-span-3 md:p-4"
+    >
       <label for="" class="pb-2 font-semibold">Carbs</label>
     </div>
     <div
-      class="order-10 col-span-12 flex w-full justify-start p-4 md:order-11 md:col-span-5"
+      class="order-10 col-span-12 flex w-full justify-start p-2 md:order-11 md:col-span-5 md:p-4"
     >
-      <input
-        type="text"
-        class="dark:bg-shark-500 h-10 w-50 rounded-xl bg-gray-200 px-5 focus:ring-2 focus:ring-green-500 focus:outline-none dark:border-1 dark:border-gray-300 dark:focus:border-none"
-        placeholder="0"
-      />
+      <input type="text" class="input-primary" placeholder="0" />
     </div>
 
-    <div class="order-11 col-span-12 flex w-full p-4 md:order-12 md:col-span-3">
+    <div
+      class="order-11 col-span-12 flex w-full p-2 md:order-12 md:col-span-3 md:p-4"
+    >
       <label for="" class="pb-2 font-semibold">Fats</label>
     </div>
-    <div class="order-12 col-span-12 flex w-full p-4 md:order-13 md:col-span-9">
-      <input
-        type="text"
-        class="dark:bg-shark-500 h-10 w-50 rounded-xl bg-gray-200 px-5 focus:ring-2 focus:ring-green-500 focus:outline-none dark:border-1 dark:border-gray-300 dark:focus:border-none"
-        placeholder="0"
-      />
+    <div
+      class="order-12 col-span-12 flex w-full p-2 md:order-13 md:col-span-5 md:p-4"
+    >
+      <input type="text" class="input-primary" placeholder="0" />
     </div>
-    <div class="order-14 col-span-12 flex w-full flex-row justify-evenly p-4">
+    <div
+      class="order-14 col-span-12 flex w-full flex-row justify-evenly gap-4 pt-4"
+    >
       <button
         class="w-75 cursor-pointer rounded-xl bg-green-100 px-4 py-2 font-semibold text-green-500 hover:bg-green-200 dark:bg-green-200 dark:text-green-600 dark:hover:bg-green-300"
         type="button"

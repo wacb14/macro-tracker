@@ -1,0 +1,68 @@
+<div class="relative flex flex-row items-center" #selectContainer>
+  <div
+    type="text"
+    class="dark:bg-shark-500 flex h-10 cursor-pointer items-center rounded-md bg-gray-200 p-1 focus:ring-2 focus:ring-green-500 focus:outline-none dark:ring dark:ring-gray-300"
+    [id]="idLabel()"
+    (click)="toggleOptions()"
+    tabindex="0"
+    role="input"
+    [class.cursor-not-allowed]="isDisabled"
+    [class.opacity-50]="isDisabled"
+    [class.pointer-events-none]="isDisabled"
+  >
+    @if (value) {
+      @for (option of options(); track "o" + $index) {
+        @if (option[optionLabel()] === value[optionLabel()]) {
+          <span
+            class="flex h-10 w-10 items-center rounded-md px-2 py-1 text-stone-700 dark:text-white"
+          >
+            <i
+              class="iconify text-2xl"
+              [attr.data-icon]="option[optionLabel()]"
+            ></i>
+          </span>
+        }
+      }
+    } @else {
+      <b class="p-2 font-normal text-[#727375] dark:text-[#a9a9a9]">{{
+        placeholder()
+      }}</b>
+    }
+    <button
+      class="h-10 cursor-pointer"
+      type="button"
+      [class.cursor-not-allowed]="isDisabled"
+      [class.opacity-50]="isDisabled"
+      [class.pointer-events-none]="isDisabled"
+    >
+      <i class="iconify text-2xl" data-icon="mingcute:down-fill"></i>
+    </button>
+  </div>
+
+  @if (!hidden) {
+    <div
+      class="dark:bg-shark-500 absolute top-11 left-0 z-10 w-full rounded-md bg-gray-200 shadow-lg ring ring-gray-300"
+    >
+      <ul class="grid max-h-50 grid-cols-8 gap-1 overflow-y-auto p-1">
+        @for (option of options(); track $index) {
+          <li class="flex w-full justify-center" (click)="chooseOption($index)">
+            <span
+              class="w-fit cursor-pointer rounded-md p-2"
+              [ngClass]="
+                $index == selectedIndex
+                  ? 'bg-green-200 text-green-600 hover:bg-green-300 dark:bg-green-600 dark:text-white dark:hover:bg-green-500'
+                  : 'dark:hover:bg-shark-400 text-stone-700 hover:bg-gray-300 dark:text-white'
+              "
+            >
+              <i
+                class="iconify text-2xl"
+                [attr.data-icon]="option[optionLabel()]"
+              >
+              </i>
+            </span>
+          </li>
+        }
+      </ul>
+    </div>
+  }
+</div>
