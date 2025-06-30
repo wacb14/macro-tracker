@@ -10,7 +10,7 @@
         Selected Food
       </h2>
       <button
-        class="cursor-pointer rounded-xl bg-green-500 px-4 py-2 text-white hover:bg-green-600 dark:bg-green-600"
+        class="btn-primary"
       >
         Confirm Entry
       </button>
@@ -24,9 +24,11 @@
             class="dark:bg-shark-500 dark:border-shark-500 grid grid-cols-12 rounded-xl border-1 border-gray-300 bg-white px-4 shadow-md"
           >
             <div class="col-span-2 flex w-full items-center justify-center p-4">
-              <span class="rounded-lg bg-green-100 p-4 dark:bg-green-200">
+              <span
+                class="rounded-lg bg-green-100 p-4 text-green-500 dark:bg-green-200"
+              >
                 <i
-                  class="iconify text-xl text-green-500"
+                  class="iconify text-2xl"
                   [attr.data-icon]="selected.icon"
                 ></i>
               </span>
@@ -37,18 +39,14 @@
               {{ selected.name }}
             </div>
             <div class="col-span-4 flex w-full items-center justify-start p-4">
-              <input
-                type="text"
-                placeholder="100g"
-                class="h-3/4 w-full rounded-xl border-1 border-gray-300 px-5 focus:border-none focus:ring-2 focus:ring-green-500 focus:outline-none"
-              />
+              <input type="text" placeholder="100g" class="input-primary" />
             </div>
             <div class="col-span-1 flex w-full items-center justify-start p-4">
               <span
                 class="rounded-full p-2 hover:cursor-pointer hover:bg-green-100 dark:hover:bg-green-600 dark:hover:text-white"
               >
                 <i
-                  class="iconify text-xl"
+                  class="iconify text-2xl"
                   data-icon="material-symbols:delete-outline"
                 ></i>
               </span>
@@ -115,13 +113,13 @@
                 <span
                   class="rounded-full p-2 hover:cursor-pointer hover:bg-green-100 dark:hover:bg-green-600 dark:hover:text-white"
                 >
-                  <i class="iconify text-xl" data-icon="mdi:heart-outline"></i>
+                  <i class="iconify text-2xl" data-icon="mdi:heart-outline"></i>
                 </span>
                 <span
                   class="rounded-full p-2 hover:cursor-pointer hover:bg-green-100 dark:hover:bg-green-600 dark:hover:text-white"
                 >
                   <i
-                    class="iconify text-xl"
+                    class="iconify text-2xl"
                     data-icon="material-symbols:add-rounded"
                   ></i>
                 </span>
@@ -146,13 +144,13 @@
                 <span
                   class="rounded-full p-2 hover:cursor-pointer hover:bg-green-100 dark:hover:bg-green-600 dark:hover:text-white"
                 >
-                  <i class="iconify text-xl" data-icon="mdi:heart-outline"></i>
+                  <i class="iconify text-2xl" data-icon="mdi:heart-outline"></i>
                 </span>
                 <span
                   class="rounded-full p-2 hover:cursor-pointer hover:bg-green-100 dark:hover:bg-green-600 dark:hover:text-white"
                 >
                   <i
-                    class="iconify text-xl"
+                    class="iconify text-2xl"
                     data-icon="material-symbols:add-rounded"
                   ></i>
                 </span>
@@ -177,13 +175,13 @@
                 <span
                   class="rounded-full p-2 hover:cursor-pointer hover:bg-green-100 dark:hover:bg-green-600 dark:hover:text-white"
                 >
-                  <i class="iconify text-xl" data-icon="mdi:heart-outline"></i>
+                  <i class="iconify text-2xl" data-icon="mdi:heart-outline"></i>
                 </span>
                 <span
                   class="rounded-full p-2 hover:cursor-pointer hover:bg-green-100 dark:hover:bg-green-600 dark:hover:text-white"
                 >
                   <i
-                    class="iconify text-xl"
+                    class="iconify text-2xl"
                     data-icon="material-symbols:add-rounded"
                   ></i>
                 </span>

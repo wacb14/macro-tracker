@@ -2,10 +2,11 @@ import { Component } from '@angular/core';
 import { RadialProgressBarComponent } from '../../components/radial-progress-bar/radial-progress-bar.component';
 import { SearchBarComponent } from '../../components/search-bar/search-bar.component';
 import { Food } from '../../models';
+import { DatePipe } from '@angular/common';
 
 @Component({
   selector: 'app-main-dashboard',
-  imports: [RadialProgressBarComponent, SearchBarComponent],
+  imports: [RadialProgressBarComponent, SearchBarComponent, DatePipe],
   templateUrl: './main-dashboard.component.html',
   styleUrl: './main-dashboard.component.css',
 })

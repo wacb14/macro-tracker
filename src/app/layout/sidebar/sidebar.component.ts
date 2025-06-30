@@ -2,6 +2,7 @@ import { NgClass } from '@angular/common';
 import { Component, inject, Input, OnInit, signal } from '@angular/core';
 import { NavigationEnd, Router, RouterLink } from '@angular/router';
 import { filter } from 'rxjs';
+import { ThemeService } from '../../services/theme.service';
 interface item {
   icon: string;
   subtitle: string;
@@ -20,6 +21,7 @@ interface section {
 })
 export class SidebarComponent implements OnInit {
   private router = inject(Router);
+  private themeService = inject(ThemeService);
 
   currentPath = '';
   @Input({ required: true }) isMobile = false;
@@ -93,5 +95,8 @@ export class SidebarComponent implements OnInit {
     if (this.isMobile) {
       this.isHidden.set(true);
     }
+  }
+  getTheme(){
+    return this.themeService.getTheme();
   }
 }

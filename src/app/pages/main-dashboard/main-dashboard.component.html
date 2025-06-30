@@ -104,41 +104,66 @@
       [placeholderMessage]="'Search entries...'"
     ></app-search-bar>
     <button
-      class="cursor-pointer rounded-xl bg-green-500 px-4 py-2 text-white hover:bg-green-600 dark:bg-green-600"
+      class="btn-primary"
     >
       New Entry
     </button>
   </div>
-  <div class="mt-6 flex h-78 w-full max-w-7xl flex-col overflow-y-auto">
-    @for (recentEntry of recentEntries; track recentEntry.id) {
-      <div class="grid grid-cols-12 border-b border-gray-200 dark:border-gray-600">
-        <div class="col-span-3 flex w-full items-center p-4">
-          <i class="iconify text-xl" [attr.data-icon]="recentEntry.icon"></i>
-          <span class="ml-2">{{ recentEntry.name }}</span>
+  <div class="mt-6 h-80 w-full max-w-7xl overflow-x-auto overflow-y-auto">
+    <div class="flex w-full flex-col">
+      @for (recentEntry of recentEntries; track recentEntry.id) {
+        <div
+          class="w-full grid grid-cols-12 border-b border-gray-200 dark:border-gray-600"
+        >
+          <div class="col-span-4 flex w-full items-center gap-1 p-2 flex-wrap sm:flex-nowrap">
+            <div class="flex w-full sm:w-1/3 justify-center px-4">
+              <span
+                class="rounded-lg bg-green-100 p-4 text-green-500 dark:bg-green-200"
+              >
+                <i
+                  class="iconify text-2xl"
+                  [attr.data-icon]="recentEntry.icon"
+                ></i>
+              </span>
+            </div>
+            <span class="w-full text-center">{{ recentEntry.name }}</span>
+          </div>
+          <div
+            class="col-span-6 flex w-full items-center justify-evenly gap-4 p-2 flex-wrap sm:flex-nowrap"
+          >
+            <span class="w-full text-center"
+              >Protein: {{ recentEntry.protein }}g</span
+            >
+            <span class="w-full text-center"
+              >Carbs: {{ recentEntry.carbs }}g</span
+            >
+            <span class="w-full text-center"
+              >Fats: {{ recentEntry.fats }}g</span
+            >
+            <span class="w-full text-center">
+              {{ recentEntry.creation | date: "shortTime" }}
+            </span>
+          </div>
+          <div
+            class="col-span-2 flex w-full items-center justify-center gap-1 p-2 flex-wrap sm:flex-nowrap"
+          >
+            <span
+              class="rounded-full p-2 hover:cursor-pointer hover:bg-green-100 dark:hover:bg-green-600 dark:hover:text-white"
+              ><i
+                class="iconify text-2xl"
+                data-icon="material-symbols:edit-outline"
+              ></i
+            ></span>
+            <span
+              class="rounded-full p-2 hover:cursor-pointer hover:bg-green-100 dark:hover:bg-green-600 dark:hover:text-white"
+              ><i
+                class="iconify text-2xl"
+                data-icon="material-symbols:delete-outline"
+              ></i
+            ></span>
+          </div>
         </div>
-        <div class="col-span-2 w-full p-4">
-          Protein: {{ recentEntry.protein }}g
-        </div>
-        <div class="col-span-2 w-full p-4">Carbs: {{ recentEntry.carbs }}g</div>
-        <div class="col-span-2 w-full p-4">Fats: {{ recentEntry.fats }}g</div>
-        <div class="col-span-2 w-full p-4">
-          {{
-            recentEntry.creation
-              ? recentEntry.creation.toLocaleTimeString()
-              : ""
-          }}
-        </div>
-        <div class="col-span-1 flex w-full justify-evenly p-4">
-          <i
-            class="iconify text-xl"
-            data-icon="material-symbols:edit-outline"
-          ></i>
-          <i
-            class="iconify text-xl"
-            data-icon="material-symbols:delete-outline"
-          ></i>
-        </div>
-      </div>
-    }
+      }
+    </div>
   </div>
 </div>

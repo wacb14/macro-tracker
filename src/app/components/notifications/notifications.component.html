@@ -3,7 +3,7 @@
     class="btn-icon"
     (click)="openMenu()"
   >
-    <i class="iconify text-xl" data-icon="solar:bell-line-duotone"></i>
+    <i class="iconify text-2xl" data-icon="solar:bell-line-duotone"></i>
   </button>
   <span
     class="absolute -top-1 -right-1 rounded-full bg-red-500 px-1 text-xs font-bold text-white"
@@ -42,7 +42,7 @@
             class="flex h-10 w-10 items-center justify-center rounded-full"
             [ngClass]="notificationClassMap[notification.type]"
           >
-            <i class="iconify text-xl" [attr.data-icon]="notification.icon"></i>
+            <i class="iconify text-2xl" [attr.data-icon]="notification.icon"></i>
           </div>
           <div class="flex-1 text-wrap">
             <p class="font-md select-none">{{ notification.title }}</p>

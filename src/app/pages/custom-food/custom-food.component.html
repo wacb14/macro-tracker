@@ -4,12 +4,16 @@
       Custom food entry
     </h2>
   </div>
-  <form class="mt-6 grid w-full max-w-4xl grid-cols-12" [formGroup]="foodForm" (ngSubmit)="sendForm()">
+  <form
+    class="mt-6 grid w-full max-w-4xl grid-cols-12"
+    [formGroup]="foodForm"
+    (ngSubmit)="sendForm()"
+  >
     <div class="order-1 col-span-12 flex w-full p-2 md:col-span-3 md:p-4">
       <label for="" class="pb-2 font-semibold">Icon</label>
     </div>
     <div
-      class="order-2 col-span-12 w-full grid grid-cols-subgrid p-2 md:col-span-9 md:p-4"
+      class="order-2 col-span-12 grid w-full grid-cols-subgrid p-2 md:col-span-9 md:p-4"
     >
       <app-input-icon-picker
         [options]="icons"
@@ -97,18 +101,8 @@
     <div
       class="order-14 col-span-12 flex w-full flex-row justify-evenly gap-4 pt-4"
     >
-      <button
-        class="w-75 cursor-pointer rounded-xl bg-green-100 px-4 py-2 font-semibold text-green-500 hover:bg-green-200 dark:bg-green-200 dark:text-green-600 dark:hover:bg-green-300"
-        type="button"
-      >
-        Cancel
-      </button>
-      <button
-        class="w-75 cursor-pointer rounded-xl bg-green-500 px-4 py-2 font-semibold text-white hover:bg-green-600 dark:bg-green-600"
-        type="submit"
-      >
-        Add Food
-      </button>
+      <button class="btn-secondary w-75" type="button">Cancel</button>
+      <button class="btn-primary w-75" type="submit">Add Food</button>
     </div>
   </form>
 </div>

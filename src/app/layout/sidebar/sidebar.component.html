@@ -10,20 +10,27 @@
   class="dark:bg-shark-500 fixed top-0 left-0 z-40 flex h-full flex-col bg-white font-sans text-gray-700 transition-all duration-300 md:translate-x-0 dark:text-stone-300"
   [ngClass]="!isHidden() ? 'w-64 translate-x-0' : 'w-18 -translate-x-full'"
 >
-  <div class="flex items-center px-4 py-5">
-    <div class="flex h-12 w-12 flex-shrink-0 items-center justify-center">
-      <img
-        src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQrx-RYbYFdnT_PM5vQTBp7a65iVmRmPG1acA&s"
-        alt="Logo"
-        class="h-10 w-10 object-contain"
-      />
+  <div class="flex flex-row items-center justify-center gap-2 px-4 pt-7 pb-3">
+    <div class="flex h-13 w-13 items-center justify-end">
+      @if (getTheme() === "light") {
+        <img src="logo.png" alt="Logo" class="h-full object-contain" />
+      } @else {
+        <img src="logo_dark.png" alt="Logo" class="h-full object-contain" />
+      }
     </div>
     @if (!isHidden()) {
-      <h1
-        class="ml-2 text-xl font-bold whitespace-nowrap text-gray-800 dark:text-stone-300"
-      >
-        Macro Tracker
-      </h1>
+      <div class="flex flex-col items-start">
+        <h1
+          class="w-full text-center text-xl font-bold whitespace-nowrap text-[#002d3a] dark:text-stone-300"
+        >
+          MACRO
+        </h1>
+        <h2
+          class="w-full text-center text-xs font-bold whitespace-nowrap text-[#002d3a] dark:text-stone-300"
+        >
+          TRACKER
+        </h2>
+      </div>
     }
   </div>
   <div class="flex-1 px-4 py-4">
@@ -47,7 +54,7 @@
                 [routerLink]="item.route"
                 (click)="closeMenu()"
               >
-                <i class="iconify text-xl" [attr.data-icon]="item.icon"></i>
+                <i class="iconify text-2xl" [attr.data-icon]="item.icon"></i>
                 @if (!isHidden()) {
                   <span class="ml-2">{{ item.subtitle }}</span>
                 }

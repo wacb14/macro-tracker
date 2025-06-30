@@ -1,19 +1,29 @@
-<div class="flex h-screen items-center justify-center text-gray-700">
+<div
+  class="dark:bg-shark-500 flex h-full min-h-screen items-center justify-center p-4 text-gray-700 dark:text-stone-300"
+>
   <div
-    class="flex w-100 max-w-5xl flex-col gap-y-5 rounded-2xl bg-slate-50 p-6"
+    class="dark:bg-bunker-500 flex w-100 max-w-5xl flex-col gap-y-5 rounded-2xl bg-slate-50 p-6 dark:text-stone-300"
   >
-    <img
-      src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQrx-RYbYFdnT_PM5vQTBp7a65iVmRmPG1acA&s"
-      alt="Logo"
-      class="h-20 w-20 self-center object-contain"
-    />
-    <h1 class="self-start text-2xl font-bold text-black">Login</h1>
+    @if (getTheme() === "light") {
+      <img
+        src="logo_2.png"
+        alt="Logo"
+        class="h-25 w-25 self-center object-contain"
+      />
+    } @else {
+      <img
+        src="logo_2_dark.png"
+        alt="Logo"
+        class="h-25 w-25 self-center object-contain"
+      />
+    }
+    <h1 class="self-start text-2xl font-bold">Login</h1>
     <form action="" class="flex w-full max-w-7xl flex-col gap-y-5">
       <div class="flex w-full flex-col">
         <label for="" class="pb-2 font-semibold">Email</label>
         <input
           type="text"
-          class="h-10 w-full rounded-xl bg-gray-200 px-5 focus:ring-2 focus:ring-green-500 focus:outline-none"
+          class="input-primary"
           placeholder="Enter you email"
         />
       </div>
@@ -21,7 +31,7 @@
         <label for="" class="pb-2 font-semibold">Password</label>
         <input
           type="text"
-          class="h-10 w-full rounded-xl bg-gray-200 px-5 focus:ring-2 focus:ring-green-500 focus:outline-none"
+          class="input-primary"
           placeholder="Enter your password"
         />
       </div>
@@ -31,23 +41,18 @@
       >
         Forgot your password?
       </a>
-      <button
-        class="cursor-pointer rounded-xl bg-green-500 px-4 py-2 font-semibold text-white hover:bg-green-600"
-        type="submit"
-      >
-        Login
-      </button>
+      <button class="btn-primary" type="submit">Login</button>
     </form>
     <p class="self-center">Or continue with</p>
     <div class="grid w-full grid-cols-2 gap-3">
       <button
-        class="cursor-pointer rounded-xl bg-green-100 px-4 py-2 font-semibold text-green-500 hover:bg-green-200"
+        class="btn-secondary"
         type="button"
       >
         Google
       </button>
       <button
-        class="cursor-pointer rounded-xl bg-green-100 px-4 py-2 font-semibold text-green-500 hover:bg-green-200"
+        class="btn-secondary"
         type="button"
       >
         Apple
