@@ -4,7 +4,7 @@
     class="transition-all duration-300"
     [ngClass]="{
       'w-18': !isMobile && isHiddenMenu(),
-      'w-64': !isHiddenMenu() && !isMobile,
+      'w-64 md:w-55 lg:w-64': !isHiddenMenu() && !isMobile,
     }"
   >
     <nav class="flex h-full flex-col items-center">
@@ -20,7 +20,7 @@
     <header class="sticky top-0 z-10">
       <app-header [isHiddenMenu]="isHiddenMenu"></app-header>
     </header>
-    <main class="p-6">
+    <main class="p-4 md:p-6">
       <router-outlet></router-outlet>
     </main>
   </div>

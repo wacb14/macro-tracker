@@ -4,11 +4,13 @@
       Body Mass Index (BMI)
     </h2>
   </div>
-  <div class="mt-5 w-full max-w-4xl p-4">
+  <div class="mt-5 w-full max-w-4xl sm:p-4">
     <div
-      class="grid max-w-4xl grid-cols-12 items-center gap-2 rounded-xl bg-green-50 p-6 shadow-md dark:bg-green-600"
+      class="grid max-w-4xl grid-cols-12 items-center gap-2 rounded-xl bg-green-50 px-4 py-6 shadow-md sm:p-6 dark:bg-green-600"
     >
-      <div class="col-span-12 flex flex-col items-center md:col-span-4">
+      <div
+        class="col-span-12 flex flex-col items-center md:col-span-5 lg:col-span-4"
+      >
         <span class="rounded-lg bg-green-100 p-3 dark:bg-green-200">
           <i
             class="iconify text-3xl text-green-500"
@@ -18,35 +20,33 @@
         <h3 class="mt-2 text-lg font-bold text-black dark:text-white">
           Current BMI: 23.7
         </h3>
-        <h4 class="text-md font-semibold text-black dark:text-white">
+        <h4 class="sm:text-md text-sm font-semibold text-black dark:text-white">
           Status: Balanced
         </h4>
-        <h5
-          class="text-md max-w-md font-semibold text-gray-500 dark:text-stone-100"
-        >
+        <h5 class="text-md font-semibold text-gray-500 dark:text-stone-100">
           Current Weight: 61.00kg
         </h5>
-        <h5
-          class="text-md max-w-md font-semibold text-gray-500 dark:text-stone-100"
-        >
+        <h5 class="text-md font-semibold text-gray-500 dark:text-stone-100">
           Ideal Weight: 62.30kg
         </h5>
       </div>
-      <div class="col-span-12 flex flex-col items-center md:col-span-8">
-        <div class="max-w-md">
+      <div
+        class="col-span-12 flex flex-col items-center md:col-span-7 lg:col-span-8"
+      >
+        <div class="w-full max-w-md">
           <div class="mt-4 grid w-full grid-cols-12 rounded-full text-center">
             <div
-              class="text-md col-span-2 col-start-3 text-gray-500 dark:text-white"
+              class="sm:text-md col-span-2 col-start-3 text-sm text-gray-500 dark:text-white"
             >
               52.80
             </div>
             <div
-              class="text-md col-span-2 col-start-6 text-gray-500 dark:text-white"
+              class="sm:text-md col-span-2 col-start-6 text-sm text-gray-500 dark:text-white"
             >
               71.40
             </div>
             <div
-              class="text-md col-span-2 col-start-9 text-gray-500 dark:text-white"
+              class="sm:text-md col-span-2 col-start-9 text-sm text-gray-500 dark:text-white"
             >
               85.70
             </div>
@@ -55,7 +55,7 @@
             class="relative grid h-4 w-full grid-cols-4 items-center rounded-full"
           >
             <div
-              class="absolute top-0 left-25 h-4 w-4 rounded-full border-2 border-green-500 bg-white"
+              class="absolute top-0 left-40 h-4 w-4 rounded-full border-2 border-green-500 bg-white"
             ></div>
             <div class="h-2 rounded-l-full bg-blue-500"></div>
             <div class="h-2 bg-green-500"></div>
@@ -63,10 +63,26 @@
             <div class="h-2 rounded-r-full bg-red-500"></div>
           </div>
           <div class="grid w-full grid-cols-4 rounded-full text-center">
-            <div class="text-md text-gray-500 dark:text-white">Underweight</div>
-            <div class="text-md text-gray-500 dark:text-white">Balanced</div>
-            <div class="text-md text-gray-500 dark:text-white">Overweight</div>
-            <div class="text-md text-gray-500 dark:text-white">Obese</div>
+            <div
+              class="sm:text-md truncate text-sm text-gray-500 dark:text-white"
+            >
+              Underweight
+            </div>
+            <div
+              class="sm:text-md truncate text-sm text-gray-500 dark:text-white"
+            >
+              Balanced
+            </div>
+            <div
+              class="sm:text-md truncate text-sm text-gray-500 dark:text-white"
+            >
+              Overweight
+            </div>
+            <div
+              class="sm:text-md truncate text-sm text-gray-500 dark:text-white"
+            >
+              Obese
+            </div>
           </div>
         </div>
       </div>

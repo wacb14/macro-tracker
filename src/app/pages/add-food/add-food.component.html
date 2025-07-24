@@ -5,15 +5,11 @@
     </h2>
   </div>
   <div class="w-full max-w-7xl pt-6">
-    <div class="flex w-full max-w-7xl justify-between pt-6">
+    <div class="flex w-full max-w-7xl justify-between pt-6 pb-2">
       <h2 class="self-start text-lg font-bold text-black dark:text-white">
         Selected Food
       </h2>
-      <button
-        class="btn-primary"
-      >
-        Confirm Entry
-      </button>
+      <button class="btn-primary">Confirm Entry</button>
     </div>
     <div class="max-h-55 w-full max-w-7xl overflow-y-auto py-4 md:p-4">
       <div
@@ -21,11 +17,13 @@
       >
         @for (selected of selectedFood; track selected.id) {
           <div
-            class="dark:bg-shark-500 dark:border-shark-500 grid grid-cols-12 rounded-xl border-1 border-gray-300 bg-white px-4 shadow-md"
+            class="dark:bg-shark-500 dark:border-shark-500 grid grid-cols-12 rounded-xl border-1 border-gray-300 bg-white px-2 shadow-md sm:px-4"
           >
-            <div class="col-span-2 flex w-full items-center justify-center p-4">
+            <div
+              class="col-span-2 flex w-full items-center justify-center p-2 sm:p-4"
+            >
               <span
-                class="rounded-lg bg-green-100 p-4 text-green-500 dark:bg-green-200"
+                class="rounded-lg bg-green-100 p-3 text-green-500 sm:p-4 dark:bg-green-200"
               >
                 <i
                   class="iconify text-2xl"
@@ -34,22 +32,30 @@
               </span>
             </div>
             <div
-              class="over col-span-4 flex w-full items-center p-4 text-start font-semibold"
+              class="over col-span-4 flex w-full items-center p-2 text-start font-semibold sm:p-4"
             >
               {{ selected.name }}
             </div>
-            <div class="col-span-4 flex w-full items-center justify-start p-4">
-              <input type="text" placeholder="100g" class="input-primary" />
+            <div
+              class="col-span-4 flex w-full items-center justify-start p-2 sm:p-4"
+            >
+              <input
+                type="text"
+                placeholder="100g"
+                class="input-primary p-2 sm:p-4"
+              />
             </div>
-            <div class="col-span-1 flex w-full items-center justify-start p-4">
-              <span
+            <div
+              class="col-span-2 flex w-full items-center justify-start p-2 sm:p-4"
+            >
+              <button
                 class="rounded-full p-2 hover:cursor-pointer hover:bg-green-100 dark:hover:bg-green-600 dark:hover:text-white"
               >
                 <i
                   class="iconify text-2xl"
                   data-icon="material-symbols:delete-outline"
                 ></i>
-              </span>
+              </button>
             </div>
           </div>
         } @empty {
@@ -60,9 +66,7 @@
       </div>
     </div>
   </div>
-  <div
-    class="flex w-full max-w-7xl flex-wrap justify-center gap-3 pt-6 sm:flex-nowrap sm:justify-between"
-  >
+  <div class="flex w-full max-w-7xl justify-center gap-3 pt-6">
     <app-search-bar
       class="h-10 w-75 sm:w-90"
       [placeholderMessage]="'Type food name...'"
@@ -97,7 +101,7 @@
         }"
       >
         <div
-          class="flex max-h-75 w-full max-w-7xl flex-shrink-0 flex-col overflow-y-auto p-4"
+          class="flex max-h-75 w-full max-w-7xl flex-shrink-0 flex-col overflow-y-auto p-2 sm:p-4"
         >
           @for (favorite of favorites; track favorite.id) {
             <div
@@ -108,7 +112,7 @@
                 class="col-span-10 grid w-full grid-cols-subgrid"
               />
               <div
-                class="col-span-2 flex w-full items-center justify-center p-4"
+                class="col-span-2 flex w-full flex-col items-center justify-center p-2 sm:flex-row sm:p-4"
               >
                 <span
                   class="rounded-full p-2 hover:cursor-pointer hover:bg-green-100 dark:hover:bg-green-600 dark:hover:text-white"
@@ -128,7 +132,7 @@
           }
         </div>
         <div
-          class="flex max-h-75 w-full max-w-7xl flex-shrink-0 flex-col overflow-y-auto p-4"
+          class="flex max-h-75 w-full max-w-7xl flex-shrink-0 flex-col overflow-y-auto p-2 sm:p-4"
         >
           @for (popular of popularFood; track popular.id) {
             <div
@@ -139,7 +143,7 @@
                 class="col-span-10 grid w-full grid-cols-subgrid"
               />
               <div
-                class="col-span-2 flex w-full items-center justify-center p-4"
+                class="col-span-2 flex w-full flex-col items-center justify-center p-2 sm:flex-row sm:p-4"
               >
                 <span
                   class="rounded-full p-2 hover:cursor-pointer hover:bg-green-100 dark:hover:bg-green-600 dark:hover:text-white"
@@ -159,7 +163,7 @@
           }
         </div>
         <div
-          class="flex max-h-75 w-full max-w-7xl flex-shrink-0 flex-col overflow-y-auto p-4"
+          class="flex max-h-75 w-full max-w-7xl flex-shrink-0 flex-col overflow-y-auto p-2 sm:p-4"
         >
           @for (food of myFood; track food.id) {
             <div
@@ -170,7 +174,7 @@
                 class="col-span-10 grid w-full grid-cols-subgrid"
               />
               <div
-                class="col-span-2 flex w-full items-center justify-center p-4"
+                class="col-span-2 flex w-full flex-col items-center justify-center p-2 sm:flex-row sm:p-4"
               >
                 <span
                   class="rounded-full p-2 hover:cursor-pointer hover:bg-green-100 dark:hover:bg-green-600 dark:hover:text-white"

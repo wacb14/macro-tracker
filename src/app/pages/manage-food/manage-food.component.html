@@ -6,17 +6,21 @@
   </div>
 
   <div
-    class="flex w-full max-w-7xl flex-wrap justify-center gap-3 pt-6 sm:flex-nowrap sm:justify-between"
+    class="flex w-full max-w-7xl flex-col justify-center gap-3 pt-6 sm:flex-row sm:justify-between"
   >
-    <app-search-bar
+    <div class="flex justify-center">
+      <app-search-bar
       class="h-10 w-75 sm:w-90"
       [placeholderMessage]="'Filter my food...'"
     ></app-search-bar>
-    <button
+    </div>
+    <div class="flex justify-center">
+      <button
       class="cursor-pointer rounded-xl bg-green-500 px-4 py-2 text-white hover:bg-green-600 dark:bg-green-600 dark:hover:bg-green-500"
     >
       New Custom Food
     </button>
+    </div>
   </div>
 
   <div class="mt-10 w-full max-w-7xl">
@@ -51,7 +55,7 @@
         }"
       >
         <div
-          class="flex max-h-150 w-full max-w-7xl flex-shrink-0 flex-col overflow-y-auto p-4"
+          class="flex max-h-150 w-full max-w-7xl flex-shrink-0 flex-col overflow-y-auto p-2 sm:p-4"
         >
           @for (favorite of favorites; track favorite.id) {
             <div
@@ -62,7 +66,7 @@
                 class="col-span-10 grid w-full grid-cols-subgrid"
               />
               <div
-                class="col-span-2 flex w-full items-center justify-center p-4"
+                class="col-span-2 flex w-full items-center justify-center p-2 sm:p-4 flex-col sm:flex-row"
               >
                 <span
                   class="rounded-full p-2 hover:cursor-pointer hover:bg-green-100 dark:hover:bg-green-600 dark:hover:text-white"
@@ -101,7 +105,7 @@
                 class="col-span-10 grid w-full grid-cols-subgrid"
               />
               <div
-                class="col-span-2 flex w-full items-center justify-center p-4"
+                class="col-span-2 flex w-full items-center justify-center p-2 sm:p-4 flex-col sm:flex-row"
               >
                 <span
                   class="rounded-full p-2 hover:cursor-pointer hover:bg-green-100 dark:hover:bg-green-600 dark:hover:text-white"
@@ -140,7 +144,7 @@
                 class="col-span-10 grid w-full grid-cols-subgrid"
               />
               <div
-                class="col-span-2 flex w-full items-center justify-center p-4"
+                class="col-span-2 flex w-full items-center justify-center p-2 sm:p-4 flex-col sm:flex-row"
               >
                 <span
                   class="rounded-full p-2 hover:cursor-pointer hover:bg-green-100 dark:hover:bg-green-600 dark:hover:text-white"
